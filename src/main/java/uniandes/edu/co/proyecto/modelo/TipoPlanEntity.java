@@ -12,7 +12,6 @@ import jakarta.persistence.Table;
 public class TipoPlanEntity {
 
     @Id
-    // TODO: Revisar si es necesario
     private String tipo_plan;
 
     private Integer vigencia;

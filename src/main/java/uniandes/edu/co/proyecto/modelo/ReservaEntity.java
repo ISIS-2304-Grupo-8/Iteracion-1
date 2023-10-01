@@ -20,8 +20,8 @@ public class ReservaEntity {
 
     @ManyToOne
     @JoinColumns({
-        @JoinColumn(name="estados_reservas_fecha_inicial", referencedColumnName = "fecha_inicial"),
-        @JoinColumn(name="estados_reservas_fecha_final", referencedColumnName = "fecha_final")
+            @JoinColumn(name = "estados_reservas_fecha_inicial", referencedColumnName = "fecha_inicial"),
+            @JoinColumn(name = "estados_reservas_fecha_fin", referencedColumnName = "fecha_fin")
     })
     private Estado_reserva estado_reserva;
 
