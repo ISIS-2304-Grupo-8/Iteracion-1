@@ -11,9 +11,8 @@ public class IncluyenEntity {
     @EmbeddedId
     private IncluyenEntityPK pk;
 
-    public IncluyenEntity(PlanDeConsumoEntity planesdeconsumo_id_plan, ProductoEntity productos_id_producto,
-            ProductoEntity productos_tipo_servicio) {
-        this.pk = new IncluyenEntityPK(planesdeconsumo_id_plan, productos_id_producto, productos_tipo_servicio);
+    public IncluyenEntity(PlanDeConsumoEntity planesdeconsumo_id_plan, ProductoEntity producto) {
+        this.pk = new IncluyenEntityPK(planesdeconsumo_id_plan, producto);
 
     }
 

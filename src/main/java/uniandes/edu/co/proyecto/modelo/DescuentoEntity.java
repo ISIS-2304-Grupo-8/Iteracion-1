@@ -39,4 +39,9 @@ public class DescuentoEntity {
         this.descuento = descuento;
     }
 
+    @Override
+    public String toString() {
+        return "DescuentoEntity [descuento=" + descuento + ", pk=" + pk + "]";
+    }
+
 }

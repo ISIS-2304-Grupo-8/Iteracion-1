@@ -16,7 +16,6 @@ public class ProductoEntityPK implements Serializable {
     @JoinColumn(name = "ts_tipo_servicio", referencedColumnName = "tipo_servicio")
     private TipoServicioEntity ts_tipo_servicio;
 
-    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id_producto;
 

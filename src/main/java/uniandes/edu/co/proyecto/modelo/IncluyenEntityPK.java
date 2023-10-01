@@ -15,11 +15,8 @@ public class IncluyenEntityPK implements Serializable {
     private PlanDeConsumoEntity planesdeconsumo_id_plan;
 
     @ManyToOne
-    @JoinColumns({
-    @JoinColumn(name = "productos_id_producto", referencedColumnName =
-    "id_producto")
-    @JoinColumn(name = "productos_tipo_servicio", referencedColumnName =
-    "ts_tipo_servicio")})
+    @JoinColumns({ @JoinColumn(name = "productos_id_producto", referencedColumnName = "id_producto"),
+            @JoinColumn(name = "productos_tipo_servicio", referencedColumnName = "ts_tipo_servicio") })
     private ProductoEntity producto;
 
     public IncluyenEntityPK(PlanDeConsumoEntity planesdeconsumo_id_plan, ProductoEntity producto) {
