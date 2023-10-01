@@ -22,7 +22,7 @@ public class ServicioEntity {
     private String descripcion;
 
     @ManyToOne
-    @JoinColumn(name = "tipos_servicio_id_tipo_ser", referencedColumnName = "id_tipo_ser")
+    @JoinColumn(name = "tipos_servicio_id_tipo_ser", referencedColumnName = "tipo_servicio")
     private TipoServicioEntity tipos_servicio_id_tipo_ser;
 
     //constructor
