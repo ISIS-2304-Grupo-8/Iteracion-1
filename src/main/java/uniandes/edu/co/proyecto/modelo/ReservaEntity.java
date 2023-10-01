@@ -17,27 +17,29 @@ public class ReservaEntity {
 
     @ManyToOne
     @JoinColumns({
-        @JoinColumn(name="estados_reservas_fecha_inicial", referencedColumnName = "fecha_inicial"),
-        @JoinColumn(name="estados_reservas_fecha_final", referencedColumnName = "fecha_final")
+            @JoinColumn(name = "estados_reservas_fecha_inicial", referencedColumnName = "fecha_inicial"),
+            @JoinColumn(name = "estados_reservas_fecha_fin", referencedColumnName = "fecha_fin")
     })
     private Estado_reserva estado_reserva;
 
     /*
-    
-    @ManyToOne
-    @JoinColumn(name="planesdeconsumo_id_plan", referencedColumnName="id_plan");
-    private PlanDeConsumo id_plan_consumo;
-    
-    public ReservaEntity() {;}
-    
-    public ReservaEntity(Integer id_reserva, Integer num_personas, Estado_reserva estado_reserva,
-    PlanDeConsumo id_plan_consumo) {
-        this.id_reserva = id_reserva;
-        this.num_personas = num_personas;
-        this.estado_reserva = estado_reserva;
-        this.id_plan_consumo = id_plan_consumo;
-    }
-    */
+     * 
+     * @ManyToOne
+     * 
+     * @JoinColumn(name="planesdeconsumo_id_plan", referencedColumnName="id_plan");
+     * private PlanDeConsumo id_plan_consumo;
+     * 
+     * public ReservaEntity() {;}
+     * 
+     * public ReservaEntity(Integer id_reserva, Integer num_personas, Estado_reserva
+     * estado_reserva,
+     * PlanDeConsumo id_plan_consumo) {
+     * this.id_reserva = id_reserva;
+     * this.num_personas = num_personas;
+     * this.estado_reserva = estado_reserva;
+     * this.id_plan_consumo = id_plan_consumo;
+     * }
+     */
 
     public Integer getId_reserva() {
         return id_reserva;
@@ -62,16 +64,15 @@ public class ReservaEntity {
     public void setEstado_reserva(Estado_reserva estado_reserva) {
         this.estado_reserva = estado_reserva;
     }
-    /* 
-     
-    public PlanDeConsumo getId_plan_consumo() {
-        return id_plan_consumo;
-    }
-    
-    public void setId_plan_consumo(PlanDeConsumo id_plan_consumo) {
-        this.id_plan_consumo = id_plan_consumo;
-    }
-    */
+    /*
+     * 
+     * public PlanDeConsumo getId_plan_consumo() {
+     * return id_plan_consumo;
+     * }
+     * 
+     * public void setId_plan_consumo(PlanDeConsumo id_plan_consumo) {
+     * this.id_plan_consumo = id_plan_consumo;
+     * }
+     */
 
-    
 }
