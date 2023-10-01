@@ -1,6 +1,8 @@
 package uniandes.edu.co.proyecto.modelo;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinColumns;
@@ -12,6 +14,7 @@ import jakarta.persistence.Table;
 public class ReservaEntity {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id_reserva;
     private Integer num_personas;
 
@@ -22,24 +25,22 @@ public class ReservaEntity {
     })
     private Estado_reserva estado_reserva;
 
-    /*
-     * 
-     * @ManyToOne
-     * 
-     * @JoinColumn(name="planesdeconsumo_id_plan", referencedColumnName="id_plan");
-     * private PlanDeConsumo id_plan_consumo;
-     * 
-     * public ReservaEntity() {;}
-     * 
-     * public ReservaEntity(Integer id_reserva, Integer num_personas, Estado_reserva
-     * estado_reserva,
-     * PlanDeConsumo id_plan_consumo) {
-     * this.id_reserva = id_reserva;
-     * this.num_personas = num_personas;
-     * this.estado_reserva = estado_reserva;
-     * this.id_plan_consumo = id_plan_consumo;
-     * }
-     */
+    
+    
+    @ManyToOne
+    @JoinColumn(name="planesdeconsumo_id_plan", referencedColumnName="id_plan")
+    private PlanDeConsumoEntity id_plan_consumo;
+    
+    public ReservaEntity() {;}
+    
+    public ReservaEntity(Integer id_reserva, Integer num_personas, Estado_reserva estado_reserva,
+    PlanDeConsumoEntity id_plan_consumo) {
+        this.id_reserva = id_reserva;
+        this.num_personas = num_personas;
+        this.estado_reserva = estado_reserva;
+        this.id_plan_consumo = id_plan_consumo;
+    }
+    
 
     public Integer getId_reserva() {
         return id_reserva;
@@ -64,15 +65,16 @@ public class ReservaEntity {
     public void setEstado_reserva(Estado_reserva estado_reserva) {
         this.estado_reserva = estado_reserva;
     }
-    /*
-     * 
-     * public PlanDeConsumo getId_plan_consumo() {
-     * return id_plan_consumo;
-     * }
-     * 
-     * public void setId_plan_consumo(PlanDeConsumo id_plan_consumo) {
-     * this.id_plan_consumo = id_plan_consumo;
-     * }
-     */
+    
+     
+    public PlanDeConsumoEntity getId_plan_consumo() {
+        return id_plan_consumo;
+    }
+    
+    public void setId_plan_consumo(PlanDeConsumoEntity id_plan_consumo) {
+        this.id_plan_consumo = id_plan_consumo;
+    }
+    
 
+    
 }
