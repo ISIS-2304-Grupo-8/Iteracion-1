@@ -15,14 +15,14 @@ public class ReservanEntity {
 
     //attributes
     private Date fecha_inicio;
-    private Date fecha_final;
+    private Date fecha_fin;
 
     //default constructor
     public ReservanEntity(HabitacionEntity hab_id, ServicioEntity serv_id,
-    Date fecha_inicio, Date fecha_final){
+    Date fecha_inicio, Date fecha_fin){
         this.pk = new ReservanPK(hab_id, serv_id);
         this.fecha_inicio = fecha_inicio;
-        this.fecha_final = fecha_final;
+        this.fecha_fin = fecha_fin;
     }
 
     //empty constructor
@@ -45,12 +45,12 @@ public class ReservanEntity {
         this.fecha_inicio = fecha_inicio;
     }
 
-    public Date getFecha_final() {
-        return fecha_final;
+    public Date getFecha_fin() {
+        return fecha_fin;
     }
 
-    public void setFecha_final(Date fecha_final) {
-        this.fecha_final = fecha_final;
+    public void setFecha_fin(Date fecha_fin) {
+        this.fecha_fin = fecha_fin;
     }
 
     
