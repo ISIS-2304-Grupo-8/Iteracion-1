@@ -19,15 +19,18 @@ public class HabitacionEntity {
     //attributes
     private Integer consumo_acumulado;
     private Character disponibilidad;
-    private Integer reservas_id_reserva;
     
+    @ManyToOne
+    @JoinColumn(name = "reservas_id_reserva", referencedColumnName = "id_reserva")
+    private ReservaEntity reservas_id_reserva;
+
     @ManyToOne
     @JoinColumn(name = "tipos_habitacion_id_tipo", referencedColumnName = "id_tipo")
     private TipoHabitacionEntity tipos_habitacion_id_tipo;
 
     //constructor
     public HabitacionEntity(Integer consumo_acumulado, Character disponibilidad,
-    Integer reservas_id_reserva, TipoHabitacionEntity tipos_habitacion_id_tipo){
+    ReservaEntity reservas_id_reserva, TipoHabitacionEntity tipos_habitacion_id_tipo){
         this.consumo_acumulado = consumo_acumulado;
         this.disponibilidad = disponibilidad;
         this.reservas_id_reserva = reservas_id_reserva;
@@ -64,11 +67,11 @@ public class HabitacionEntity {
         this.disponibilidad = disponibilidad;
     }
 
-    public Integer getReservas_id_reserva() {
+    public ReservaEntity getReservas_id_reserva() {
         return reservas_id_reserva;
     }
 
-    public void setReservas_id_reserva(Integer reservas_id_reserva) {
+    public void setReservas_id_reserva(ReservaEntity reservas_id_reserva) {
         this.reservas_id_reserva = reservas_id_reserva;
     }
 
