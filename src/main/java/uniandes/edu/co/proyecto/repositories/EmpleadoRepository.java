@@ -19,7 +19,7 @@ public interface EmpleadoRepository extends JpaRepository<EmpleadoEntity,
 
     @Query(value = "SELECT * FROM empleados WHERE num_doc= :num_doc ", nativeQuery
     = true)
-    EmpleadoEntity darEmpleado(@Param("num_doc") int id);
+    EmpleadoEntity darEmpleado(@Param("num_doc") int num_doc);
 
     @Modifying
     @Transactional
