@@ -41,9 +41,20 @@ document.addEventListener("DOMContentLoaded", function () {
         const documentNumber = documentNumberInput.value;
         const role = roleDropdown.innerText.trim();
 
-        // Verificar si es cliente o cualquier otro rol
         if (role === "Customer (Client)") {
-            alert('Funcionalidad para Cliente aún no implementada.');
+            // Hacer fetch al endpoint de clientes
+            fetch(`/clientes/${documentNumber}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.cliente) {
+                        alert(`Cliente encontrado: ${data.cliente.nombre}`);
+                    } else {
+                        alert('Cliente no encontrado.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching client:', error);
+                });
         } else {
             // Hacer fetch al endpoint de empleados
             fetch(`/empleados/${documentNumber}`)
@@ -60,6 +71,4 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
         }
     });
-  
 });
-

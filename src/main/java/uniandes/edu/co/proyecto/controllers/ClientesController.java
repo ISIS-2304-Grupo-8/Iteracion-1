@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import java.util.Collections;
 
 import uniandes.edu.co.proyecto.modelo.ClienteEntity;
 import uniandes.edu.co.proyecto.repositories.ClienteRepository;
@@ -64,5 +67,15 @@ public class ClientesController {
         clienteRepository.eliminarCliente(num_doc);
         return "redirect:/clientes";
 
+    }
+
+    @GetMapping("/clientes/{num_doc}")
+    public ResponseEntity<Object> clienteDetalle(@PathVariable("num_doc") int num_doc) {
+        ClienteEntity cliente = clienteRepository.darCliente(num_doc);
+        if(cliente != null) {
+            return new ResponseEntity<>(Collections.singletonMap("cliente", cliente), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(Collections.singletonMap("mensaje", "Cliente no encontrado"), HttpStatus.NOT_FOUND);
+        }
     }
 }
