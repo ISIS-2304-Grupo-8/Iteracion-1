@@ -24,12 +24,12 @@ public interface EmpleadoRepository extends JpaRepository<EmpleadoEntity,
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO empleados (num_doc, nombre, email, tipo_doc, rol) VALUES (:num_doc, :nombre, :email, :tipo_doc, :rol)", nativeQuery = true)
-    void insertarEmpleado(@Param("num_doc ") int num_doc, @Param("nombre") String nombre, @Param("email") String email , 
+    void insertarEmpleado(@Param("num_doc") int num_doc, @Param("nombre") String nombre, @Param("email") String email , 
     @Param("tipo_doc") String tipo_doc, @Param("rol") String rol);
 
     @Modifying
     @Transactional
-    @Query(name = "UPDATE empleados SET nombre = :nombre, email = :email, tipo_doc = :tipo_doc, rol = :rol", nativeQuery = true)
+    @Query(value = "UPDATE empleados SET nombre = :nombre, email = :email, tipo_doc = :tipo_doc, rol = :rol WHERE num_doc = :num_doc", nativeQuery = true)
     void actualizarEmpleado(@Param("num_doc") int num_doc, @Param("nombre") String nombre, @Param("email") String email , 
     @Param("tipo_doc") String tipo_doc, @Param("rol") String rol);
 
