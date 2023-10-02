@@ -14,6 +14,15 @@ function type() {
   }
 }
 
+const roleMapping = {
+  "Receptionist": "recepcionista",
+  "Service Manager": "gerente",
+  "Employee": "empleado",
+  "Data Administrator": "admin_datos",
+  "Customer (Client)": "cliente"
+};
+
+
 document.addEventListener("DOMContentLoaded", function () {
   //load title
     type()
@@ -38,37 +47,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Evento cuando se hace click en el botón "Entrar"
     document.querySelector('.btn-primary.w-100.mb-2').addEventListener('click', function() {
-        const documentNumber = documentNumberInput.value;
-        const role = roleDropdown.innerText.trim();
+      const documentNumber = documentNumberInput.value;
+      let role = roleDropdown.innerText.trim();
+  
+      // Mapear el rol al valor correcto en la base de datos
+      role = roleMapping[role] || role;
+  
+      // Si el rol es "cliente", hacemos un fetch a la ruta de clientes
+      if (role === "cliente") {
+          fetch(`/clientes/${documentNumber}`)
+              .then(response => response.json())
+              .then(data => {
+                  if (data.cliente) {
+                      alert(`Cliente encontrado: ${data.cliente.nombre}`);
+                      window.location.href = "cliente.html";
+                  } else {
+                      alert('Cliente no encontrado.');
+                  }
+              })
+              .catch(error => {
+                  console.error('Error fetching client:', error);
+              });
+      } else { // Si no es un cliente, asumimos que es un tipo de empleado
+          fetch(`/empleados/${documentNumber}`)
+              .then(response => response.json())
+              .then(data => {
+                  if (data.empleado && data.empleado.rol === role) {
+                      switch(role) {
+                          case "gerente":
+                              window.location.href = "administradorDelSistema.html";
+                              break;
+                          case "admin_datos":
+                              window.location.href = "administrador.html";
+                              break;
+                          case "recepcionista":
+                          case "empleado":
+                              window.location.href = "recepcionista.html";
+                              break;
+                          default:
+                              alert('Rol no reconocido.');
+                              break;
+                      }
+                  } else {
+                      alert('Empleado no encontrado o el rol no coincide.');
+                  }
+              })
+              .catch(error => {
+                  console.error('Error fetching employee:', error);
+              });
+      }
+  });
 
-        if (role === "Customer (Client)") {
-            // Hacer fetch al endpoint de clientes
-            fetch(`/clientes/${documentNumber}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.cliente) {
-                        alert(`Cliente encontrado: ${data.cliente.nombre}`);
-                    } else {
-                        alert('Cliente no encontrado.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching client:', error);
-                });
-        } else {
-            // Hacer fetch al endpoint de empleados
-            fetch(`/empleados/${documentNumber}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.empleado) {
-                        alert(`Empleado encontrado: ${data.empleado.nombre}`);
-                    } else {
-                        alert('Empleado no encontrado.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching employee:', error);
-                });
-        }
-    });
+  document.querySelector('.btn.btn-secondary.goback').addEventListener('click', function() {
+    window.location.href = "/";
+  });
+  
 });
