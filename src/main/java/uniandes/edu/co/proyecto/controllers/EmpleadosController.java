@@ -1,6 +1,10 @@
 package uniandes.edu.co.proyecto.controllers;
 
+import java.util.Collections;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -59,16 +63,14 @@ public class EmpleadosController {
         return "redirect:/empleados";
     }
 
-     // Nuevo método para buscar un empleado por número de documento.
      @GetMapping("/empleados/{num_doc}")
-     public String empleadoDetalle(@PathVariable("num_doc") int num_doc, Model model){
-         EmpleadoEntity empleado = empleadoRepository.darEmpleado(num_doc);
-         if(empleado != null){
-             model.addAttribute("empleado", empleado);
-             return "empleadoDetalle";
-         } else {
-             model.addAttribute("mensaje", "El empleado con el número de documento " + num_doc + " no existe.");
-             return "empleadoNoEncontrado"; // Aquí deberías tener una vista que muestre el mensaje de que el empleado no fue encontrado.
-         }
-     }
+    public ResponseEntity<Object> empleadoDetalle(@PathVariable("num_doc") int num_doc){
+        EmpleadoEntity empleado = empleadoRepository.darEmpleado(num_doc);
+        if(empleado != null){
+            return new ResponseEntity<>(Collections.singletonMap("empleado", empleado), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(Collections.singletonMap("mensaje", "Empleado no encontrado"), HttpStatus.NOT_FOUND);
+        }
+}
+
 }

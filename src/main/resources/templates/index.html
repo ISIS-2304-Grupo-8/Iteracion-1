@@ -91,8 +91,8 @@
                         </p>
                         <div class="d-flex align-items-center justify-content-center mb-3">
                             <div>
-                                <label for="exampleFormControlInput1" class="form-label"> <b>Please enter your email address</b></label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <label for="documentNumberInput" class="form-label"> <b>Please enter your document number</b></label>
+                                <input type="text" class="form-control" id="documentNumberInput" placeholder="Document Number">
                             </div>
                         
                             <div class="dropdown ms-2 mt-1">
@@ -103,11 +103,14 @@
                                   <li><a class="dropdown-item" href="#"> Customer (Client) </a></li>
                                   <li><a class="dropdown-item" href="#"> Receptionist </a></li>
                                   <li><a class="dropdown-item" href="#"> Service Manager </a></li>
-                                  <li><a class="dropdown-item" href="#"> Administrator </a></li>
+                                  <li><a class="dropdown-item" href="#"> Employee </a></li>
+                                  <li><a class="dropdown-item" href="#"> Data Administrator </a></li>
                                 </ul>
                             </div>
                         </div>
-                        
+                        <button type="button" class="btn btn-primary w-100 mb-2" onclick="loginUser()">
+                            Entrar
+                        </button>
                         <button type="button" class="btn btn-outline-dark w-100" data-bs-toggle="modal" data-bs-target="#createUserModal">
                             Create new user
                          </button>
