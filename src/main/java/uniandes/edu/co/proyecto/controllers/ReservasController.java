@@ -49,6 +49,12 @@ public class ReservasController {
 
     }
 
+    @PostMapping("/reservas/new/save")
+    public String reservaGuardar(@ModelAttribute ReservaEntity reserva){
+        reservasRepository.insertarReserva(reserva.getNum_personas(), reserva.getEstado_reserva().getPk().getFecha_inicial(), reserva.getEstado_reserva().getPk().getFecha_final(), reserva.getId_plan_consumo().getId_plan(), reserva.getClientes_num_doc().getNum_doc());
+        return "redirect:/reservas";
+    }
+
     @GetMapping("/reservas/{id_reserva}/edit")
     public String reservaEditarForm(@PathVariable("id_reserva") int id_reserva, Model model){
         ReservaEntity reserva = reservasRepository.darReserva(id_reserva);
@@ -64,13 +70,18 @@ public class ReservasController {
         }
     }
 
-    //@PostMapping("/reservas/{id_reserva}/edit/save")
-    //public String reservaEditarGuardar(@PathVariable("id_reserva") int id_reserva, @ModelAttribute ReservaEntity reserva){
-        //reservasRepository.actualizarReserva(id_reserva, reserva.getNum_personas(), reserva.getEstado_reserva().getPk().getFecha_inicial(), reserva.getEstado_reserva().getPk().getFecha_final(), reserva.getId_plan_consumo(), reserva.getNum_personas());
-    //}
+    @PostMapping("/reservas/{id_reserva}/edit/save")
+    public String reservaEditarGuardar(@PathVariable("id_reserva") int id_reserva, @ModelAttribute ReservaEntity reserva){
+        reservasRepository.actualizarReserva(id_reserva, (int) reserva.getNum_personas(), reserva.getEstado_reserva().getPk().getFecha_inicial(), reserva.getEstado_reserva().getPk().getFecha_final(), reserva.getId_plan_consumo().getId_plan(), reserva.getClientes_num_doc().getNum_doc());
+        return "redirect:/reservas";
+    }
 
-    
-    //@PostMapping("/reservas/{id_reserva}/delete")
+
+    @GetMapping("/reservas/{id_reserva}/delete")
+    public String reservaBorrar(@PathVariable("id_reserva") int id_reserva){
+        reservasRepository.eliminarReserva(id_reserva);
+        return "redirect:/reservas";
+    }
 
 
     
