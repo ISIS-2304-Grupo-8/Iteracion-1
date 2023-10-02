@@ -18,9 +18,13 @@ public class DescuentosController {
     @Autowired
     private DescuentoRepository descuentoRepository;
 
+    @Autowired
+    private TipoPlanRepository tipoPlanRepository;
+
     @GetMapping("/descuentos")
     public String descuentos(Model model) {
         model.addAttribute("descuentos", descuentoRepository.darDescuentos());
+        model.addAttribute("tipos_plan", tipoPlanRepository.darTiposPlan());
         return model.toString();
     }
 
