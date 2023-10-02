@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A8A672D3-A49E-4E39-FA08-8E55971E1820" name="Tipos_habitacion">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>54835403-C791-1FCE-171D-9539CEB15D29</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tipo" id="85D8D834-18CB-C9C3-50AE-FC686AC6AACA">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>8C3C9034-E30B-7657-37D3-47D3741B8CD6</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<sourceType>System</sourceType>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo" id="07B9433E-E00B-44A6-D8D8-26D2225CC6C3">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>0B1BBF01-C060-61C9-75D2-9A7A913911C1</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidad" id="737EF806-B32A-F717-ED70-F5BA931AC4AB">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>92DA4804-45CA-342B-397F-4FC8BF98384A</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="6C602CF3-81A5-CB27-0E51-F105A368C216">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>02AC6F45-6859-24B7-D168-74AE188EDB2D</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="D728DDF7-5590-B8E2-30DE-E19DC8BC4D40">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>6850D059-A3CA-4598-B5AA-27D39E50E4B7</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E4C8F24A-9DED-829D-CA9B-7A9A0902F432</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="43432CD7-D81C-21DA-237B-BF521E5B2AF5" name="Tipos_habitacion_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>8684DA9A-2506-7909-9E51-9889A5912689</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="85D8D834-18CB-C9C3-50AE-FC686AC6AACA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AD190D60-F5BC-6B1C-8C81-D9836A78BB37" name="Descuentos">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>17674CB0-CEDD-5AB0-A359-9D0CB15DEAE8</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="C81DF1EE-EE2D-B002-ECA6-F79E41241215">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>6C43A801-5181-FBAB-1131-B974BDCBAFF6</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="69F9C09C-F0CE-0959-0D79-0B558B138FB3">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>7AE796B2-C8B6-1E41-8A0E-16062EA85845</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor" id="2BEB9073-27C7-29D7-6C76-BA0A25F9483A">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>6E877EDE-0EC3-C55A-38C5-989ABC48C435</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,1,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PlanesDeConsumo_id_plan" id="D60E3979-DB42-2166-41AC-07B011DEF2C8">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>CC2DA315-F01A-10B7-71E8-0E90FDD415BF</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4D93E496-0EFE-2936-D5DC-3E16A788C074" referredColumn="DF335673-9AFF-C319-EA2C-E08FA740C849"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="46923CFA-00B1-16EC-BBAB-B87B56A5B64A" name="Descuentos_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>16D2D020-3142-2DB4-320E-132DA4CB9954</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C81DF1EE-EE2D-B002-ECA6-F79E41241215"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B2081AD1-4FC0-6349-4507-4AB641EA9B54" name="Descuentos_PlanesDeConsumo_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>06D84FBC-118B-FA5C-4AB7-9F311B7DE250</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D60E3979-DB42-2166-41AC-07B011DEF2C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

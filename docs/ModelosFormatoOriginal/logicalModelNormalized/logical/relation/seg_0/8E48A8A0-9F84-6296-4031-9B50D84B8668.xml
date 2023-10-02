@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="reservas-habitaciones" directorySegmentName="seg_0" id="8E48A8A0-9F84-6296-4031-9B50D84B8668">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:02:39 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<sourcePk>51968052-E10E-D8F2-E5E9-EE6E1628F8C9</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7FD28FE9-2E63-6516-C3D0-E4991306C17B</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>43EFE1D8-3448-624C-4E6C-B45F683EDB3D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

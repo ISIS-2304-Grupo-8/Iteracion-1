@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2FB51234-BC16-D90E-1BB4-EFD94FD7C3F6" name="Clientes">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:26:51 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="num_doc" id="86F7451C-DF00-6DE4-5B87-69EAB3DE4E8C">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:26:56 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="45C8BE77-1782-41C3-1D28-6189E2F4F6C1">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:27:01 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="9A5D07B7-C62E-9696-3378-8EE9C290A535">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:30:59 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_doc" id="254DB7AC-5BB1-B166-EA39-4533FED7EE8C">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:53:34 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_reserva" id="D1446E8A-82F1-6AB9-56DC-2E1BBB1DD7AB">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-24 17:16:17 UTC</createdTime>
+<generatorID>58870A1C-91A0-0F5D-67FF-4E9A081718BC</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>A006F3D7-FD91-5BBA-8C01-F012477DCFE4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rol_cliente" id="042698DB-CE9D-8A8E-D79C-BFE1CF561DC6">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 23:16:37 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>6316BDE9-706F-18FA-7E10-62E3D075EC6A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_inicial" id="6623EAC2-E582-0382-3390-3D18A92B6312">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 01:15:06 UTC</createdTime>
+<generatorID>58870A1C-91A0-0F5D-67FF-4E9A081718BC</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>CBFBA0E6-BCCD-28E0-3F8E-68CBC44F1AAE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_fin" id="EA73E39A-3ED2-D6C3-8794-FA6712334DA2">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 01:15:06 UTC</createdTime>
+<generatorID>58870A1C-91A0-0F5D-67FF-4E9A081718BC</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>CEE8D22C-6FD3-1D4E-91A0-2FDE94FD6631</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2C56F3EA-BEB8-D863-C2F3-CE725F9224B3" name="Clientes PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:30:58 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>86F7451C-DF00-6DE4-5B87-69EAB3DE4E8C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

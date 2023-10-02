@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="11895135-B142-0CDA-C305-97227DE3B5F8" containerWithKeyObject="D6DF6F7A-241B-73B2-2D0D-96E590EF66BA" localFKIndex="997A7D86-1E05-2982-F8B3-7989BECEC73E" name="Platos_Menus_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>8F3BC180-9A00-3861-D7E9-19794F61CE35</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<referredTableLongName>Menus</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3015BDC0-D848-6EFC-6BF5-6321A7D3C674</referredTableID>
+<keyObject>B2833D51-10AE-56E0-A81A-F7AD8187B324</keyObject>
+<referredKeyID>B2833D51-10AE-56E0-A81A-F7AD8187B324</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_menu</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

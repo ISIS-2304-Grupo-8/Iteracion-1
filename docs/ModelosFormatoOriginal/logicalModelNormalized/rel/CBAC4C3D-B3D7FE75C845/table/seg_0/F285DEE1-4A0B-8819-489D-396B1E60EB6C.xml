@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F285DEE1-4A0B-8819-489D-396B1E60EB6C" name="Registran">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Clientes_id_cliente" id="867DC6F6-EC84-EC7F-21AB-B23488F062D7">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74A2DF1B-284C-9590-2190-5078297A659C" referredColumn="503AA2AA-2167-AFF9-9DC8-BDF2F0C93E10"/>
+</associations>
+</Column>
+<Column name="Empleados_id_empleado" id="D381D9C5-28D2-DA1F-8DDD-C93470BDBD83">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DEFD5360-F51A-ECCD-6341-85918920BBCA" referredColumn="F2172FA1-FAE5-CE3B-87E1-85F9C6B91415"/>
+</associations>
+</Column>
+<Column name="id_registro" id="A04EADE5-89DA-9268-3084-D65F516C1E87">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>67A7E28D-437F-3EC1-7BC6-8744A8B36E78</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+<Column name="check_in" id="FE92756F-23D2-4AB8-F5BF-53C6FB7E2C94">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>847BFD5A-4C23-5625-A14D-158287E40C58</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DA71C99F-7296-56AC-2477-E26B7B634236" name="Registran_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="867DC6F6-EC84-EC7F-21AB-B23488F062D7"/>
+<colUsage columnID="D381D9C5-28D2-DA1F-8DDD-C93470BDBD83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A9F4D08F-DCD6-6517-15C8-C672176EB228" name="Registran_Clientes_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>295E51E9-F0AA-FAD4-BA4D-0B920CF66C8D</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="867DC6F6-EC84-EC7F-21AB-B23488F062D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D63874E2-0091-42D4-5EEF-CE8A368CBE99" name="Registran_Empleados_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>295E51E9-F0AA-FAD4-BA4D-0B920CF66C8D</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D381D9C5-28D2-DA1F-8DDD-C93470BDBD83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

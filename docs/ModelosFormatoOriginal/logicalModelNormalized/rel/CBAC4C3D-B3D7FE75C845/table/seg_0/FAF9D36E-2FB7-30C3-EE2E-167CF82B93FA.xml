@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FAF9D36E-2FB7-30C3-EE2E-167CF82B93FA" name="Tipos_servicio">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>4AD1CF47-A2DE-0EF9-B849-B0FD72648835</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tipo_servicio" id="9056C152-152C-78F6-73E0-36D13DF6CDC2">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>78B47883-27F2-A751-7977-F513839CA86D</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B7A05680-5F3B-ECB8-26B0-91B8D7540565</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="precio" id="D98DAED3-BB99-EF2B-1981-515EC4F77A00">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>75CAFCE0-F38C-897F-0EB6-4F850F780467</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidad" id="214B64E6-F4AE-91AE-4928-C555CD04748B">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>AF11395A-8347-C288-794F-4B9D699862A6</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DA38CE98-0758-76F7-BC9D-2E0696A2CFA8" name="Tipos_servicio_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>3267A53D-485E-DEE2-0EC1-8E38E0EA2799</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9056C152-152C-78F6-73E0-36D13DF6CDC2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

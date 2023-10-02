@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Reservan" directorySegmentName="seg_0" id="C04CB0AC-169D-738C-A2EE-82E949D886DD">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:48:00 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>43EFE1D8-3448-624C-4E6C-B45F683EDB3D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9CCA7906-4921-5CA3-FC92-508DFB92F2EA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="fecha_inicio" id="983019B0-00DC-FCBE-ADFB-077BAE6D9F4E">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-24 16:42:01 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+<attribute name="fecha_final" id="DAB99CCA-3AD2-3EB0-3C6D-B68E6062823A">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 03:51:58 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

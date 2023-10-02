@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4745AA7B-8EBE-1C75-B01B-474AFF5F9FE5" name="PlanesDeConsumo">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>DD11B62F-FA4D-B106-AE57-F5D667D11238</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_plan" id="0CA99619-D71F-8FFD-935C-E87D0ACAE98E">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>72585A71-404B-344C-E55A-F047762BA27E</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<sourceType>System</sourceType>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Tipos_plan_id_tipo" id="9AC5399A-263C-0D80-514D-70D394D34E47">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>CA75E127-B6CE-9903-759C-B8AEE159E810</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C9D2AE02-B954-B774-F22A-225BEBEED9FD" referredColumn="4D05E47D-1BAB-64CA-896F-23C59BF21068"/>
+</associations>
+</Column>
+<Column name="nombre" id="48635895-90CE-7AE8-F879-01D310C5BEBA">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>E4DD2DC6-4F1A-4515-2E64-99FB0848E09F</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="C990E149-363A-EE3E-CD1F-29AD2CE934F7">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>3A7EF214-D00E-2F61-76E1-66A8B079692C</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C340969B-C3F8-3BDA-B019-A1F79ABC7815" name="PlanesDeConsumo_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>771EC8A5-F657-7ECB-DF04-8CD9607F2317</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0CA99619-D71F-8FFD-935C-E87D0ACAE98E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F88EA610-694C-A76D-3304-D9E4DC9BBCCE" name="PlanesDeConsumo_Tipos_plan_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>DE708E56-1EF0-13E5-2E50-7B52B78DAA1A</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9AC5399A-263C-0D80-514D-70D394D34E47"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

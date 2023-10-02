@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DD11B62F-FA4D-B106-AE57-F5D667D11238" name="PlanesDeConsumo">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:07:14 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_plan" id="72585A71-404B-344C-E55A-F047762BA27E">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:07:27 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_plan" id="83E347D3-8A44-DB2B-2B0A-E34D5C75EF2F">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:07:35 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costo_al_base" id="58ACD6FB-A06A-92F8-BFC5-8D247262CCC8">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:08:00 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costo_al_descuento" id="5E38392A-C721-C434-B738-2AA72703DF4E">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:08:13 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="periodo_vigencia" id="1B18C9C9-AC43-DC7C-10D5-824D6EB9F456">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:08:38 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="restricciones" id="1A4E0EB4-FB0B-7A19-CBFC-E7D9498C29F0">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:10:47 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_plan1" id="CA75E127-B6CE-9903-759C-B8AEE159E810">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 04:29:46 UTC</createdTime>
+<generatorID>DE708E56-1EF0-13E5-2E50-7B52B78DAA1A</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>8E7F88D1-CF8B-FDAF-D544-47F8D790E4E0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="771EC8A5-F657-7ECB-DF04-8CD9607F2317" name="PlanesDeConsumo PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:07:33 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>72585A71-404B-344C-E55A-F047762BA27E</attributeRef>
+<attributeRef>CA75E127-B6CE-9903-759C-B8AEE159E810</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

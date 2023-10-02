@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="084B3810-A186-376E-EB66-C776B886AAFD" name="Reservas">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>7FD28FE9-2E63-6516-C3D0-E4991306C17B</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_reserva" id="6F97D5CD-7017-FD71-7993-364A81E5513E">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>A006F3D7-FD91-5BBA-8C01-F012477DCFE4</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<sourceType>System</sourceType>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="num_personas" id="49E6B9D0-0091-03C1-45AC-B1AC242ABD16">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>9DEAF012-E867-6B3F-7440-A9A1FE783930</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estados_Reservas_fecha_inicial" id="1C2C88D8-3FBC-856B-18A6-C3D0D8E5C6F9">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>CBFBA0E6-BCCD-28E0-3F8E-68CBC44F1AAE</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="10A44411-0621-4C88-260A-16209F2F6465" referredColumn="6CF48634-2E21-31BB-39B0-85DDDD27E8C8"/>
+</associations>
+</Column>
+<Column name="Estados_Reservas_fecha_fin" id="91B8A090-64C7-9D02-181B-D23FE1B7D595">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>CEE8D22C-6FD3-1D4E-91A0-2FDE94FD6631</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="10A44411-0621-4C88-260A-16209F2F6465" referredColumn="9FDAC18A-3B7D-E223-A53A-740E3583F1AA"/>
+</associations>
+</Column>
+<Column name="PlanesDeConsumo_id_plan" id="0D5A209A-2A9B-AA81-720F-A855779AA9AF">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>1B754CB8-26EE-AAA1-1466-3A83016CFEBA</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="814E775D-D5B1-8596-9C8D-FED9A853EBF3" referredColumn="0CA99619-D71F-8FFD-935C-E87D0ACAE98E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C3E4FC35-66A7-0C2E-FF57-9BBD8F712960" name="Reservas_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>51968052-E10E-D8F2-E5E9-EE6E1628F8C9</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6F97D5CD-7017-FD71-7993-364A81E5513E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2EE67C8E-3694-CBF6-025F-6C05E436DCE3" name="Reservas__IDX">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>181C0EC4-7E2C-80E1-727C-B1CD08ADA630</relationGeneratorID>
+</ind_PK_UK>
+<ind_PK_UK id="913FE7B2-DEA9-815F-B2B1-34F243A712B4" name="Reservas_Estados_Reservas_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>10E43BA1-9453-F0B8-AE13-56BB067D19AB</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C2C88D8-3FBC-856B-18A6-C3D0D8E5C6F9"/>
+<colUsage columnID="91B8A090-64C7-9D02-181B-D23FE1B7D595"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F843AD00-8315-CD00-5D6E-67AA6136F416" name="Reservas_PlanesDeConsumo_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>96222552-9DDA-E174-9B4C-2B01F5A62E12</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0D5A209A-2A9B-AA81-720F-A855779AA9AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

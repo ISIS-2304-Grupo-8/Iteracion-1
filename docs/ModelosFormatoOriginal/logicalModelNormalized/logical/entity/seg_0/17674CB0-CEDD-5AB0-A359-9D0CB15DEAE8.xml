@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="17674CB0-CEDD-5AB0-A359-9D0CB15DEAE8" name="Descuentos">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:13:51 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_plan" id="6C43A801-5181-FBAB-1131-B974BDCBAFF6">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:13:57 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="servicio_descuentado" id="7AE796B2-C8B6-1E41-8A0E-16062EA85845">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:13:59 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<domain>8BF9B784-D7E6-B099-6D89-6747AB7FB0A9</domain>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descuento" id="42452891-5806-E454-84E0-7BF5AA04B9ED">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 04:26:00 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_plan1" id="DC5B6061-0A3F-D156-7465-027F1610A6F0">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 04:28:17 UTC</createdTime>
+<generatorID>54AD801B-5E3D-59B7-82F8-89060065E2DC</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>8E7F88D1-CF8B-FDAF-D544-47F8D790E4E0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="16D2D020-3142-2DB4-320E-132DA4CB9954" name="Descuentos PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:15:38 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6C43A801-5181-FBAB-1131-B974BDCBAFF6</attributeRef>
+<attributeRef>7AE796B2-C8B6-1E41-8A0E-16062EA85845</attributeRef>
+<attributeRef>DC5B6061-0A3F-D156-7465-027F1610A6F0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1E454C0E-B34B-3F58-4DB6-C4550721653F" name="Servicios">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>9CCA7906-4921-5CA3-FC92-508DFB92F2EA</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_servicio" id="6305A329-FA91-461A-944E-B01F5C505808">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>8D0B70A1-EE41-3DFC-E901-3FE674F12AFC</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<sourceType>System</sourceType>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="disponibilidad" id="7C19C050-3F88-21E2-3535-43D81B0AD817">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>F1E2E954-64EA-E255-A914-277ABF40204E</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="6CD4627F-6A7D-0C1D-D998-3562A7269926">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>49A2D6A0-6A38-6F34-40B6-7F97E0E45A12</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="DFBE3CC2-D7EC-86D9-F11C-AD11E99E3EEB">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>5195BFB6-0B89-5318-FD7E-9B9168A4CDD8</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ts_tipo_servicio" id="7E179364-CD58-0D85-BBFC-715170737DD8">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>F81A2EF1-78E4-FF96-7FB3-0CD5239DE90C</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B7A05680-5F3B-ECB8-26B0-91B8D7540565</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CED3C46F-F9CA-06FE-CE5A-AB7F571AAAD1" referredColumn="9056C152-152C-78F6-73E0-36D13DF6CDC2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A123619F-671E-4A15-2075-E90F4191A0AD" name="Servicios_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>AB9D7C81-A901-7510-3F74-7478638D5333</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6305A329-FA91-461A-944E-B01F5C505808"/>
+<colUsage columnID="7E179364-CD58-0D85-BBFC-715170737DD8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9FF8D094-E597-7E12-4F23-D58982ACB346" name="Servicios_Tipos_servicio_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>2F1FF715-45BD-05B5-1E44-AF125D3B8B5B</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7E179364-CD58-0D85-BBFC-715170737DD8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

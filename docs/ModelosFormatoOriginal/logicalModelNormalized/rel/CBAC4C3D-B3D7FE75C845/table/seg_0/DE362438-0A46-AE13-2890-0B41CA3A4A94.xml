@@ -1,0 +1,121 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DE362438-0A46-AE13-2890-0B41CA3A4A94" name="Clientes">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>2FB51234-BC16-D90E-1BB4-EFD94FD7C3F6</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="num_doc" id="FE6BF059-D26E-C4E1-2E6D-E4E84F15DE19">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>86F7451C-DF00-6DE4-5B87-69EAB3DE4E8C</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="8105BEAD-DBE5-B468-43C6-0E7141ABA4AE">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>45C8BE77-1782-41C3-1D28-6189E2F4F6C1</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="FDE867DE-D0AE-6CE8-C49A-40D3D5E46999">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>9A5D07B7-C62E-9696-3378-8EE9C290A535</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_doc" id="C091F033-D316-3FE0-EFF0-C2DA3E729CB8">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>254DB7AC-5BB1-B166-EA39-4533FED7EE8C</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rol_cliente" id="D263D4A5-A155-F148-9625-2140D3F3C2B1">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>042698DB-CE9D-8A8E-D79C-BFE1CF561DC6</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>6316BDE9-706F-18FA-7E10-62E3D075EC6A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Reservas_id_reserva" id="6C69DD8E-1B45-9766-0ABD-CA46CE8735A0">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>B579E8E6-2E08-4769-928B-5FAE15704064</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A4F7A0DF-40A8-F1EF-2D8F-A09831015436" referredColumn="6F97D5CD-7017-FD71-7993-364A81E5513E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B5D8744C-8570-41CE-0992-C004276B2A1C" name="Clientes_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>2C56F3EA-BEB8-D863-C2F3-CE725F9224B3</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FE6BF059-D26E-C4E1-2E6D-E4E84F15DE19"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E8916AB1-19EA-E4DC-23A1-4DC23ADA9E18" name="Clientes__IDX">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>181C0EC4-7E2C-80E1-727C-B1CD08ADA630</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="6C69DD8E-1B45-9766-0ABD-CA46CE8735A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="197E851F-FFDE-DECD-9B6C-C2346E6B003B" name="Clientes_Reservas_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:30:28 UTC</createdTime>
+<generatorID>181C0EC4-7E2C-80E1-727C-B1CD08ADA630</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C69DD8E-1B45-9766-0ABD-CA46CE8735A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

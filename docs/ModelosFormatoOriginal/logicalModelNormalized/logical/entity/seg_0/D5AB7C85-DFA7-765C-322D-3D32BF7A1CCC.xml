@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D5AB7C85-DFA7-765C-322D-3D32BF7A1CCC" name="Empleados">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:51:05 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="num_doc" id="8474382B-5FC3-5E52-43FF-F6A9C7F009C3">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:51:12 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_doc" id="50BD833D-8695-99C3-BC26-F5CE28254C5D">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:51:24 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rol" id="1644866D-C730-444F-2D05-CE15A223430C">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:51:45 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<domain>D9226116-91A7-C974-3C6B-5E112502A350</domain>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="A1B33F74-7F9E-5BD8-7583-26FB7B95A3CC">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 03:46:03 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="5461AFB0-317A-6F4A-B92C-4AD55C2ADEAB">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 03:46:13 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4F56C550-56E0-FD0A-1E14-82CC347F3C2A" name="Empleados PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:51:22 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8474382B-5FC3-5E52-43FF-F6A9C7F009C3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

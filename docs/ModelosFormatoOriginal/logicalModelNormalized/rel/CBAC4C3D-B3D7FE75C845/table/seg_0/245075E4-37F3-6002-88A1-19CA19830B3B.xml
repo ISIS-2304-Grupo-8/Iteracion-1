@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="245075E4-37F3-6002-88A1-19CA19830B3B" name="Habitaciones">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>7DC6D618-1BB6-6B5C-F3FD-1D8E45C25C60</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_habitacion" id="638D967B-E8C6-C60E-5BE3-6326C8BBBD04">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>0B05D0C4-2E1C-C940-3C32-C1696A49DFA6</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<sourceType>System</sourceType>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="consumo_acumulado" id="9ADCCDEB-C8E5-74EF-4FD9-68887A51AE88">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>BAEC79B6-04EB-B96E-C411-AD822F55668D</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="disponibilidad" id="770DC34B-1DB1-6A73-21A2-6C68EF18D74C">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>2803805B-63A3-6D58-16F5-EFA272EB1FD3</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Reservas_id_reserva" id="1A44A74C-3BA5-D028-03AD-82ACFEE6A4E2">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>A2292CC7-0CC8-7D61-38AA-1B2A4C8378A8</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="77637C1D-EAB4-2901-3500-9673849CB079" referredColumn="6F97D5CD-7017-FD71-7993-364A81E5513E"/>
+</associations>
+</Column>
+<Column name="Tipos_habitacion_id_tipo" id="A5B8C058-7B4D-A5FC-D5D1-99EAAF1E0B61">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>B643B21A-49C0-BEF3-D6E5-862F966EDED3</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B69C570E-B4E1-33A3-5875-D361392BD55B" referredColumn="85D8D834-18CB-C9C3-50AE-FC686AC6AACA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="874AAE90-97FD-A6CE-5105-A90EFEA221A2" name="Habitaciones_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>6B6FCAA7-66C3-1678-CE87-E5438C14F9E8</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="638D967B-E8C6-C60E-5BE3-6326C8BBBD04"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="379E487F-5451-C17A-8DE9-C19F6F338716" name="Reservas_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>29B2C7E9-A872-A4D8-8C71-66BE426CC0E6</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1A44A74C-3BA5-D028-03AD-82ACFEE6A4E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DDFA7E3E-415D-FB4C-69F7-5EB55F81342D" name="Tipos_habitacion_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>C72E6CF4-E5CA-5F2F-9D3F-700963E43D7C</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A5B8C058-7B4D-A5FC-D5D1-99EAAF1E0B61"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

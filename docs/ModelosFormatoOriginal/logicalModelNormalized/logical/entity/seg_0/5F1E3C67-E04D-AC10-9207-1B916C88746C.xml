@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5F1E3C67-E04D-AC10-9207-1B916C88746C" name="Productos">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:43:25 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_producto" id="CAC74B0A-DFB7-8BBF-516A-6BA94CE8C07C">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:43:32 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="C340C60C-2B89-45A8-C605-1A26F7657133">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:43:50 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costo" id="108D5B4B-5379-0263-48F2-97742668499B">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:44:05 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tipo" id="09294A0A-DFCC-2327-3EBC-AA34450534B3">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 03:03:57 UTC</createdTime>
+<generatorID>9DBFF414-3FEB-4BEA-F1F5-21799585736C</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>AA4FE661-B283-43FC-9B11-5702506DF09C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9C3E169B-E755-BE96-64A6-29FA65DE137B" name="Productos PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:43:49 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CAC74B0A-DFB7-8BBF-516A-6BA94CE8C07C</attributeRef>
+<attributeRef>09294A0A-DFCC-2327-3EBC-AA34450534B3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

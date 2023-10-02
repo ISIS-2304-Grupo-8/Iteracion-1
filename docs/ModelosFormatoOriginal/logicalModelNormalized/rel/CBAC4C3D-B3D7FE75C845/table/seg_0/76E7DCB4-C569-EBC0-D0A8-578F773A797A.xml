@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="76E7DCB4-C569-EBC0-D0A8-578F773A797A" name="Descuentos">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>17674CB0-CEDD-5AB0-A359-9D0CB15DEAE8</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="servicio_descuentado" id="AA7CC392-8221-F328-F1A3-25177219628A">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>7AE796B2-C8B6-1E41-8A0E-16062EA85845</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<domain>8BF9B784-D7E6-B099-6D89-6747AB7FB0A9</domain>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descuento" id="EB51D4CE-58A7-0283-7CC6-5EDB8C238F99">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>42452891-5806-E454-84E0-7BF5AA04B9ED</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Tipos_plan_id_tipo" id="7F80F38B-6099-A331-DB2B-77E50F57E306">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>DC5B6061-0A3F-D156-7465-027F1610A6F0</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="64FA25F8-E1A3-D3C8-C752-C4E4B4E092B0" referredColumn="4D05E47D-1BAB-64CA-896F-23C59BF21068"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4CC19277-D6DE-7BF6-A86F-FC37097972B8" name="Descuentos_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>16D2D020-3142-2DB4-320E-132DA4CB9954</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AA7CC392-8221-F328-F1A3-25177219628A"/>
+<colUsage columnID="7F80F38B-6099-A331-DB2B-77E50F57E306"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DA2F34AD-3EE1-BAF7-7C58-3AC36A4D540B" name="Descuentos_Tipos_plan_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>54AD801B-5E3D-59B7-82F8-89060065E2DC</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F80F38B-6099-A331-DB2B-77E50F57E306"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

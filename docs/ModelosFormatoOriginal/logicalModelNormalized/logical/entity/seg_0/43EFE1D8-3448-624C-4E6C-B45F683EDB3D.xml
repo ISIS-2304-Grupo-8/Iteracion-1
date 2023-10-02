@@ -1,0 +1,199 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="43EFE1D8-3448-624C-4E6C-B45F683EDB3D" name="Habitaciones">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 21:53:51 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_habitacion" id="1CA367A5-0D2E-9E6C-ED9C-784F03CD1BF5">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 21:54:03 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costo" id="812C09D2-3729-2C14-6615-C8DAEFDD6F46">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 21:54:56 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,9,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="consumo_acumulado" id="FDD67211-232B-D6FA-1A45-2EE601950060">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 21:55:17 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,9,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_reserva1" id="CE749EB0-3CD7-0A69-4C77-44E1F359FADB">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 22:02:39 UTC</createdTime>
+<generatorID>8E48A8A0-9F84-6296-4031-9B50D84B8668</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>A006F3D7-FD91-5BBA-8C01-F012477DCFE4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_habitacion" id="06B5F7B3-FDC4-26EF-8AB1-470CBC0BD77C">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-24 16:41:08 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="disponiblidad" id="39E3CD3E-D318-0354-38E4-15A534D4FB2A">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 00:57:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_inicial" id="B7203902-B416-7F73-E874-4B6CCB7C698A">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 01:15:06 UTC</createdTime>
+<generatorID>8E48A8A0-9F84-6296-4031-9B50D84B8668</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>CBFBA0E6-BCCD-28E0-3F8E-68CBC44F1AAE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_fin" id="28CA0959-1A85-7AA3-0775-CE3E9DC42892">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 01:15:06 UTC</createdTime>
+<generatorID>8E48A8A0-9F84-6296-4031-9B50D84B8668</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>CEE8D22C-6FD3-1D4E-91A0-2FDE94FD6631</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tipo" id="A0568909-25C7-0324-227E-38172C36A6AF">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 01:53:31 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tipo1" id="39DD0B12-627D-F9C5-3B42-CE40AD049D23">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 02:04:45 UTC</createdTime>
+<generatorID>661F2140-3220-B117-3361-D7CD51A2B674</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>79FAE00D-4394-215E-AECA-03BCF946A4B4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo" id="828F2F80-DFA2-89D4-6D22-982DB3300E04">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 02:04:45 UTC</createdTime>
+<generatorID>661F2140-3220-B117-3361-D7CD51A2B674</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>3D9A36FA-EC61-CE7E-EFF8-E1BE942673A4</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcion" id="D27FB7FE-490F-E9C1-CEE6-25ECA74E2D95">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 02:28:01 UTC</createdTime>
+<generatorID>661F2140-3220-B117-3361-D7CD51A2B674</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>F622849F-6F76-F582-1F6D-F9CD66447E96</referedAttribute>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="839E1ECD-C3DB-151C-23DF-F0E2FB24272A" name="Habitaciones PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 21:54:25 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1CA367A5-0D2E-9E6C-ED9C-784F03CD1BF5</attributeRef>
+<attributeRef>39DD0B12-627D-F9C5-3B42-CE40AD049D23</attributeRef>
+<attributeRef>828F2F80-DFA2-89D4-6D22-982DB3300E04</attributeRef>
+<attributeRef>D27FB7FE-490F-E9C1-CEE6-25ECA74E2D95</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

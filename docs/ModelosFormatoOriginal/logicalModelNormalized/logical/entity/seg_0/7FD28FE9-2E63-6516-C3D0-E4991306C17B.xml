@@ -1,0 +1,157 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7FD28FE9-2E63-6516-C3D0-E4991306C17B" name="Reservas">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 21:56:41 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_reserva" id="A006F3D7-FD91-5BBA-8C01-F012477DCFE4">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 21:56:47 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_inicio" id="8EC28AFE-335C-C031-3702-080DBC7D3117">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 21:57:06 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_final" id="119AC309-9020-5991-C80A-08C0F8CE3A7A">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 21:57:16 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="num_personas" id="9DEAF012-E867-6B3F-7440-A9A1FE783930">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 21:57:29 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="num_doc" id="23A27757-5E21-A75D-FE92-680DBC54C6A1">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-24 17:16:15 UTC</createdTime>
+<generatorID>58870A1C-91A0-0F5D-67FF-4E9A081718BC</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>86F7451C-DF00-6DE4-5B87-69EAB3DE4E8C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_inicial" id="CBFBA0E6-BCCD-28E0-3F8E-68CBC44F1AAE">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 01:15:06 UTC</createdTime>
+<generatorID>10E43BA1-9453-F0B8-AE13-56BB067D19AB</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>007F7289-CC9F-A653-C28E-062002D81B72</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_fin" id="CEE8D22C-6FD3-1D4E-91A0-2FDE94FD6631">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 01:15:06 UTC</createdTime>
+<generatorID>10E43BA1-9453-F0B8-AE13-56BB067D19AB</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>18358878-F522-FB28-E6F4-99508FA641CA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_plan" id="1B754CB8-26EE-AAA1-1466-3A83016CFEBA">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 04:00:13 UTC</createdTime>
+<generatorID>96222552-9DDA-E174-9B4C-2B01F5A62E12</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>72585A71-404B-344C-E55A-F047762BA27E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_plan1" id="0D7F5786-C4B8-C54E-4F2F-3ACA10084BFF">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 04:29:46 UTC</createdTime>
+<generatorID>96222552-9DDA-E174-9B4C-2B01F5A62E12</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>CA75E127-B6CE-9903-759C-B8AEE159E810</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="51968052-E10E-D8F2-E5E9-EE6E1628F8C9" name="Reservas PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 21:57:56 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A006F3D7-FD91-5BBA-8C01-F012477DCFE4</attributeRef>
+<attributeRef>CBFBA0E6-BCCD-28E0-3F8E-68CBC44F1AAE</attributeRef>
+<attributeRef>CEE8D22C-6FD3-1D4E-91A0-2FDE94FD6631</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="80515605-AA44-1F8C-B036-CC181F5FCD70" name="PlanesDeConsumo">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>DD11B62F-FA4D-B106-AE57-F5D667D11238</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_plan" id="DF335673-9AFF-C319-EA2C-E08FA740C849">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>72585A71-404B-344C-E55A-F047762BA27E</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_plan" id="CE9154AD-8737-E33A-842E-00C9D18AC832">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>83E347D3-8A44-DB2B-2B0A-E34D5C75EF2F</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo_alojamiento_base" id="1EDCC690-5EE4-A555-E632-43DE6ABC1B30">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>58ACD6FB-A06A-92F8-BFC5-8D247262CCC8</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo_alojamiento_descuento" id="C8BD79C2-731C-6E63-6C5A-6CFB5261AB14">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>5E38392A-C721-C434-B738-2AA72703DF4E</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="periodo_vigencia_dias" id="8924038B-F771-6570-5D03-CA0A0C3047DD">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>1B18C9C9-AC43-DC7C-10D5-824D6EB9F456</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="restricciones" id="9FAD1672-48CD-A5E1-D5F0-505BBD4A0131">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>1A4E0EB4-FB0B-7A19-CBFC-E7D9498C29F0</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Reservas_id_reserva" id="A191B387-83B9-24B2-3C07-2F6487FC6A2D">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>2D797ABC-BA28-9CDB-2B3E-7492E9811776</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3DA5C6C7-FE37-43B7-BEAA-2936707DA6C5" referredColumn="68515DE0-11DA-987B-7F30-52B2601BEA3C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BEEFFDAA-6898-390C-857A-2EC7527872F5" name="PlanesDeConsumo_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>771EC8A5-F657-7ECB-DF04-8CD9607F2317</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DF335673-9AFF-C319-EA2C-E08FA740C849"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E1553732-95EE-F7D1-E527-D2740EFC7510" name="PlanesDeConsumo__IDX">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>96222552-9DDA-E174-9B4C-2B01F5A62E12</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="A191B387-83B9-24B2-3C07-2F6487FC6A2D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="71EA10C3-41A0-BC12-9376-E7E5DCDEAEF4" name="PlanesDeConsumo_Reservas_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 23:00:49 UTC</createdTime>
+<generatorID>96222552-9DDA-E174-9B4C-2B01F5A62E12</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A191B387-83B9-24B2-3C07-2F6487FC6A2D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

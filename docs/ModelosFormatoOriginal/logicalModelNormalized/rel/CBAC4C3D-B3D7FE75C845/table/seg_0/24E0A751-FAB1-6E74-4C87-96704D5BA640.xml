@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="24E0A751-FAB1-6E74-4C87-96704D5BA640" name="Registran">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Clientes_num_doc" id="757787D1-350C-D1CB-2A91-3E6E5D4C0ED4">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6B61CEC2-BCB8-94DD-C31D-257B23138C5C" referredColumn="FE6BF059-D26E-C4E1-2E6D-E4E84F15DE19"/>
+</associations>
+</Column>
+<Column name="Empleados_num_doc" id="4011B8FC-BD0B-DBA6-2DAB-ED5F36ABAA7D">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0DBE4A71-31B5-B7DA-2429-8D8940D7AB5A" referredColumn="53DE2402-3D09-43A5-709C-3D24C725B3ED"/>
+</associations>
+</Column>
+<Column name="check_in" id="798243BD-AF19-0B08-99BD-27DE1423553C">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>847BFD5A-4C23-5625-A14D-158287E40C58</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<domain>F7615976-7DFF-CA22-0EE2-D384B67308C3</domain>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9004B784-EB9A-92FB-B9EC-4F1066E2DCDA" name="Registran_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="757787D1-350C-D1CB-2A91-3E6E5D4C0ED4"/>
+<colUsage columnID="4011B8FC-BD0B-DBA6-2DAB-ED5F36ABAA7D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC18D84C-F612-ED1E-1629-4CB9B3DD9B44" name="Registran_Clientes_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>295E51E9-F0AA-FAD4-BA4D-0B920CF66C8D</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="757787D1-350C-D1CB-2A91-3E6E5D4C0ED4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4EA70342-9F71-C1B5-9CAC-1E7F1708ADC2" name="Registran_Empleados_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 14:25:59 UTC</createdTime>
+<generatorID>295E51E9-F0AA-FAD4-BA4D-0B920CF66C8D</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4011B8FC-BD0B-DBA6-2DAB-ED5F36ABAA7D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

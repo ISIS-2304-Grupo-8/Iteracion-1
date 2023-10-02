@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7DC6D618-1BB6-6B5C-F3FD-1D8E45C25C60" name="Habitaciones">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 06:07:42 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_habitacion" id="0B05D0C4-2E1C-C940-3C32-C1696A49DFA6">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 06:08:00 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<sourceType>System</sourceType>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="consumo_acumulado" id="BAEC79B6-04EB-B96E-C411-AD822F55668D">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 06:08:11 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="disponibilidad" id="2803805B-63A3-6D58-16F5-EFA272EB1FD3">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 06:08:31 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_reserva" id="A2292CC7-0CC8-7D61-38AA-1B2A4C8378A8">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 06:09:36 UTC</createdTime>
+<generatorID>29B2C7E9-A872-A4D8-8C71-66BE426CC0E6</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>A006F3D7-FD91-5BBA-8C01-F012477DCFE4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tipo" id="B643B21A-49C0-BEF3-D6E5-862F966EDED3">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 06:21:54 UTC</createdTime>
+<generatorID>C72E6CF4-E5CA-5F2F-9D3F-700963E43D7C</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<referedAttribute>8C3C9034-E30B-7657-37D3-47D3741B8CD6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6B6FCAA7-66C3-1678-CE87-E5438C14F9E8" name="Habitaciones PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-10-01 06:08:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0B05D0C4-2E1C-C940-3C32-C1696A49DFA6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

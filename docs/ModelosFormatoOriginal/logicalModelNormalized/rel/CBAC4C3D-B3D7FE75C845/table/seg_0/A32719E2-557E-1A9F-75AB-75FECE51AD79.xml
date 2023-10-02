@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A32719E2-557E-1A9F-75AB-75FECE51AD79" name="Consumen">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Habitaciones_id_habitacion" id="3DF4E0D4-029C-3A30-9299-4409174DA369">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="10574237-9003-88BC-3E8E-7D65CA771DEB" referredColumn="A93211E6-BE7C-D485-FFDB-1378717D9BD9"/>
+</associations>
+</Column>
+<Column name="Servicios_id_servicio" id="6442C7B4-68D7-16C3-3A35-4D59F1594867">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4241B86F-B77B-134B-F86B-480F17B6C9BB" referredColumn="F56CE642-2F3C-7119-EF81-97CA6B2DAB78"/>
+</associations>
+</Column>
+<Column name="fecha" id="8905B9DF-32BB-A059-5E6F-F9CECC1FA1DC">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>983019B0-00DC-FCBE-ADFB-077BAE6D9F4E</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0E92E20A-2243-7502-B524-DF609601A59A" name="Consumen_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DF4E0D4-029C-3A30-9299-4409174DA369"/>
+<colUsage columnID="6442C7B4-68D7-16C3-3A35-4D59F1594867"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4C114797-08CA-DC74-E451-C28B01178637" name="Consumen_Habitaciones_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>C04CB0AC-169D-738C-A2EE-82E949D886DD</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DF4E0D4-029C-3A30-9299-4409174DA369"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="64A493E8-ACB2-F765-6958-6B48E375890B" name="Consumen_Servicios_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>C04CB0AC-169D-738C-A2EE-82E949D886DD</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6442C7B4-68D7-16C3-3A35-4D59F1594867"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

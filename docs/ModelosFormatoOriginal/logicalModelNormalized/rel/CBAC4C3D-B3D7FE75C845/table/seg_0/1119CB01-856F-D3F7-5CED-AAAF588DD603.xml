@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1119CB01-856F-D3F7-5CED-AAAF588DD603" name="Clientes">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>2FB51234-BC16-D90E-1BB4-EFD94FD7C3F6</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_cliente" id="503AA2AA-2167-AFF9-9DC8-BDF2F0C93E10">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>86F7451C-DF00-6DE4-5B87-69EAB3DE4E8C</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="13C1AFC6-6934-A7BF-FC40-995868067864">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>45C8BE77-1782-41C3-1D28-6189E2F4F6C1</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="7BC41707-7AB8-CB41-8445-B66F16D25C09">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>9A5D07B7-C62E-9696-3378-8EE9C290A535</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_documento" id="8B788CF5-F83A-9924-484C-564AAF52C29B">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>254DB7AC-5BB1-B166-EA39-4533FED7EE8C</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Reservas_id_reserva" id="3B0823A1-5632-9CA5-85CD-1A7FA67E29AF">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>D1446E8A-82F1-6AB9-56DC-2E1BBB1DD7AB</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="70CAE30D-F822-F97C-3FF9-7BE8AD2E16A9" referredColumn="68515DE0-11DA-987B-7F30-52B2601BEA3C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="105473E8-5396-5A24-DE7A-054DE830EEA3" name="Clientes_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>2C56F3EA-BEB8-D863-C2F3-CE725F9224B3</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="503AA2AA-2167-AFF9-9DC8-BDF2F0C93E10"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F788E93D-239A-8F6D-7E84-C38D0FCCC86B" name="Clientes__IDX">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>58870A1C-91A0-0F5D-67FF-4E9A081718BC</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="3B0823A1-5632-9CA5-85CD-1A7FA67E29AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D457EEAC-4BF6-E205-5A5A-B1AA9380AF55" name="Clientes_Reservas_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 23:00:49 UTC</createdTime>
+<generatorID>58870A1C-91A0-0F5D-67FF-4E9A081718BC</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3B0823A1-5632-9CA5-85CD-1A7FA67E29AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

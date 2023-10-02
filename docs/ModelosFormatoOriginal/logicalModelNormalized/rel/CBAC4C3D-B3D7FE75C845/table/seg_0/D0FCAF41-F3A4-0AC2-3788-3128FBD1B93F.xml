@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D0FCAF41-F3A4-0AC2-3788-3128FBD1B93F" name="PuedenTener">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Platos_id_plato" id="7DE56ED1-BB41-A2A7-BBE2-A10F203FE3BA">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1B70AF6B-55FE-8681-1A9F-0D4203A25D21" referredColumn="61454B90-1A1D-9DA2-D151-7E47C52E9F52"/>
+</associations>
+</Column>
+<Column name="PlanesDeConsumo_id_plan" id="678F8E60-B2DC-E480-C477-D060C62B2CF1">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6626DB21-4733-3E89-7996-01A662EFCB59" referredColumn="DF335673-9AFF-C319-EA2C-E08FA740C849"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2196E7AD-3C48-D38C-4DE0-063CA94C4905" name="PuedenTener_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DE56ED1-BB41-A2A7-BBE2-A10F203FE3BA"/>
+<colUsage columnID="678F8E60-B2DC-E480-C477-D060C62B2CF1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="04BE8675-C49D-F956-C0DB-5B256463F9E8" name="PuedenTener_Platos_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>B1F45D35-0C9D-EB36-7333-3B5E1AC6BD33</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DE56ED1-BB41-A2A7-BBE2-A10F203FE3BA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ECBBD897-C02A-7C59-7167-6567FF254220" name="PuedenTener_PlanesDeConsumo_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>B1F45D35-0C9D-EB36-7333-3B5E1AC6BD33</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="678F8E60-B2DC-E480-C477-D060C62B2CF1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

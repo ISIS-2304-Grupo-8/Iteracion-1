@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="222142D3-0117-3508-5A6D-1EE76E8F1E2F" name="Compran">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Habitaciones_id_habitacion" id="9708F918-A4F2-5DB5-B69E-BD3FB7D26C16">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="151B16C4-3EAD-071C-D37D-01945B284830" referredColumn="A93211E6-BE7C-D485-FFDB-1378717D9BD9"/>
+</associations>
+</Column>
+<Column name="Productos_id_producto" id="962E655A-E9F8-A8D2-EEF0-CDF609A547E8">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FEAAF84C-436A-9EB5-8EA1-9BE656B4E23B" referredColumn="C5AC4985-287A-1FCB-C274-D45861919257"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1174BDC2-6C55-15AE-02F8-BF7E6512E87C" name="Compran_PK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9708F918-A4F2-5DB5-B69E-BD3FB7D26C16"/>
+<colUsage columnID="962E655A-E9F8-A8D2-EEF0-CDF609A547E8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="14363C49-8A2A-BC30-B8EC-B940BCFF82BC" name="Compran_Habitaciones_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>E147B24A-E1F8-F8EE-5762-6AF781676A39</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9708F918-A4F2-5DB5-B69E-BD3FB7D26C16"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BC169905-04D2-F00B-49C1-622D96DADD7E" name="Compran_Productos_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>E147B24A-E1F8-F8EE-5762-6AF781676A39</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="962E655A-E9F8-A8D2-EEF0-CDF609A547E8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

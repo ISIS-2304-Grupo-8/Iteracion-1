@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1B70AF6B-55FE-8681-1A9F-0D4203A25D21" containerWithKeyObject="D0FCAF41-F3A4-0AC2-3788-3128FBD1B93F" localFKIndex="04BE8675-C49D-F956-C0DB-5B256463F9E8" name="PuedenTener_Platos_FK">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-30 22:12:10 UTC</createdTime>
+<generatorID>B1F45D35-0C9D-EB36-7333-3B5E1AC6BD33</generatorID>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<referredTableLongName>Platos</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D6DF6F7A-241B-73B2-2D0D-96E590EF66BA</referredTableID>
+<keyObject>E187EFCD-27E2-8006-2518-CE821161E303</keyObject>
+<referredKeyID>E187EFCD-27E2-8006-2518-CE821161E303</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_plato</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

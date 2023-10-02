@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Registran" directorySegmentName="seg_0" id="295E51E9-F0AA-FAD4-BA4D-0B920CF66C8D">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 23:01:29 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<sourcePk>2C56F3EA-BEB8-D863-C2F3-CE725F9224B3</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>2FB51234-BC16-D90E-1BB4-EFD94FD7C3F6</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D5AB7C85-DFA7-765C-322D-3D32BF7A1CCC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="check_in" id="847BFD5A-4C23-5625-A14D-158287E40C58">
+<createdBy>Nico</createdBy>
+<createdTime>2023-09-17 23:01:49 UTC</createdTime>
+<ownerDesignName>logicalModelNormalized</ownerDesignName>
+<engineerTo>
+<item key="CBAC4C3D-E0BE-460D-09C0-B3D7FE75C845" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<domain>F7615976-7DFF-CA22-0EE2-D384B67308C3</domain>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>
