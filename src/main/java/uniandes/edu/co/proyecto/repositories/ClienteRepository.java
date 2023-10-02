@@ -18,7 +18,7 @@ public interface ClienteRepository extends JpaRepository<ClienteEntity,
 
     @Query(value = "SELECT * FROM clientes WHERE num_doc= :num_doc ", nativeQuery
     = true)
-    ClienteEntity darCliente(@Param("num_doc") int id);
+    ClienteEntity darCliente(@Param("num_doc") int num_doc);
 
     @Modifying
     @Transactional
@@ -28,7 +28,7 @@ public interface ClienteRepository extends JpaRepository<ClienteEntity,
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE clientes SET nombre = :nombre, email = :email, tipo_doc = :tipo_doc, rol_cliente = :rol_cliente, reservas_id_reserva = :reservas_id_reservaWHERE num_doc= :num_doc", nativeQuery = true)
+    @Query(value = "UPDATE clientes SET nombre = :nombre, email = :email, tipo_doc = :tipo_doc, rol_cliente = :rol_cliente, reservas_id_reserva = :reservas_id_reserva WHERE num_doc= :num_doc", nativeQuery = true)
     void actualizarCliente(@Param("num_doc") int num_doc, @Param("nombre") String nombre, @Param("email") String email , 
     @Param("tipo_doc") String tipo_doc, @Param("rol_cliente") String rol_cliente, @Param("reservas_id_reserva") int reservas_id_reserva);
 
