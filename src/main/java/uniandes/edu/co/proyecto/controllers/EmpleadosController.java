@@ -58,4 +58,17 @@ public class EmpleadosController {
         empleadoRepository.eliminarEmpleado(num_doc);
         return "redirect:/empleados";
     }
+
+     // Nuevo método para buscar un empleado por número de documento.
+     @GetMapping("/empleados/{num_doc}")
+     public String empleadoDetalle(@PathVariable("num_doc") int num_doc, Model model){
+         EmpleadoEntity empleado = empleadoRepository.darEmpleado(num_doc);
+         if(empleado != null){
+             model.addAttribute("empleado", empleado);
+             return "empleadoDetalle";
+         } else {
+             model.addAttribute("mensaje", "El empleado con el número de documento " + num_doc + " no existe.");
+             return "empleadoNoEncontrado"; // Aquí deberías tener una vista que muestre el mensaje de que el empleado no fue encontrado.
+         }
+     }
 }
