@@ -13,7 +13,7 @@ import uniandes.edu.co.proyecto.modelo.TipoPlanEntity;
 public interface TipoPlanRepository extends JpaRepository<TipoPlanEntity, Integer> {
 
     // Read tipos de plan
-    @Query(value = "SELECT * FROM tipos_plan", nativeQuery = true)
+    @Query(value = "SELECT * FROM Tipos_plan", nativeQuery = true)
     Collection<TipoPlanEntity> darTiposPlan();
 
     // Read tipo de plan dado un tipo de plan

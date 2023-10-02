@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import uniandes.edu.co.proyecto.modelo.PlanDeConsumoEntity;
 import uniandes.edu.co.proyecto.repositories.PlanDeConsumoRepository;
 
-@Controller
+@RestController
 public class PlanesDeConsumoController {
 
     @Autowired
@@ -20,7 +21,7 @@ public class PlanesDeConsumoController {
     @GetMapping("/planes_de_consumo")
     public String planesDeConsumo(Model model) {
         model.addAttribute("planes_de_consumo", planesDeConsumoRepository.darPlanesDeConsumo());
-        return "planes_de_consumo";
+        return model.toString();
     }
 
     @GetMapping("/planes_de_consumo/new")

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta tags for info for the webpage in order to have a more specific app -->
+        <!-- specifying the web encoding -->
+            <meta charset="UTF-8">
+
+        <!-- change web page width to device size automatically -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- importing bootstrap for framework style -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        
+        <!-- importing css file to style html doc -->
+            <link rel="stylesheet" href="main.css">
+
+        <!-- importing the javascript file for utility functions that're used in the front-end -->
+            <script defer src="./js/connection.js"></script>
+        
+        <!-- web page info -->
+            <meta name="description" content="Portfolio of Juan Pablo Barón to show my abilities and skills">
+            <meta name="keywords" content="portfolio, programming, software engineering, dreams, success, ideas">
+            <meta name="author" content="Juan Pablo Barón Sandoval">
+        
+        <!-- google fonts -->
+            <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Heebo:wght@300;400&display=swap" rel="stylesheet">
+        
+        <!-- refresh the webpage in certain time of seconds -->
+            <meta http-equiv="refresh" content="900">
+
+        <!-- font awesome icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Web title -->
+    <title> Juan Pablo Barón Portfolio</title>
+
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <!-- navbar for main title and sections -->
+            <div id="nav_bar">
+                <!-- navbar main content -->
+                    <nav class="navbar navbar-expand-lg fixed-top bg-dark" data-bs-theme="dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="." id="title">
+                                <h1 class="display-6 justify-content-center my-1">Proyecto ISIS-2304 Grupo #8</h1>
+                            </a>
+                    
+                            <!-- toggle button for mobile nav -->        
+                            <button class="navbar-toggler" type="button" 
+                                    data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 
+                                    aria-controls="navbarNavAltMarkup" aria-expanded="false" 
+                                    aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                    </nav>
+    
+            </div>
+    </div>
+        <!-- ... Tu barra de navegación ... -->
+    
+<!-- Introduction to the web -->
+    <div id="introduction" style="margin-top: 5em;">
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <!-- Typing Title -->
+            <div id="writing_title" class="container-lg text-center">
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <h1>Welcome to the Client side!</h1>
+                        <hr class="my-4">
+                        <!-- List of Actions -->
+                        <p>As a client, you can:</p>
+                        <div class="list-group list-group-flush mb-4">
+                            <!-- Link with button style -->
+                            <a href="#reservaciones-section" class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-bed mr-2 icon"></i> Make Reservations
+                            </a>
+                            <a href="#reservacionServicioForm" class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-coffee mr-2 icon"></i> View Consumptions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- content -->
+    <div class="container my-5">
+
+        <!-- Sección de Reservaciones de Habitación -->
+        <div id="reservaciones-section" class="card mb-5 p-4 text-bg-dark">
+            <h3 class="card-title">Reservaciones de Habitaciones</h3>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <!-- entrada -->
+                        <label for="fechaEntrada">Fecha de entrada:</label>
+                        <input type="date" id="fechaEntrada" class="form-control">
+                        
+                        <!-- salida -->
+                        <label for="fechaSalida" class="mt-2">Fecha de salida:</label>
+                        <input type="date" id="fechaSalida" class="form-control">
+                        
+                        <!-- tipo de habitación -->
+                        <label for="tipoHabitacion" class="mt-2">Tipo de habitación:</label>
+                        <select id="tipoHabitacion" class="form-control">
+                            <!-- Opciones de habitación -->
+                            <option value="sencilla">Habitación Sencilla</option>
+                            <option value="doble">Habitación Doble</option>
+                            <option value="suite">Suite</option>
+                            <option value="suite-presidencial">Suite Presidencial</option>
+                            <option value="familiar">Habitación Familiar</option>
+                        </select>
+                        <!-- tipo de consumo -->
+                        <label for="planConsumo" class="mt-2">Plan de consumo:</label>
+                        <select id="planConsumo" class="form-control">
+                            <!-- Opciones de plan de consumo -->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar Reserva de Servicio</button>
+                    <button type="button" class="btn btn-info">Actualizar Reserva de Servicio</button>
+                    <button type="button" class="btn btn-danger">Cancelar Reserva de Servicio</button>
+                    <button type="button" class="btn btn-secondary">Consultar Reservas de Servicio</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Sección de Reservaciones de Servicios -->
+        <div class="card mb-5 p-4 text-bg-dark">
+            <h3 class="card-title">Reservaciones de Servicios</h3>
+            <div class="card-body">
+                <!-- Formulario para registrar y actualizar reservas de servicios -->
+                <form id="reservacionServicioForm">
+                    <!-- Pregunta del número de habitación -->
+                    <div class="mb-3">
+                        <label for="habitacionNumero" class="form-label">Número de habitación:</label>
+                        <input type="text" class="form-control" id="habitacionNumero" placeholder="Ingrese el número de habitación">
+                    </div>
+                    <!-- Selector de tipo de servicio -->
+                    <div class="mb-3">
+                        <label for="tipoServicio">Tipo de servicio:</label>
+                        <select id="tipoServicio" class="form-control">
+                            <!-- Opciones de servicio -->
+                            <option value="spa">SPA - $50</option>
+                            <option value="bar">Bar - Varía según el producto</option>
+                            <option value="restaurante">Restaurante - Varía según el plato</option>
+                            <option value="supermercado">Supermercado - Varía según el producto</option>
+                            <option value="tiendas">Tiendas (Joyerías, Moda, etc.) - Varía según el producto</option>
+                            <option value="lavado">Lavado/Planchado/Embolada - Varía según el tipo de prenda o par de zapatos</option>
+                            <option value="utensilios">Préstamo de utensilios - No tiene costo, pero en caso de no devolución se cargará a la habitación</option>
+                            <option value="reuniones">Salones de reuniones - Costo por hora de uso</option>
+                            <option value="conferencias">Salones de conferencias - Costo por hora de uso</option>
+                        </select>
+                    </div>
+                    <!-- Botones para acciones de reservas de servicios -->
+                    <button type="submit" class="btn btn-primary">Registrar Reserva de Servicio</button>
+                    <button type="button" class="btn btn-info">Actualizar Reserva de Servicio</button>
+                    <button type="button" class="btn btn-danger">Cancelar Reserva de Servicio</button>
+                    <button type="button" class="btn btn-secondary">Consultar Reservas de Servicio</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- go back button -->
+    <div class="container-md">
+        <div class="row">
+            <div class="col-8"></div>
+            <div class="col-4">
+                <button type="button" class="btn btn-secondary">Volver al menu principal</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark py-3 pb-1 mt-5" id="footer">
+        <div class="container-fluid text-center">
+            <div class="row justify-content-center">
+                    <div class="col-xl-4 col-lg-4 col-4 col-sm-6">
+                        <p class="contact_me">
+                            © 2023 Copyright
+                        </p> 
+                    </div>
+            </div>
+        </div>
+    </footer>
+    
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+<!-- Bootstrap Bundle with Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Pf2l4DSGSBSxcj1dWmSEspe2SLc61c+vB5I2bWTH3IfEcs/nYVd6rhri2buXG4bT" crossorigin="anonymous"></script>
+
+</body>
+</html>

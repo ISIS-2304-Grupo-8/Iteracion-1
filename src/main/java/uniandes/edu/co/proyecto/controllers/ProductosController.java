@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import oracle.jdbc.proxy.annotation.Post;
 import uniandes.edu.co.proyecto.modelo.ProductoEntity;
 import uniandes.edu.co.proyecto.repositories.ProductoRepository;
 
-@Controller
+@RestController
 public class ProductosController {
     @Autowired
     private ProductoRepository productoRepository;
@@ -20,7 +21,7 @@ public class ProductosController {
     @GetMapping("/productos")
     public String productos(Model model) {
         model.addAttribute("productos", productoRepository.darProductos());
-        return "productos";
+        return model.toString();
     }
 
     @GetMapping("/productos/new")

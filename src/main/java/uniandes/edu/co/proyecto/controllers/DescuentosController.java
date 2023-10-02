@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import uniandes.edu.co.proyecto.modelo.DescuentoEntity;
 import uniandes.edu.co.proyecto.repositories.DescuentoRepository;
 import uniandes.edu.co.proyecto.repositories.TipoPlanRepository;
 
-@Controller
+@RestController
 public class DescuentosController {
     @Autowired
     private DescuentoRepository descuentoRepository;
@@ -20,7 +21,7 @@ public class DescuentosController {
     @GetMapping("/descuentos")
     public String descuentos(Model model) {
         model.addAttribute("descuentos", descuentoRepository.darDescuentos());
-        return "descuentos";
+        return model.toString();
     }
 
     @GetMapping("/descuentos/new")

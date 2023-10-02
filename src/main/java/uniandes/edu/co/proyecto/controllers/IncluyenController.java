@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import uniandes.edu.co.proyecto.modelo.IncluyenEntity;
 import uniandes.edu.co.proyecto.modelo.IncluyenEntityPK;
@@ -15,7 +16,7 @@ import uniandes.edu.co.proyecto.repositories.IncluyenRepository;
 import uniandes.edu.co.proyecto.repositories.PlanDeConsumoRepository;
 import uniandes.edu.co.proyecto.repositories.ProductoRepository;
 
-@Controller
+@RestController
 public class IncluyenController {
     @Autowired
     private IncluyenRepository incluyenRepository;
