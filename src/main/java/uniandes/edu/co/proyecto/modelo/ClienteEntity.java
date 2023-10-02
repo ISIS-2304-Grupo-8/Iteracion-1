@@ -18,7 +18,7 @@ public class ClienteEntity {
     private String rol_cliente;
 
     @OneToOne
-    @JoinColumn(name = "reservas_id_reserva", referencedColumnName = "id_reserva")
+    @JoinColumn(name = "Reservas_id_reserva", referencedColumnName = "id_reserva")
     private ReservaEntity reserva;
 
     public ClienteEntity() {;}
