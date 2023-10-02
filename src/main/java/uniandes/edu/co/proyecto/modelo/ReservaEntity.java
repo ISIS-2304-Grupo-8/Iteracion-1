@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -31,16 +33,21 @@ public class ReservaEntity {
     @JoinColumn(name = "planesdeconsumo_id_plan", referencedColumnName = "id_plan")
     private PlanDeConsumoEntity id_plan_consumo;
 
+    @ManyToOne
+    @JoinColumn(name = "clientes_num_doc", referencedColumnName = "num_doc")
+    private ClienteEntity clientes_num_doc;
+
     public ReservaEntity() {
         ;
     }
 
     public ReservaEntity(Integer id_reserva, Integer num_personas, Estado_reserva estado_reserva,
-            PlanDeConsumoEntity id_plan_consumo) {
+            PlanDeConsumoEntity id_plan_consumo, ClienteEntity clientes_num_doc) {
         this.id_reserva = id_reserva;
         this.num_personas = num_personas;
         this.estado_reserva = estado_reserva;
         this.id_plan_consumo = id_plan_consumo;
+        this.clientes_num_doc = clientes_num_doc;
     }
 
     public Integer getId_reserva() {
@@ -73,6 +80,14 @@ public class ReservaEntity {
 
     public void setId_plan_consumo(PlanDeConsumoEntity id_plan_consumo) {
         this.id_plan_consumo = id_plan_consumo;
+    }
+
+    public ClienteEntity getClientes_num_doc() {
+        return clientes_num_doc;
+    }
+
+    public void setClientes_num_doc(ClienteEntity clientes_num_doc) {
+        this.clientes_num_doc = clientes_num_doc;
     }
 
 }

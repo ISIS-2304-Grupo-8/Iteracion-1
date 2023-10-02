@@ -23,7 +23,7 @@ public class EmpleadosController {
 
     @GetMapping("/empleados")
     public String empleados(Model model){
-        model.addAttribute("bares", empleadoRepository.darEmpleados());
+        model.addAttribute("empleados", empleadoRepository.darEmpleados());
         return "empleados";
     }
 
