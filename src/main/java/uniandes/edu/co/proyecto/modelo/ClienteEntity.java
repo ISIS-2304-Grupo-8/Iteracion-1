@@ -17,9 +17,9 @@ public class ClienteEntity {
     private String tipo_doc;
     private String rol_cliente;
 
-    @OneToOne
-    @JoinColumn(name = "Reservas_id_reserva", referencedColumnName = "id_reserva")
-    private ReservaEntity reserva;
+    // @OneToOne
+    // @JoinColumn(name = "Reservas_id_reserva", referencedColumnName = "id_reserva")
+    // private ReservaEntity reserva;
 
     public ClienteEntity() {;}
 
@@ -30,7 +30,7 @@ public class ClienteEntity {
         this.email = email;
         this.tipo_doc = tipo_doc;
         this.rol_cliente = rol_cliente;
-        this.reserva = reserva;
+        
     }
 
     public Integer getNum_doc() {
@@ -73,13 +73,13 @@ public class ClienteEntity {
         this.rol_cliente = rol_cliente;
     }
 
-    public ReservaEntity getReserva() {
-        return reserva;
-    }
+    // public ReservaEntity getReserva() {
+    //     return reserva;
+    // }
 
-    public void setReserva(ReservaEntity reserva) {
-        this.reserva = reserva;
-    }
+    // public void setReserva(ReservaEntity reserva) {
+    //     this.reserva = reserva;
+    // }
 
     
 
