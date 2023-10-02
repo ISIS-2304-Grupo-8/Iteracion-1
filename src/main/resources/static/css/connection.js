@@ -31,5 +31,35 @@ document.addEventListener("DOMContentLoaded", function () {
           dropdownButton.textContent = this.textContent;
       });
   });
+
+    // Obteniendo referencias
+    const documentNumberInput = document.getElementById('documentNumberInput');
+    const roleDropdown = document.querySelector('.custom-dropdown');
+
+    // Evento cuando se hace click en el botón "Entrar"
+    document.querySelector('.btn-primary.w-100.mb-2').addEventListener('click', function() {
+        const documentNumber = documentNumberInput.value;
+        const role = roleDropdown.innerText.trim();
+
+        // Verificar si es cliente o cualquier otro rol
+        if (role === "Customer (Client)") {
+            alert('Funcionalidad para Cliente aún no implementada.');
+        } else {
+            // Hacer fetch al endpoint de empleados
+            fetch(`/empleados/${documentNumber}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.empleado) {
+                        alert(`Empleado encontrado: ${data.empleado.nombre}`);
+                    } else {
+                        alert('Empleado no encontrado.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching employee:', error);
+                });
+        }
+    });
+  
 });
 
