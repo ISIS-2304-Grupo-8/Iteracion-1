@@ -26,14 +26,14 @@ public interface DescuentoRepository extends JpaRepository<DescuentoEntity, Inte
         @Transactional
         @Query(value = "INSERT INTO descuentos (servicio_descuentado, tipos_plan_tipo_plan, descuento) VALUES (:servicio_descuentado, :tipo_plan, :descuento)", nativeQuery = true)
         void insertarDescuento(@Param("servicio_descuentado") String servicio_descuentado,
-                        @Param("tipo_plan") String tipo_plan, @Param("descuento") String descuento);
+                        @Param("tipo_plan") String tipo_plan, @Param("descuento") Double descuento);
 
         // Actualizar un descuento
         @Modifying
         @Transactional
         @Query(value = "UPDATE descuentos SET descuento=:descuento WHERE servicio_descuentado=:servicio_descuentado AND tipos_plan_tipo_plan=:tipo_plan", nativeQuery = true)
         void actualizarDescuento(@Param("servicio_descuentado") String servicio_descuentado,
-                        @Param("tipo_plan") String tipo_plan, @Param("descuento") String descuento);
+                        @Param("tipo_plan") String tipo_plan, @Param("descuento") Double descuento);
 
         // Eliminar descuento
         @Modifying

@@ -77,4 +77,15 @@ public class TipoHabitacionEntity {
         this.tipo = tipo;
     }
 
+    // Método toString
+    @Override
+    public String toString() {
+        return "TipoHabitacionEntity{" +
+               "id_tipo=" + id_tipo +
+               ", costo=" + costo +
+               ", capacidad=" + capacidad +
+               ", descripcion='" + descripcion + '\'' +
+               ", tipo='" + tipo + '\'' +
+               '}';
+    }
 }

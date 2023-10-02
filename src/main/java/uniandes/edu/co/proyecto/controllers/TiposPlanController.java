@@ -7,34 +7,35 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import uniandes.edu.co.proyecto.modelo.TipoPlanEntity;
 import uniandes.edu.co.proyecto.repositories.TipoPlanRepository;
 
-@Controller
+@RestController
 public class TiposPlanController {
     @Autowired
     private TipoPlanRepository tipoPlanRepository;
 
-    @GetMapping("/tipos_plan")
+    @GetMapping("/tipos_planes")
     public String tiposPlan(Model model) {
-        model.addAttribute("tipos_plan", tipoPlanRepository.darTiposPlan());
-        return "tipos_plan";
+        model.addAttribute("tipos_planes", tipoPlanRepository.darTiposPlan());
+        return model.toString();
     }
 
-    @GetMapping("/tipos_plan/new")
+    @GetMapping("/tipos_planes/new")
     public String tiposPlanForm(Model model) {
         model.addAttribute("tipo_plan", new TipoPlanEntity());
         return "tipos_plan_new";
     }
 
-    @PostMapping("/tipos_plan/new/save")
+    @PostMapping("/tipos_planes/new/save")
     public String tiposPlanSave(@ModelAttribute TipoPlanEntity tipoPlanEntity) {
         tipoPlanRepository.crearTipoPlan(tipoPlanEntity.getTipo_plan(), tipoPlanEntity.getVigencia());
         return "redirect:/tipos_plan";
     }
 
-    @GetMapping("/tipos_plan/{tipo_plan}/edit")
+    @GetMapping("/tipos_planes/{tipo_plan}/edit")
     public String tiposPlanEditarForm(@PathVariable("tipo_plan") String tipo_plan, Model model) {
         TipoPlanEntity tipoPlan = tipoPlanRepository.darTipoPlan(tipo_plan);
         if (tipoPlan != null) {

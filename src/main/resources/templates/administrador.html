@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta tags and imports -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <script defer src="./js/connection.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Heebo:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Admin Dashboard Hotel</title>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <!-- navbar for main title and sections -->
+            <div id="nav_bar">
+                <!-- navbar main content -->
+                    <nav class="navbar navbar-expand-lg fixed-top bg-dark" data-bs-theme="dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="." id="title">
+                                <h1 class="display-6 justify-content-center my-1">Proyecto ISIS-2304 Grupo #8</h1>
+                            </a>
+                    
+                            <!-- toggle button for mobile nav -->        
+                            <button class="navbar-toggler" type="button" 
+                                    data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 
+                                    aria-controls="navbarNavAltMarkup" aria-expanded="false" 
+                                    aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                    </nav>
+    
+            </div>
+    </div>
+
+    <!-- Introduction -->
+    <div id="introduction" style="margin-top: 5em;">
+        <div class="jumbotron">
+            <div id="writing_title" class="container-lg text-center">
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <h1>Welcome to the Admin Dashboard!</h1>
+                        <hr class="my-4">
+                        <p>Manage all hotel functionalities here:</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- CRUD Sections -->
+    <div class="container my-5">
+
+    <!-- User Management Section -->
+        <div class="card mb-5 p-4 text-bg-dark">
+            <h3 class="card-title">User Management</h3>
+            <div class="card-body">
+                <!-- CRUD Buttons -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createUserModal">Create User</button>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#updateUserModal">Update User</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUserModal">Delete User</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#viewUsersModal">View Users</button>
+            </div>
+        </div>
+
+    <!-- Room Type Management Section -->
+        <div class="card mb-5 p-4 text-bg-dark">
+            <h3 class="card-title">Room Type Management</h3>
+            <div class="card-body">
+                <!-- CRUD Buttons -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createRoomTypeModal">Create Room Type</button>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#updateRoomTypeModal">Update Room Type</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteRoomTypeModal">Delete Room Type</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#viewRoomTypesModal">View Room Types</button>
+            </div>
+        </div>
+
+
+    <!-- Room Management Section -->
+        <div class="card mb-5 p-4 text-bg-dark">
+            <h3 class="card-title">Room Management</h3>
+            <div class="card-body">
+                <!-- CRUD Buttons -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createRoomModal">Create Room</button>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#updateRoomModal">Update Room</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteRoomModal">Delete Room</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#viewRoomsModal">View Rooms</button>
+            </div>
+        </div>
+
+
+
+    <!-- Service Management Section -->
+        <div class="card mb-5 p-4 text-bg-dark">
+            <h3 class="card-title">Service Management</h3>
+            <div class="card-body">
+                <!-- CRUD Buttons -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createServiceModal">Create Service</button>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#updateServiceModal">Update Service</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteServiceModal">Delete Service</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#viewServicesModal">View Services</button>
+            </div>
+        </div>
+
+
+    <!-- Consumption Plan Management Section -->
+        <div class="card mb-5 p-4 text-bg-dark">
+            <h3 class="card-title">Consumption Plan Management</h3>
+            <div class="card-body">
+                <!-- CRUD Buttons -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createConsumptionPlan">Create Consumption Plan</button>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#updateConsumptionPlan">Update Consumption Plan</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConsumptionPlan">Delete Consumption Plan</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#viewConsumptionPlans">View Consumption Plans</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <footer class="bg-dark py-3 pb-1 mt-5" id="footer">
+        <div class="container-fluid text-center">
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-lg-4 col-4 col-sm-6">
+                    <p class="contact_me">
+                        © 2023 Admin Dashboard Hotel
+                    </p> 
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- modals -->
+<!-- USER -->
+    <!-- Create User Modal -->
+        <div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createUserModalLabel">Create User</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <form id="createUserForm" action="/path_to_api_or_endpoint" method="POST">
+                            <!-- Document Type -->
+                            <div class="mb-3">
+                                <label for="docType" class="form-label">Tipo de Documento</label>
+                                <select class="form-select" id="docType" name="docType" required>
+                                    <option value="cc">Cédula de Ciudadanía</option>
+                                    <!-- Other options... -->
+                                </select>
+                            </div>
+                            <!-- Document Number -->
+                            <div class="mb-3">
+                                <label for="docNumber" class="form-label">Número de Documento</label>
+                                <input type="text" class="form-control" id="docNumber" name="docNumber" required>
+                            </div>
+                            <!-- Name -->
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <!-- Role -->
+                            <div class="mb-3">
+                                <label for="role" class="form-label">Rol</label>
+                                <select class="form-select" id="role" name="role" required>
+                                    <option value="manager">Gerente</option>
+                                    <option value="data_admin">Administrador de Datos</option>
+                                    <option value="receptionist">Recepcionista</option>
+                                    <option value="employee">Empleado</option>
+                                    <option value="customer">Cliente</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" form="createUserForm">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Update User Modal -->
+        <div class="modal fade" id="updateUserModal" tabindex="-1" aria-labelledby="updateUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateUserModalLabel">Update User</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <form id="updateUserForm" action="/path_to_update_api" method="POST">
+                            <!-- User ID (hidden) -->
+                            <input type="hidden" id="updateUserId" name="userId">
+                            <!-- Document Type -->
+                            <div class="mb-3">
+                                <label for="updateDocType" class="form-label">Tipo de Documento</label>
+                                <select class="form-select" id="updateDocType" name="docType" required>
+                                    <option value="cc">Cédula de Ciudadanía</option>
+                                    <!-- Other options... -->
+                                </select>
+                            </div>
+                            <!-- Document Number -->
+                            <div class="mb-3">
+                                <label for="updateDocNumber" class="form-label">Número de Documento</label>
+                                <input type="text" class="form-control" id="updateDocNumber" name="docNumber" required>
+                            </div>
+                            <!-- Name -->
+                            <div class="mb-3">
+                                <label for="updateName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="updateName" name="name" required>
+                            </div>
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label for="updateEmail" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="updateEmail" name="email" required>
+                            </div>
+                            <!-- Role -->
+                            <div class="mb-3">
+                                <label for="updateRole" class="form-label">Rol</label>
+                                <select class="form-select" id="updateRole" name="role" required>
+                                    <option value="manager">Gerente</option>
+                                    <option value="data_admin">Administrador de Datos</option>
+                                    <option value="receptionist">Recepcionista</option>
+                                    <option value="employee">Empleado</option>
+                                    <option value="customer">Cliente</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" form="updateUserForm">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  
+  <!-- Delete User Modal -->
+    <div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="deleteUserModalLabel">Delete User</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <!-- Simple form to identify which user to delete -->
+            <form id="deleteUserForm" action="/path_to_delete_api" method="POST">
+                <div class="mb-3">
+                <label for="deleteUserId" class="form-label">User ID</label>
+                <input type="text" class="form-control" id="deleteUserId" name="userId" required>
+                </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger" form="deleteUserForm">Delete</button>
+            </div>
+        </div>
+        </div>
+    </div>
+  
+  <!-- View Users Modal -->
+    <div class="modal fade" id="viewUsersModal" tabindex="-1" aria-labelledby="viewUsersModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="viewUsersModalLabel">View Users</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <!-- Table to display users -->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <!-- ... other user fields ... -->
+                </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                <!-- User rows will be inserted here dynamically using JavaScript and API -->
+                </tbody>
+            </table>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+<!-- ROOM TYPE -->
+    <!-- Create Room Type Modal -->
+        <div class="modal fade" id="createRoomTypeModal" tabindex="-1" aria-labelledby="createRoomTypeModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createRoomTypeModalLabel">Create Room Type</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createRoomTypeForm" action="/path_to_create_room_type_api" method="POST">
+                            <div class="mb-3">
+                                <label for="roomTypeName" class="form-label">Room Type Name</label>
+                                <select class="form-select" id="roomTypeName" name="roomTypeName" required>
+                                    <option value="sencilla">Habitación Sencilla</option>
+                                    <option value="doble">Habitación Doble</option>
+                                    <option value="suite">Suite</option>
+                                    <option value="suite-presidencial">Suite Presidencial</option>
+                                    <option value="familiar">Habitación Familiar</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pricePerNight" class="form-label">Price per Night</label>
+                                <input type="number" class="form-control" id="pricePerNight" name="pricePerNight" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="maxOccupancy" class="form-label">Max Occupancy</label>
+                                <input type="number" class="form-control" id="maxOccupancy" name="maxOccupancy" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" form="createRoomTypeForm">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Update Room Type Modal -->
+        <div class="modal fade" id="updateRoomTypeModal" tabindex="-1" aria-labelledby="updateRoomTypeModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateRoomTypeModalLabel">Update Room Type</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="updateRoomTypeForm" action="/path_to_update_room_type_api" method="POST">
+                            <input type="hidden" id="updateRoomTypeId" name="roomTypeId">
+                            <div class="mb-3">
+                                <label for="updateRoomTypeName" class="form-label">Room Type Name</label>
+                                <select class="form-select" id="updateRoomTypeName" name="roomTypeName" required>
+                                    <option value="sencilla">Habitación Sencilla</option>
+                                    <option value="doble">Habitación Doble</option>
+                                    <option value="suite">Suite</option>
+                                    <option value="suite-presidencial">Suite Presidencial</option>
+                                    <option value="familiar">Habitación Familiar</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updatePricePerNight" class="form-label">Price per Night</label>
+                                <input type="number" class="form-control" id="updatePricePerNight" name="pricePerNight" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updateMaxOccupancy" class="form-label">Max Occupancy</label>
+                                <input type="number" class="form-control" id="updateMaxOccupancy" name="maxOccupancy" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" form="updateRoomTypeForm">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Delete Room Type Modal -->
+        <div class="modal fade" id="deleteRoomTypeModal" tabindex="-1" aria-labelledby="deleteRoomTypeModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteRoomTypeModalLabel">Delete Room Type</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="deleteRoomTypeForm" action="/path_to_delete_room_type_api" method="POST">
+                            <div class="mb-3">
+                                <label for="deleteRoomTypeId" class="form-label">Room Type ID</label>
+                                <input type="text" class="form-control" id="deleteRoomTypeId" name="roomTypeId" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger" form="deleteRoomTypeForm">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- View Room Types Modal -->
+        <div class="modal fade" id="viewRoomTypesModal" tabindex="-1" aria-labelledby="viewRoomTypesModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewRoomTypesModalLabel">View Room Types</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Table to display room types -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Price per Night</th>
+                                    <th scope="col">Max Occupancy</th>
+                                </tr>
+                            </thead>
+                            <tbody id="roomTypesTableBody">
+                                <!-- Room type rows will be inserted here dynamically using JavaScript and API -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- ROOM -->
+    <!-- Create Room Modal -->
+        <div class="modal fade" id="createRoomModal" tabindex="-1" aria-labelledby="createRoomModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createRoomModalLabel">Create Room</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createRoomForm" action="/path_to_api_or_endpoint" method="POST">
+                            <div class="mb-3">
+                                <label for="roomNumber" class="form-label">Room Number</label>
+                                <input type="number" class="form-control" id="roomNumber" name="roomNumber" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="roomType" class="form-label">Room Type</label>
+                                <select class="form-select" id="roomType" name="roomType" required>
+                                    <option value="sencilla">Habitación Sencilla</option>
+                                    <option value="doble">Habitación Doble</option>
+                                    <option value="suite">Suite</option>
+                                    <option value="suite-presidencial">Suite Presidencial</option>
+                                    <option value="familiar">Habitación Familiar</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="roomStatus" class="form-label">Room Status</label>
+                                <select class="form-select" id="roomStatus" name="roomStatus" required>
+                                    <option value="available">Available</option>
+                                    <option value="occupied">Occupied</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" form="createRoomForm">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Update Room Modal -->
+        <div class="modal fade" id="updateRoomModal" tabindex="-1" aria-labelledby="updateRoomModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateRoomModalLabel">Update Room</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="updateRoomForm" action="/path_to_update_api" method="POST">
+                            <!-- The form fields will be similar to the create modal, but you will populate fields with existing data -->
+                            <div class="mb-3">
+                                <label for="updateRoomNumber" class="form-label">Room Number</label>
+                                <input type="number" class="form-control" id="updateRoomNumber" name="roomNumber" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updateRoomType" class="form-label">Room Type</label>
+                                <select class="form-select" id="updateRoomType" name="roomType" required>
+                                    <option value="sencilla">Habitación Sencilla</option>
+                                    <option value="doble">Habitación Doble</option>
+                                    <option value="suite">Suite</option>
+                                    <option value="suite-presidencial">Suite Presidencial</option>
+                                    <option value="familiar">Habitación Familiar</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updateRoomStatus" class="form-label">Room Status</label>
+                                <select class="form-select" id="updateRoomStatus" name="roomStatus" required>
+                                    <option value="available">Available</option>
+                                    <option value="occupied">Occupied</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" form="updateRoomForm">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Delete Room Modal -->
+        <div class="modal fade" id="deleteRoomModal" tabindex="-1" aria-labelledby="deleteRoomModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteRoomModalLabel">Delete Room</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="deleteRoomForm" action="/path_to_delete_api" method="POST">
+                            <div class="mb-3">
+                                <label for="deleteRoomNumber" class="form-label">Room Number</label>
+                                <input type="number" class="form-control" id="deleteRoomNumber" name="roomNumber" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger" form="deleteRoomForm">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- View Rooms Modal -->
+        <div class="modal fade" id="viewRoomsModal" tabindex="-1" aria-labelledby="viewRoomsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewRoomsModalLabel">View Rooms</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Table to display rooms -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Room Number</th>
+                                    <th scope="col">Room Type</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="roomsTableBody">
+                                <!-- Room rows will be inserted here dynamically using JavaScript and API -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- SERVICES -->
+   <!-- Create Service Modal -->
+        <div class="modal fade" id="createServiceModal" tabindex="-1" aria-labelledby="createServiceModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createServiceModalLabel">Create Service</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createServiceForm" action="/path_to_api_or_endpoint" method="POST">
+                            <div class="mb-3">
+                                <label for="serviceName" class="form-label">Service Name</label>
+                                <input type="text" class="form-control" id="serviceName" name="serviceName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="serviceType" class="form-label">Service Type</label>
+                                <select class="form-select" id="serviceType" name="serviceType" required>
+                                    <option value="pool">Pool</option>
+                                    <option value="gym">Gym</option>
+                                    <option value="internet">Internet</option>
+                                    <option value="bar">Bar</option>
+                                    <option value="restaurant">Restaurant</option>
+                                    <!-- Add other services... -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="serviceDescription" class="form-label">Service Description</label>
+                                <textarea class="form-control" id="serviceDescription" name="serviceDescription" required></textarea>
+                            </div>
+                            <div class="mb-3" id="menuItemsDiv">
+                                <label for="menuItems" class="form-label">Menu Items</label>
+                                <textarea class="form-control" id="menuItems" name="menuItems">Item 1, Item 2, Item 3</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="serviceCost" class="form-label">Service Cost (if applicable)</label>
+                                <input type="number" class="form-control" id="serviceCost" name="serviceCost">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" form="createServiceForm">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Update Service Modal -->
+        <div class="modal fade" id="updateServiceModal" tabindex="-1" aria-labelledby="updateServiceModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateServiceModalLabel">Update Service</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="updateServiceForm" action="/path_to_update_api" method="POST">
+                            <div class="mb-3">
+                                <label for="serviceIdToUpdate" class="form-label">Service to Update</label>
+                                <select class="form-select" id="serviceIdToUpdate" name="serviceIdToUpdate" required>
+                                    <option value="1">Pool</option>
+                                    <option value="2">Gym</option>
+                                    <!-- Add other services... -->
+                                </select>
+                            </div>
+                            <!-- The rest of the form fields would be similar to create, 
+                                you might also want to populate them with existing data using JavaScript -->
+                            <div class="mb-3">
+                                <label for="updatedServiceName" class="form-label">Service Name</label>
+                                <input type="text" class="form-control" id="updatedServiceName" name="updatedServiceName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updatedServiceType" class="form-label">Service Type</label>
+                                <select class="form-select" id="updatedServiceType" name="updatedServiceType" required>
+                                    <option value="pool">Pool</option>
+                                    <option value="gym">Gym</option>
+                                    <!-- Add other services... -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updatedServiceDescription" class="form-label">Service Description</label>
+                                <textarea class="form-control" id="updatedServiceDescription" name="updatedServiceDescription" required></textarea>
+                            </div>
+                            <div class="mb-3" id="updatedMenuItemsDiv">
+                                <label for="updatedMenuItems" class="form-label">Menu Items</label>
+                                <textarea class="form-control" id="updatedMenuItems" name="updatedMenuItems">Item 1, Item 2, Item 3</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updatedServiceCost" class="form-label">Service Cost (if applicable)</label>
+                                <input type="number" class="form-control" id="updatedServiceCost" name="updatedServiceCost">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" form="updateServiceForm">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Delete Service Modal -->
+        <div class="modal fade" id="deleteServiceModal" tabindex="-1" aria-labelledby="deleteServiceModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteServiceModalLabel">Delete Service</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="deleteServiceForm" action="/path_to_delete_api" method="POST">
+                            <div class="mb-3">
+                                <label for="serviceIdToDelete" class="form-label">Service to Delete</label>
+                                <select class="form-select" id="serviceIdToDelete" name="serviceIdToDelete" required>
+                                    <option value="1">Pool</option>
+                                    <option value="2">Gym</option>
+                                    <!-- Add other services... -->
+                                </select>
+                            </div>
+                            <p>Are you sure you want to delete this service? This action cannot be undone.</p>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger" form="deleteServiceForm">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <!-- View Services Modal -->
+        <div class="modal fade" id="viewServicesModal" tabindex="-1" aria-labelledby="viewServicesModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewServicesModalLabel">View Services</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Your method to display the services would go here. 
+                            You might use JavaScript to dynamically create elements based on the data from your database. -->
+                        <p>Display the services here...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- PLANES DE CONSUMO -->
+    <!-- Modal Create Consumption Plan -->
+        <div class="modal fade" id="createConsumptionPlan" tabindex="-1" aria-labelledby="createConsumptionPlanLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createConsumptionPlanLabel">Create Consumption Plan</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createConsumptionPlanForm">
+                            <div class="mb-3">
+                                <label for="planName" class="form-label">Plan Name</label>
+                                <input type="text" class="form-control" id="planName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="planDescription" class="form-label">Description</label>
+                                <textarea class="form-control" id="planDescription" required></textarea>
+                            </div>
+                            <!-- Add other necessary fields based on the specifics of the consumption plan -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="submitCreateConsumptionPlanForm()">Create Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Modal Update Consumption Plan -->
+        <div class="modal fade" id="updateConsumptionPlan" tabindex="-1" aria-labelledby="updateConsumptionPlanLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateConsumptionPlanLabel">Update Consumption Plan</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="updateConsumptionPlanForm">
+                            <div class="mb-3">
+                                <label for="updatePlanName" class="form-label">Plan Name</label>
+                                <select class="form-select" id="updatePlanName" required>
+                                    <!-- Options should be populated dynamically based on existing plans -->
+                                </select>
+                            </div>
+                            <!-- Other fields for updating details -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="submitUpdateConsumptionPlanForm()">Update Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- Modal Delete Consumption Plan -->
+        <div class="modal fade" id="deleteConsumptionPlan" tabindex="-1" aria-labelledby="deleteConsumptionPlanLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteConsumptionPlanLabel">Delete Consumption Plan</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="deleteConsumptionPlanForm">
+                            <div class="mb-3">
+                                <label for="deletePlanName" class="form-label">Plan Name</label>
+                                <select class="form-select" id="deletePlanName" required>
+                                    <!-- Options should be populated dynamically based on existing plans -->
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" onclick="submitDeleteConsumptionPlanForm()">Delete Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Modal View Consumption Plans -->
+        <div class="modal fade" id="viewConsumptionPlans" tabindex="-1" aria-labelledby="viewConsumptionPlansLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewConsumptionPlansLabel">View Consumption Plans</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Dynamically populate this section based on existing plans -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    <!-- Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
