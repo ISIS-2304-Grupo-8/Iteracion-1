@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 
 @Embeddable
 public class ProductoEntityPK implements Serializable {
@@ -16,7 +17,8 @@ public class ProductoEntityPK implements Serializable {
     @JoinColumn(name = "ts_tipo_servicio", referencedColumnName = "tipo_servicio")
     private TipoServicioEntity ts_tipo_servicio;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "productos_sequence")
+    @SequenceGenerator(name = "productos_sequence", sequenceName = "productos_sequence", allocationSize = 1)
     private Integer id_producto;
 
     public ProductoEntityPK(TipoServicioEntity ts_tipo_servicio) {

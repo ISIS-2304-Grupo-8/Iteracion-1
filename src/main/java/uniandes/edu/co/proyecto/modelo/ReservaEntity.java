@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,7 +15,8 @@ import jakarta.persistence.Table;
 public class ReservaEntity {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "reservas_sequence")
+    @SequenceGenerator(name = "reservas_sequence", sequenceName = "reservas_sequence", allocationSize = 1)
     private Integer id_reserva;
     private Integer num_personas;
 
@@ -25,22 +27,21 @@ public class ReservaEntity {
     })
     private Estado_reserva estado_reserva;
 
-    
-    
     @ManyToOne
-    @JoinColumn(name="planesdeconsumo_id_plan", referencedColumnName="id_plan")
+    @JoinColumn(name = "planesdeconsumo_id_plan", referencedColumnName = "id_plan")
     private PlanDeConsumoEntity id_plan_consumo;
-    
-    public ReservaEntity() {;}
-    
+
+    public ReservaEntity() {
+        ;
+    }
+
     public ReservaEntity(Integer id_reserva, Integer num_personas, Estado_reserva estado_reserva,
-    PlanDeConsumoEntity id_plan_consumo) {
+            PlanDeConsumoEntity id_plan_consumo) {
         this.id_reserva = id_reserva;
         this.num_personas = num_personas;
         this.estado_reserva = estado_reserva;
         this.id_plan_consumo = id_plan_consumo;
     }
-    
 
     public Integer getId_reserva() {
         return id_reserva;
@@ -65,16 +66,13 @@ public class ReservaEntity {
     public void setEstado_reserva(Estado_reserva estado_reserva) {
         this.estado_reserva = estado_reserva;
     }
-    
-     
+
     public PlanDeConsumoEntity getId_plan_consumo() {
         return id_plan_consumo;
     }
-    
+
     public void setId_plan_consumo(PlanDeConsumoEntity id_plan_consumo) {
         this.id_plan_consumo = id_plan_consumo;
     }
-    
 
-    
 }
