@@ -1,6 +1,11 @@
 package uniandes.edu.co.proyecto.controllers;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import uniandes.edu.co.proyecto.modelo.EmpleadoEntity;
 import uniandes.edu.co.proyecto.repositories.EmpleadoRepository;
@@ -22,22 +28,39 @@ public class EmpleadosController {
     private EmpleadoRepository empleadoRepository;
 
     @GetMapping("/empleados")
-    public String empleados(Model model){
-        model.addAttribute("empleados", empleadoRepository.darEmpleados());
-        return "empleados";
+    public ResponseEntity<List<EmpleadoEntity>> empleados(){
+        Collection<EmpleadoEntity> empleadosCollection = empleadoRepository.darEmpleados();
+        List<EmpleadoEntity> empleados = new ArrayList<>(empleadosCollection);
+        return new ResponseEntity<>(empleados, HttpStatus.OK);
     }
 
-    @GetMapping("/empleados/new")
-    public String empleadoForm(Model model){
-        model.addAttribute("empleado", new EmpleadoEntity());
-        return "empleadoNuevo";
+    // @GetMapping("/empleados/new")
+    // public String empleadoForm(Model model){
+    //     model.addAttribute("empleado", new EmpleadoEntity());
+    //     return "empleadoNuevo";
+    // }
+
+    // @PostMapping("/empleados/new/save")
+    // public String empleadoGuardar(@ModelAttribute EmpleadoEntity empleado){
+    //     empleadoRepository.insertarEmpleado(empleado.getNum_doc(), empleado.getNombre(), empleado.getEmail(), empleado.getTipo_doc(), empleado.getRol());
+    //     return "redirect:/empleados";
+    // }
+
+    //test for creating new 'empleado'
+    @PostMapping("/empleados/new")
+    public ResponseEntity<Map<String, String>> createEmpleado(@RequestBody EmpleadoEntity empleado) {
+    Map<String, String> response = new HashMap<>();
+    try {
+        empleadoRepository.insertarEmpleado(empleado.getNum_doc(), empleado.getNombre(),
+                empleado.getEmail(), empleado.getTipo_doc(), empleado.getRol());
+        response.put("message", "Empleado created successfully");
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    } catch (Exception e) {
+        response.put("message", "Failed to create empleado");
+        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
-    @PostMapping("/empleados/new/save")
-    public String empleadoGuardar(@ModelAttribute EmpleadoEntity empleado){
-        empleadoRepository.insertarEmpleado(empleado.getNum_doc(), empleado.getNombre(), empleado.getEmail(), empleado.getTipo_doc(), empleado.getRol());
-        return "redirect:/empleados";
-    }
 
 
     @GetMapping("/empleados/{num_doc}/edit")
