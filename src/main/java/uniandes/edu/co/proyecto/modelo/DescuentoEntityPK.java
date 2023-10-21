@@ -2,11 +2,7 @@ package uniandes.edu.co.proyecto.modelo;
 
 import java.io.Serializable;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
