@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import uniandes.edu.co.proyecto.modelo.EmpleadoEntity;
 import uniandes.edu.co.proyecto.repositories.EmpleadoRepository;
@@ -27,13 +29,18 @@ public class EmpleadosController {
     @Autowired
     private EmpleadoRepository empleadoRepository;
 
+    //viejo
+    // @GetMapping("/empleados")
+    // public ResponseEntity<List<EmpleadoEntity>> empleados(){
+    //     Collection<EmpleadoEntity> empleadosCollection = empleadoRepository.darEmpleados();
+    //     List<EmpleadoEntity> empleados = new ArrayList<>(empleadosCollection);
+    //     return new ResponseEntity<>(empleados, HttpStatus.OK);
+    // }
     @GetMapping("/empleados")
-    public ResponseEntity<List<EmpleadoEntity>> empleados(){
-        Collection<EmpleadoEntity> empleadosCollection = empleadoRepository.darEmpleados();
-        List<EmpleadoEntity> empleados = new ArrayList<>(empleadosCollection);
-        return new ResponseEntity<>(empleados, HttpStatus.OK);
-    }
-
+    public ResponseEntity<Page<EmpleadoEntity>> empleados(Pageable pageable){
+    Page<EmpleadoEntity> empleadosPage = empleadoRepository.findAll(pageable);
+    return new ResponseEntity<>(empleadosPage, HttpStatus.OK);
+}
     // @GetMapping("/empleados/new")
     // public String empleadoForm(Model model){
     //     model.addAttribute("empleado", new EmpleadoEntity());

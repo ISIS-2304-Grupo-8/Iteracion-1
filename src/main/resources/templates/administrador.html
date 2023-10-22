@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-    <script defer src="./css/subconnections.js"></script>
+    <script defer src="./connection_administrador.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Heebo:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Admin Dashboard Hotel</title>
@@ -147,120 +147,134 @@
 <!-- modals -->
 <!-- USER -->
     <!-- Create User Modal -->
-        <div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- Header -->
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="createUserModalLabel">Create User</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <!-- Body -->
-                    <div class="modal-body">
-                        <form id="createUserForm" action="/path_to_api_or_endpoint" method="POST">
-                            <!-- Document Type -->
-                            <div class="mb-3">
-                                <label for="docType" class="form-label">Tipo de Documento</label>
-                                <select class="form-select" id="docType" name="docType" required>
-                                    <option value="cc">Cédula de Ciudadanía</option>
-                                    <!-- Other options... -->
-                                </select>
-                            </div>
-                            <!-- Document Number -->
-                            <div class="mb-3">
-                                <label for="docNumber" class="form-label">Número de Documento</label>
-                                <input type="text" class="form-control" id="docNumber" name="docNumber" required>
-                            </div>
-                            <!-- Name -->
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
-                            </div>
-                            <!-- Email -->
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                            <!-- Role -->
-                            <div class="mb-3">
-                                <label for="role" class="form-label">Rol</label>
-                                <select class="form-select" id="role" name="role" required>
-                                    <option value="manager">Gerente</option>
-                                    <option value="data_admin">Administrador de Datos</option>
-                                    <option value="receptionist">Recepcionista</option>
-                                    <option value="employee">Empleado</option>
-                                    <option value="customer">Cliente</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- Footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" form="createUserForm">Save</button>
-                    </div>
+    <div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+    
+                <!-- modal header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createUserModalLabel">Create New User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+    
+                <!-- modal body -->
+                <div class="modal-body">
+                    <form id="userForm">
+                        <!-- Input fields specific for user creation -->
+                        <!-- name -->
+                        <div class="mb-3">
+                            <label for="userNameInput" class="form-label"><b>Name:</b></label>
+                            <input type="text" class="form-control" id="userNameInput" name="userNameInput" placeholder="John Doe" required>
+                        </div>
+                        <!-- mail -->
+                        <div class="mb-3">
+                            <label for="userEmailInput" class="form-label"><b>Email Address:</b></label>
+                            <input type="email" class="form-control" id="userEmailInput" name="userEmailInput" placeholder="name@example.com" required>
+                        </div>
+                        <!-- document type -->
+                        <div class="mb-3">
+                            <label for="userDocumentTypeSelect" class="form-label"><b>Select Document Type:</b></label>
+                            <select class="form-select" id="userDocumentTypeSelect" name="userDocumentTypeSelect" required>
+                                <option value="ID Card">ID Card</option>
+                                <option value="Driver's License">Driver's License</option>
+                                <option value="Birth Certificate">Birth Certificate</option>
+                                <option value="Passport">Passport</option>
+                                <option value="Social Security Card">Social Security Card</option>
+                            </select>
+                        </div>
+                        <!-- document number -->
+                        <div class="mb-3">
+                            <label for="userDocumentNumberInput" class="form-label"><b>Document Number:</b></label>
+                            <input type="number" class="form-control" id="userDocumentNumberInput" name="userDocumentNumberInput" placeholder="123" min="100">
+                        </div>
+                        <!-- role -->
+                        <div class="mb-3">
+                            <label for="userRoleSelect" class="form-label"><b>Select Role:</b></label>
+                            <select class="form-select" id="userRoleSelect" name="userRoleSelect" required>
+                                <option value="Receptionist">Receptionist</option>
+                                <option value="Service Manager">Service Manager</option>
+                                <option value="User">User</option>
+                                <option value="Data Administrator">Data Administrator</option>
+                                <option value="Customer">Customer</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+    
+                <!-- modal footer with buttons -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="userForm">Submit</button>
                 </div>
             </div>
         </div>
-
+    </div>
+    
     <!-- Update User Modal -->
-        <div class="modal fade" id="updateUserModal" tabindex="-1" aria-labelledby="updateUserModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- Header -->
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="updateUserModalLabel">Update User</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <!-- Body -->
-                    <div class="modal-body">
-                        <form id="updateUserForm" action="/path_to_update_api" method="POST">
-                            <!-- User ID (hidden) -->
-                            <input type="hidden" id="updateUserId" name="userId">
-                            <!-- Document Type -->
-                            <div class="mb-3">
-                                <label for="updateDocType" class="form-label">Tipo de Documento</label>
-                                <select class="form-select" id="updateDocType" name="docType" required>
-                                    <option value="cc">Cédula de Ciudadanía</option>
-                                    <!-- Other options... -->
-                                </select>
-                            </div>
-                            <!-- Document Number -->
-                            <div class="mb-3">
-                                <label for="updateDocNumber" class="form-label">Número de Documento</label>
-                                <input type="text" class="form-control" id="updateDocNumber" name="docNumber" required>
-                            </div>
-                            <!-- Name -->
-                            <div class="mb-3">
-                                <label for="updateName" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="updateName" name="name" required>
-                            </div>
-                            <!-- Email -->
-                            <div class="mb-3">
-                                <label for="updateEmail" class="form-label">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="updateEmail" name="email" required>
-                            </div>
-                            <!-- Role -->
-                            <div class="mb-3">
-                                <label for="updateRole" class="form-label">Rol</label>
-                                <select class="form-select" id="updateRole" name="role" required>
-                                    <option value="manager">Gerente</option>
-                                    <option value="data_admin">Administrador de Datos</option>
-                                    <option value="receptionist">Recepcionista</option>
-                                    <option value="employee">Empleado</option>
-                                    <option value="customer">Cliente</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- Footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" form="updateUserForm">Update</button>
-                    </div>
+    <div class="modal fade" id="updateUserModal" tabindex="-1" aria-labelledby="updateUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateUserModalLabel">Update User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Body -->
+                <div class="modal-body">
+                    <form id="updateUserForm">
+                        <!-- User ID -->
+                        <div class="mb-3">
+                            <label for="inputUserId" class="form-label"><b>User ID:</b></label>
+                            <input type="number" class="form-control" id="inputUserId" name="userId" placeholder="Enter User ID" required>
+                        </div>
+                        <!-- Document Type -->
+                        <div class="mb-3">
+                            <label for="updateDocType" class="form-label"><b>Select Document Type:</b></label>
+                            <select class="form-select" id="updateDocType" name="docType" required>
+                                <option value="ID Card">ID Card</option>
+                                <option value="Driver's License">Driver's License</option>
+                                <option value="Birth Certificate">Birth Certificate</option>
+                                <option value="Passport">Passport</option>
+                                <option value="Social Security Card">Social Security Card</option>
+                            </select>
+                        </div>
+                        <!-- Document Number -->
+                        <div class="mb-3">
+                            <label for="updateDocNumber" class="form-label"><b>Número de Documento:</b></label>
+                            <input type="text" class="form-control" id="updateDocNumber" name="docNumber" required>
+                        </div>
+                        <!-- Name -->
+                        <div class="mb-3">
+                            <label for="updateName" class="form-label"><b>Nombre:</b></label>
+                            <input type="text" class="form-control" id="updateName" name="name" required>
+                        </div>
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="updateEmail" class="form-label"><b>Correo Electrónico:</b></label>
+                            <input type="email" class="form-control" id="updateEmail" name="email" required>
+                        </div>
+                        <!-- Role -->
+                        <div class="mb-3">
+                            <label for="updateRole" class="form-label"><b>Rol:</b></label>
+                            <select class="form-select" id="updateRole" name="role" required>
+                                <option value="Service Manager">Service Manager</option>
+                                <option value="Data Administrator">Data Administrator</option>
+                                <option value="Receptionist">Recepcionist</option>
+                                <option value="Employee">Empleado</option>
+                                <option value="Customer (Client)">Customer (Client)</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="updateUserForm">Update</button>
                 </div>
             </div>
         </div>
+    </div>
+
 
   
   <!-- Delete User Modal -->
@@ -291,33 +305,45 @@
   <!-- View Users Modal -->
     <div class="modal fade" id="viewUsersModal" tabindex="-1" aria-labelledby="viewUsersModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="viewUsersModalLabel">View Users</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewUsersModalLabel">View Users</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Table to display users -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Document Number</th>
+                                <th scope="col">Document Type</th>
+                                <th scope="col">Role</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <!-- User rows will be inserted here dynamically using JavaScript and API -->
+                        </tbody>
+                    </table>
+                    <!-- Paginación -->
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center" id="paginationControls">
+                            <li class="page-item"><a class="page-link" href="#" id="previousPage">Previous</a></li>
+                            <!-- Los números de página se insertarán aquí dinámicamente -->
+                            <li class="page-item"><a class="page-link" href="#" id="nextPage">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-body">
-            <!-- Table to display users -->
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <!-- ... other user fields ... -->
-                </tr>
-                </thead>
-                <tbody id="usersTableBody">
-                <!-- User rows will be inserted here dynamically using JavaScript and API -->
-                </tbody>
-            </table>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
         </div>
     </div>
+
+
 
 <!-- ROOM TYPE -->
     <!-- Create Room Type Modal -->
