@@ -38,4 +38,9 @@ public class TipoUsuarioEntity {
 
     }
 
+    @Override
+    public String toString() {
+        return "{id_usuario=" + id_usuario + ", rol=" + rol + "}";
+    }
+
 }

@@ -1,7 +1,12 @@
 package uniandes.edu.co.proyecto.controllers;
 
 import org.springframework.ui.Model;
+
+import java.util.Collections;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +26,17 @@ public class TiposUsuarioController {
     public String tiposUsuario(Model model) {
         model.addAttribute("tiposusuario", tipoUsuarioRepository.darTiposUsuario());
         return model.toString();
+    }
+
+    @GetMapping("/tiposusuario/{id_usuario}")
+    public ResponseEntity<Object> tipoUsuario(@PathVariable("id_usuario") int id_usuario) {
+        TipoUsuarioEntity tipoUsuario = tipoUsuarioRepository.darTipoUsuario(id_usuario);
+        if (tipoUsuario != null) {
+            return new ResponseEntity<>(Collections.singletonMap("tipoUsuario", tipoUsuario), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(Collections.singletonMap("mensaje", "Tipo de usuario no encontrado"),
+                    HttpStatus.NOT_FOUND);
+        }
     }
 
     @GetMapping("/tiposusuario/new")
