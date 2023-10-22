@@ -22,36 +22,36 @@ public class TiposUsuarioController {
     @Autowired
     private TipoUsuarioRepository tipoUsuarioRepository;
 
-    @GetMapping("/tiposusuario")
+    @GetMapping("/tipos_usuario")
     public String tiposUsuario(Model model) {
-        model.addAttribute("tiposusuario", tipoUsuarioRepository.darTiposUsuario());
+        model.addAttribute("tipos_usuario", tipoUsuarioRepository.darTiposUsuario());
         return model.toString();
     }
 
-    @GetMapping("/tiposusuario/{id_usuario}")
+    @GetMapping("/tipos_usuario/{id_usuario}")
     public ResponseEntity<Object> tipoUsuario(@PathVariable("id_usuario") int id_usuario) {
         TipoUsuarioEntity tipoUsuario = tipoUsuarioRepository.darTipoUsuario(id_usuario);
         if (tipoUsuario != null) {
-            return new ResponseEntity<>(Collections.singletonMap("tipoUsuario", tipoUsuario), HttpStatus.OK);
+            return new ResponseEntity<>(Collections.singletonMap("tipos_usuario", tipoUsuario), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(Collections.singletonMap("mensaje", "Tipo de usuario no encontrado"),
                     HttpStatus.NOT_FOUND);
         }
     }
 
-    @GetMapping("/tiposusuario/new")
+    @GetMapping("/tipos_usuario/new")
     public String tipoUsuarioForm(Model model) {
-        model.addAttribute("tipousuario", new TipoUsuarioEntity());
+        model.addAttribute("tipos_usuario", new TipoUsuarioEntity());
         return "tipoUsuarioNew";
     }
 
-    @PostMapping("/tiposusuario/new/save")
+    @PostMapping("/tipos_usuario/new/save")
     public String tipoUsuarioSave(@ModelAttribute TipoUsuarioEntity tipoUsuario) {
         tipoUsuarioRepository.crearTipoUsuario(tipoUsuario.getRol());
-        return "redirect:/tiposusuario";
+        return "redirect:/tipos_usuario";
     }
 
-    @GetMapping("/tiposusuario/{id}/edit")
+    @GetMapping("/tipos_usuario/{id}/edit")
     public String tipoUsuarioEditarFrom(@PathVariable("id_usuario") Integer id_usuario, Model model) {
         TipoUsuarioEntity tipoUsuario = tipoUsuarioRepository.darTipoUsuario(id_usuario);
         if (tipoUsuario != null) {
@@ -62,17 +62,17 @@ public class TiposUsuarioController {
         }
     }
 
-    @PostMapping("/tiposusuario/{id}/edit/save")
+    @PostMapping("/tipos_usuario/{id}/edit/save")
     public String tipoUsuarioEditarSave(@PathVariable("id_usuario") Integer id_usuario,
             @ModelAttribute TipoUsuarioEntity tipoUsuario) {
         tipoUsuarioRepository.actualizarTipoUsuario(tipoUsuario.getId_usuario(), tipoUsuario.getRol());
-        return "redirect:/tiposusuario";
+        return "redirect:/tipos_usuario";
     }
 
     @GetMapping("/tiposusuario/{id}/delete")
     public String tipoUsuarioDelete(@PathVariable("id_usuario") Integer id_usuario) {
         tipoUsuarioRepository.eliminarTipoUsuario(id_usuario);
-        return "redirect:/tiposusuario";
+        return "redirect:/tipos_usuario";
     }
 
 }
