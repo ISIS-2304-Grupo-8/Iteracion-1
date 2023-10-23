@@ -97,11 +97,6 @@
                                   Select role
                                 </button>
                                 <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="#"> Customer (Client) </a></li>
-                                  <li><a class="dropdown-item" href="#"> Receptionist </a></li>
-                                  <li><a class="dropdown-item" href="#"> Service Manager </a></li>
-                                  <li><a class="dropdown-item" href="#"> Employee </a></li>
-                                  <li><a class="dropdown-item" href="#"> Data Administrator </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -173,15 +168,13 @@
                     <input type="number" class="form-control" id="workerDocumentNumberInput" name="workerDocumentNumberInput" placeholder="123" min="100">
                 </div>
                 <!-- role -->
-                    <div class="mb-3">
-                        <label for="workerRoleSelect" class="form-label"><b>Select Role:</b></label>
-                        <select class="form-select" id="workerRoleSelect" name="workerRoleSelect" required>
-                            <option value="Receptionist">Receptionist</option>
-                            <option value="Service Manager">Service Manager</option>
-                            <option value="Employee">Employee</option>
-                            <option value="Data Administrator">Data Administrator</option>
-                        </select>
-                    </div>
+                <div class="mb-3">
+                    <label for="workerRoleSelect" class="form-label"><b>Select Role:</b></label>
+                    <select class="form-select" id="workerRoleSelect" name="workerRoleSelect" required>
+                        <!-- Las opciones se insertarán dinámicamente aquí -->
+                    </select>
+                </div>
+                
                 </form>
             </div>
 

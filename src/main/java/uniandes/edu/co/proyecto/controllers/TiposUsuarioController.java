@@ -2,7 +2,10 @@ package uniandes.edu.co.proyecto.controllers;
 
 import org.springframework.ui.Model;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,10 +26,11 @@ public class TiposUsuarioController {
     private TipoUsuarioRepository tipoUsuarioRepository;
 
     @GetMapping("/tiposusuario")
-    public String tiposUsuario(Model model) {
-        model.addAttribute("tiposusuario", tipoUsuarioRepository.darTiposUsuario());
-        return model.toString();
-    }
+    public ResponseEntity<List<TipoUsuarioEntity>> tiposUsuario() {
+    Collection<TipoUsuarioEntity> tiposUsuarioCollection = tipoUsuarioRepository.darTiposUsuario();
+    List<TipoUsuarioEntity> tiposUsuario = new ArrayList<>(tiposUsuarioCollection);
+    return new ResponseEntity<>(tiposUsuario, HttpStatus.OK);
+}
 
     @GetMapping("/tiposusuario/{id_usuario}")
     public ResponseEntity<Object> tipoUsuario(@PathVariable("id_usuario") int id_usuario) {

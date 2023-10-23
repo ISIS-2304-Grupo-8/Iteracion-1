@@ -16,16 +16,36 @@
             text = 'Python and Web Developer - Systems Engineering Student';
         }
         }
-
-//extra functions
+//global variables
+    //num role mapper
+    var numRoleMapping = {};
     //rolemapper for db querys
-        const roleMapping = {
-        "Receptionist": "recepcionista",
-        "Service Manager": "gerente",
-        "Employee": "empleado",
-        "Data Administrator": "admin_datos",
-        "Customer (Client)": "cliente"
+    const roleMapping = {
+        "Recepcionista": "recepcionista",
+        "Gerente": "gerente",
+        "Empleado": "empleado",
+        "Administrador": "administrador",
+        "Cliente": "cliente"
         };
+//extra functions
+    // Insertar roles en el select después de obtenerlos
+    function populateRolesFromMapping() {
+    const workerRoleSelect = document.getElementById('workerRoleSelect');
+    
+    for (const roleId in numRoleMapping) {
+        const role = numRoleMapping[roleId];
+        if (!role.toLowerCase().startsWith("cliente")) {
+            const option = document.createElement("option");
+            option.value = capitalizeFirstLetter(role);
+            option.textContent = capitalizeFirstLetter(role);
+            workerRoleSelect.appendChild(option);
+            }
+        }   
+    }
+    // get key from value of a dict
+    function getKeysByValue(object, value) {
+        return Object.keys(object).filter(key => object[key] === value);
+    }
     //reset modals
         function resetModalInputs(modalId) {
             const modalElement = document.getElementById(modalId);
@@ -55,7 +75,7 @@
             alert("There is a nullable field, please try again.");
         } else {
             //mapping right name of the role for the db
-                role = roleMapping[role] || role;
+                role = getKeysByValue(numRoleMapping, role.toLowerCase())[0];
             // Prepare the data to be sent to the server (body)
             const data = {
                 num_doc: documentNumber,  
@@ -120,6 +140,10 @@
         clientModal.hide();
     }
 
+    //Capitalize Letter for Roles
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
     
 document.addEventListener("DOMContentLoaded", function () {
     //load title
@@ -167,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 fetch(`/clientes/${documentNumber}`)
                     .then(response => response.json())
                     .then(data => {
-                        if (data.cliente) {
+                        if (data.cliente) { 
                             alert(`Cliente encontrado: ${data.cliente.nombre}`);
                             window.location.href = "cliente.html";
                         } else {
@@ -180,14 +204,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else { // Si no es un cliente, asumimos que es un tipo de empleado
                 fetch(`/empleados/${documentNumber}`)
                     .then(response => response.json())
-                    .then(data => {
-                        if (data.empleado && data.empleado.rol === role) {
-                            alert(`${data.empleado.rol} encontrado: ${data.empleado.nombre}`);  
+                    .then(data => { 
+                        if (data.empleado && numRoleMapping[parseInt(data.empleado.rol)] === role) {
+                            alert(`${numRoleMapping[parseInt(data.empleado.rol)]} encontrado: ${data.empleado.nombre}`);  
                             switch(role) {
                                 case "gerente":
                                     window.location.href = "administradorDelSistema.html";
                                     break;
-                                case "admin_datos":
+                                case "administrador":
                                     window.location.href = "administrador.html";
                                     break;
                                 case "recepcionista":
@@ -214,5 +238,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add submit event listener to the clientForm
     document.getElementById('clientForm').addEventListener('submit', submitNewClient);
+    
+    //fetching role types in the hotel
+    // ...
 
+    //fetching role types in the hotel
+    fetch("http://localhost:8080/tiposusuario")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then(data => {
+        const dropdownList = document.querySelector(".dropdown-menu");
+
+        data.forEach(role => {
+            const listItem = document.createElement("li");
+            const anchorItem = document.createElement("a");
+            anchorItem.className = "dropdown-item";
+            anchorItem.href = "#";
+            anchorItem.textContent = capitalizeFirstLetter(role.rol);
+            listItem.appendChild(anchorItem);
+            dropdownList.appendChild(listItem);
+
+            //add elements to role numberRoleMapping
+            numRoleMapping[role.id_usuario] = role.rol;
+        });
+
+        // Llamamos a la función que inserta los roles en el select
+        populateRolesFromMapping();
+
+        // Aquí es donde se moverá el código de manejo del evento de click
+        let dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                // Set the dropdown button text to the clicked item's text
+                dropdownButton.textContent = this.textContent;
+            });
+        });
+    })
+    .catch(error => {
+        console.error("Error fetching roles:", error);
+    });
+    
 });
