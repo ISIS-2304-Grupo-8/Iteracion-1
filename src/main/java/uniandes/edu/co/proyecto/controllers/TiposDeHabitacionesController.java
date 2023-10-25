@@ -16,7 +16,7 @@ public class TiposDeHabitacionesController {
     @Autowired
     private TipoHabitacionRepository tipoHabitacionRepository;
 
-    @GetMapping("/tipos_de_servicios")
+    @GetMapping("/tipos_de_habitaciones")
     public String Tipos_habitacion(Model model){
         model.addAttribute("Tipos_habitacion", tipoHabitacionRepository.darTiposDeHabitaciones());
     return model.toString();
