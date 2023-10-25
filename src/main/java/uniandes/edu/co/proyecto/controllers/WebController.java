@@ -26,6 +26,12 @@ public class WebController {
         return "cliente";
     }
 
+    @RequestMapping("/gerente.html")
+    public String gerente() {
+        return "gerente";
+    }
+    
+
     //administrador.html" "recepcionista.html" "recepcionista.html"
 }
 

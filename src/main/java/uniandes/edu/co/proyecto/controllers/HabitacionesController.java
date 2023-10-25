@@ -1,6 +1,7 @@
 package uniandes.edu.co.proyecto.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import uniandes.edu.co.proyecto.modelo.HabitacionEntity;
 import uniandes.edu.co.proyecto.repositories.HabitacionRepository;
 
+@Controller
 public class HabitacionesController {
 
     @Autowired
@@ -41,7 +43,7 @@ public class HabitacionesController {
 
     @PostMapping("/habitaciones/new/save")
     public String habitacionGuardar(@ModelAttribute HabitacionEntity habitacion){
-        habitacionRepository.insertarHabitacion(habitacion.getConsumo_acumulado(), habitacion.getDisponibilidad(), habitacion.getReservas_id_reserva().getId_reserva(), habitacion.getTipos_habitacion_id_tipo().getId_tipo());
+        habitacionRepository.insertarHabitacion(habitacion.getConsumo_acumulado(), habitacion.getDisponibilidad(), habitacion.getTipos_habitacion_id_tipo().getId_tipo());
         return "redirect:/habitaciones";
     }
 
@@ -58,7 +60,7 @@ public class HabitacionesController {
 
     @PostMapping("/habitaciones/{id_habitacion}/edit/save")
     public String habitacionEditarGuardar(@PathVariable("id_habitacion") Integer id_habitacion, @ModelAttribute HabitacionEntity habitacion){
-        habitacionRepository.actualizarHabitacion(id_habitacion, habitacion.getConsumo_acumulado(), habitacion.getDisponibilidad(), habitacion.getReservas_id_reserva().getId_reserva(), habitacion.getTipos_habitacion_id_tipo().getId_tipo());
+        habitacionRepository.actualizarHabitacion(id_habitacion, habitacion.getConsumo_acumulado(), habitacion.getDisponibilidad(), habitacion.getTipos_habitacion_id_tipo().getId_tipo());
         return "redirect:/habitaciones";
     }
 
