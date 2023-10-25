@@ -209,14 +209,16 @@ document.addEventListener("DOMContentLoaded", function () {
                             alert(`${numRoleMapping[parseInt(data.empleado.rol)]} encontrado: ${data.empleado.nombre}`);  
                             switch(role) {
                                 case "gerente":
-                                    window.location.href = "administradorDelSistema.html";
+                                    window.location.href = "gerente.html";
                                     break;
                                 case "administrador":
                                     window.location.href = "administrador.html";
                                     break;
                                 case "recepcionista":
-                                case "empleado":
                                     window.location.href = "recepcionista.html";
+                                    break;
+                                case "empleado":
+                                    window.location.href = "empleado.html";
                                     break;
                                 default:
                                     alert('Rol no reconocido.');

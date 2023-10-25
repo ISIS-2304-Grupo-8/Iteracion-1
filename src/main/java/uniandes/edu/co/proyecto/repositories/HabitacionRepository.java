@@ -29,7 +29,7 @@ public interface HabitacionRepository extends JpaRepository<HabitacionEntity, In
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO Habitaciones (id_habitacion, consumo_acumulado, disponibilidad, Reservas_id_reserva, Tipos_habitacion_id_tipo) VALUES(habitaciones_sequence.nextval, :consumo_acumulado, :disponibilidad, :Reservas_id_reserva, :Tipos_habitacion_id_tipo)", nativeQuery=true)
-    void insertarHabitacion(@Param("consumo_acumulado") Integer consumo_acumulado, @Param("disponibilidad") Integer disponibilidad,
+    void insertarHabitacion(@Param("consumo_acumulado") Integer consumo_acumulado, @Param("disponibilidad") Character disponibilidad,
     @Param("Reservas_id_reserva") Integer Reservas_id_reserva, @Param("Tipos_habitacion_id_tipo") Integer Tipos_habitacion_id_tipo);
 
     //update an instance
@@ -37,7 +37,7 @@ public interface HabitacionRepository extends JpaRepository<HabitacionEntity, In
     @Transactional
     @Query(value = "UPDATE Habitaciones SET consumo_acumulado=:consumo_acumulado, disponibilidad=:disponibilidad, Reservas_id_reserva=:Reservas_id_reserva, Tipos_habitacion_id_tipo=:Tipos_habitacion_id_tipo WHERE id_habitacion=:id_habitacion", nativeQuery = true)
     void actualizarHabitacion(@Param("id_habitacion") Integer id_habitacion, @Param("consumo_acumulado") Integer consumo_acumulado, 
-    @Param("disponibilidad") Integer disponibilidad, @Param("Reservas_id_reserva") Integer Reservas_id_reserva, @Param("Tipos_habitacion_id_tipo") Integer Tipos_habitacion_id_tipo);
+    @Param("disponibilidad") Character disponibilidad, @Param("Reservas_id_reserva") Integer Reservas_id_reserva, @Param("Tipos_habitacion_id_tipo") Integer Tipos_habitacion_id_tipo);
 
     //eliminate an instance
     @Modifying
