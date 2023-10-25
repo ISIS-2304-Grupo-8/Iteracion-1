@@ -47,7 +47,7 @@ public interface ClienteRepository extends JpaRepository<ClienteEntity,
     @Query(value = "SELECT clientes_num_doc as cedula_cliente, SUM((A.fecha_fin - A.fecha_in)) as dias_estadia, null as consumo_total " +
     "FROM reservas R " +
     "INNER JOIN apartan A ON R.id_reserva = A.id_reserva " +
-    "WHERE EXTRACT(YEAR FROM fecha_in) = EXTRACT(YEAR FROM SYSDATE) AND EXTRACT(YEAR FROM fecha_fin) = EXTRACT(YEAR FROM SYSDATE) " +
+    "WHERE A.fecha_in>=to_date('2023-01-01','yyyy-mm-dd') AND A.fecha_fin<=to_date('2023-12-31','yyyy-mm-dd') " +
     "GROUP BY clientes_num_doc " +
     "HAVING SUM((A.fecha_fin - A.fecha_in))>=14 " +
     "UNION ALL " +
@@ -57,10 +57,10 @@ public interface ClienteRepository extends JpaRepository<ClienteEntity,
     "INNER JOIN Tipos_servicio T ON S.ts_tipo_servicio = T.tipo_servicio " +
     "INNER JOIN apartan A ON R.id_habitacion = A.id_habitacion " +
     "INNER JOIN reservas Res ON Res.id_reserva = A.id_reserva " +
-    "WHERE EXTRACT(YEAR FROM fecha_inicio) = EXTRACT(YEAR FROM SYSDATE) AND EXTRACT(YEAR FROM fecha_final) = EXTRACT(YEAR FROM SYSDATE) " +
+    "WHERE fecha_inicio>=to_date('2023-01-01','yyyy-mm-dd') AND fecha_final<=to_date('2023-12-31','yyyy-mm-dd') " +
     "GROUP BY Res.clientes_num_doc  " +
     "HAVING SUM(T.precio)>= 15000000/4300 " +
-    "ORDER BY dias_estadia DESC, consumo_total DESC", nativeQuery = true)
+    "ORDER BY consumo_total DESC", nativeQuery = true)
     Collection<ResponseGoodClients> darBuenosClientes();
 
 
