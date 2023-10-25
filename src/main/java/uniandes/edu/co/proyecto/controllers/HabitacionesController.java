@@ -1,6 +1,12 @@
 package uniandes.edu.co.proyecto.controllers;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,8 +14,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import uniandes.edu.co.proyecto.modelo.EmpleadoEntity;
 import uniandes.edu.co.proyecto.modelo.HabitacionEntity;
 import uniandes.edu.co.proyecto.repositories.HabitacionRepository;
+import uniandes.edu.co.proyecto.repositories.HabitacionRepository.RespuestaReq1;
 
 @Controller
 public class HabitacionesController {
@@ -17,11 +25,13 @@ public class HabitacionesController {
     @Autowired
     private HabitacionRepository habitacionRepository;
 
+
     @GetMapping("/habitaciones")
-    public String habitaciones(Model model){
-        model.addAttribute("habitaciones", habitacionRepository.darHabitaciones());
-        return "habitaciones";
+    public ResponseEntity<Page<HabitacionEntity>> habitaciones(Pageable pageable){
+    Page<HabitacionEntity> habPage = habitacionRepository.findAll(pageable);
+    return new ResponseEntity<>(habPage, HttpStatus.OK);
     }
+
 
    @GetMapping("/habitaciones/{id_habitacion}")
     public String habitacion(Model model, @PathVariable("id_habitacion") Integer id_habitacion){
@@ -70,10 +80,19 @@ public class HabitacionesController {
         return "redirect:/habitaciones";
     }
 
+    // @GetMapping("/habitaciones/dinero_recolectado")
+    // public String habitacionDineroRecolectado(Model model){
+    //     Collection<RespuestaReq1> informacion = habitacionRepository.darDineroRecolectadoServiciosPorHabitacion();
+    //     model.addAttribute("habitaciones", informacion.iterator().next().getID_HABITACION());
+    //     model.addAttribute("dinero_recolectado", informacion.iterator().next().getDINERO_RECOLECTADO());
+    //     return "habitaciones_dinero_recolectado";
+    // }
+
     @GetMapping("/habitaciones/dinero_recolectado")
-    public String habitacionDineroRecolectado(Model model){
-        model.addAttribute("habitaciones", habitacionRepository.darDineroRecolectadoServiciosPorHabitacion());
-        return "habitaciones_dinero_recolectado";
+    public ResponseEntity<Collection<RespuestaReq1>> habitacionesDinero(Pageable pageable){
+    Collection<RespuestaReq1> habPage = habitacionRepository.darDineroRecolectadoServiciosPorHabitacion();
+    return new ResponseEntity<>(habPage, HttpStatus.OK);
     }
+
     
 }

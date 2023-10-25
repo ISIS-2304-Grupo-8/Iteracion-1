@@ -40,7 +40,7 @@ public class EmpleadosController {
     public ResponseEntity<Page<EmpleadoEntity>> empleados(Pageable pageable){
     Page<EmpleadoEntity> empleadosPage = empleadoRepository.findAll(pageable);
     return new ResponseEntity<>(empleadosPage, HttpStatus.OK);
-}
+    }
     // @GetMapping("/empleados/new")
     // public String empleadoForm(Model model){
     //     model.addAttribute("empleado", new EmpleadoEntity());
@@ -59,7 +59,7 @@ public class EmpleadosController {
     Map<String, String> response = new HashMap<>();
     try {
         empleadoRepository.insertarEmpleado(empleado.getNum_doc(), empleado.getNombre(),
-                empleado.getEmail(), empleado.getTipo_doc(), empleado.getRol());
+                empleado.getEmail(), empleado.getTipo_doc(), empleado.getRol().getId_usuario());
         response.put("message", "Empleado created successfully");
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     } catch (Exception e) {
@@ -83,7 +83,7 @@ public class EmpleadosController {
 
     @PostMapping("/empleados/{num_doc}/edit/save")
     public String empleadoEditarGuardar(@PathVariable("num_doc") int num_doc, @ModelAttribute EmpleadoEntity empleado){
-        empleadoRepository.actualizarEmpleado(num_doc, empleado.getNombre(), empleado.getEmail(), empleado.getTipo_doc(), empleado.getRol());
+        empleadoRepository.actualizarEmpleado(num_doc, empleado.getNombre(), empleado.getEmail(), empleado.getTipo_doc(), empleado.getRol().getId_usuario());
         return "redirect:/empleados";
     }
     

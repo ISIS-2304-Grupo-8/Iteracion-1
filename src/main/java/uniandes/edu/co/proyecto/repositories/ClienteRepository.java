@@ -24,13 +24,13 @@ public interface ClienteRepository extends JpaRepository<ClienteEntity,
     @Transactional
     @Query(value = "INSERT INTO clientes (num_doc, nombre, email, tipo_doc, rol_cliente, reservas_id_reserva) VALUES (:num_doc, :nombre, :email, :tipo_doc, :rol_cliente)", nativeQuery = true)
     void insertarCliente(@Param("num_doc") int num_doc, @Param("nombre") String nombre, @Param("email") String email , 
-    @Param("tipo_doc") String tipo_doc, @Param("rol_cliente") String rol_cliente);
+    @Param("tipo_doc") String tipo_doc, @Param("rol_cliente") Integer rol_cliente);
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE clientes SET nombre = :nombre, email = :email, tipo_doc = :tipo_doc, rol_cliente = :rol_cliente WHERE num_doc= :num_doc", nativeQuery = true)
     void actualizarCliente(@Param("num_doc") int num_doc, @Param("nombre") String nombre, @Param("email") String email , 
-    @Param("tipo_doc") String tipo_doc, @Param("rol_cliente") String rol_cliente);
+    @Param("tipo_doc") String tipo_doc, @Param("rol_cliente") Integer rol_cliente);
 
     @Modifying
     @Transactional

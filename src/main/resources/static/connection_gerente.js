@@ -1,21 +1,23 @@
+let currentPage = 0; // Página actual. Empieza en 0.    
+
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.btn.btn-secondary.goback').addEventListener('click', function() {
       window.location.href = "/";
     });
   });
 
-  function fetchAndDisplayUsers(page = 0, size = 10) {
-    fetch(`/habitaciones/dinero_recolectado`)
+  function fetchAndDisplayMoney(page = 0, size = 10) {
+    fetch(`/habitaciones/dinero_recolectado?page=${page}&size=${size}`)
         .then(response => response.json())
         .then(data => {
             const moneyTableBody = document.getElementById('moneyTableBody');
             moneyTableBody.innerHTML = ''; // Limpiar el contenido anterior
 
-            data.content.forEach((hab, dinero) => {
+            data.forEach((hab) => {
                 const habRow = `
                     <tr>
-                        <td>${hab.id_habitacion}</td>
-                        <td>${dinero}</td>
+                        <td>${hab.id_HABITACION}</td>
+                        <td>${hab.dinero_RECOLECTADO}</td>
                     </tr>
                 `;
                 moneyTableBody.insertAdjacentHTML('beforeend', habRow);
@@ -44,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById('nextPage').parentNode.classList.toggle('disabled', page === totalPages - 1);
 
             currentPage = page; // Actualizar página actual
-
         })
         .catch(error => {
             console.error('Error fetching users:', error);
@@ -58,15 +59,14 @@ document.addEventListener("DOMContentLoaded", function() {
             const clickedPage = event.target.getAttribute('data-page');
 
             if (clickedPage !== null) {
-                fetchAndDisplayUsers(parseInt(clickedPage));
+                fetchAndDisplayMoney(parseInt(clickedPage));
             } else if (event.target.id === 'previousPage') {
-                fetchAndDisplayUsers(currentPage - 1);
+                fetchAndDisplayMoney(currentPage - 1);
             } else if (event.target.id === 'nextPage') {
-                fetchAndDisplayUsers(currentPage + 1);
+                fetchAndDisplayMoney(currentPage + 1);
             }
 
             event.preventDefault();
         }
     });
-
 });

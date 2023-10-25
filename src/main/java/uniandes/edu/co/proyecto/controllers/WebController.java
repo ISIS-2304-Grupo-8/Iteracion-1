@@ -30,6 +30,8 @@ public class WebController {
     public String gerente() {
         return "gerente";
     }
+
+   
     
 
     //administrador.html" "recepcionista.html" "recepcionista.html"

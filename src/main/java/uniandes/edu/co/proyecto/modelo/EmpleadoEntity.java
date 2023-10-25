@@ -2,6 +2,8 @@ package uniandes.edu.co.proyecto.modelo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -11,13 +13,16 @@ public class EmpleadoEntity {
     @Id
     private Integer num_doc;
     private String tipo_doc;
-    private String rol;
     private String nombre;
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name = "rol", referencedColumnName = "id_usuario")
+    private TipoUsuarioEntity rol;
+
     public EmpleadoEntity(){;}
 
-    public EmpleadoEntity(Integer num_doc, String tipo_doc, String rol, String nombre, String email) {
+    public EmpleadoEntity(Integer num_doc, String tipo_doc, TipoUsuarioEntity rol, String nombre, String email) {
         this.num_doc = num_doc;
         this.tipo_doc = tipo_doc;
         this.rol = rol;
@@ -41,11 +46,11 @@ public class EmpleadoEntity {
         this.tipo_doc = tipo_doc;
     }
 
-    public String getRol() {
+    public TipoUsuarioEntity getRol() {
         return rol;
     }
 
-    public void setRol(String rol) {
+    public void setRol(TipoUsuarioEntity rol) {
         this.rol = rol;
     }
 

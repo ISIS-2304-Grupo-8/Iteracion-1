@@ -30,7 +30,6 @@ public class HabitacionEntity {
     public HabitacionEntity(Integer consumo_acumulado, Character disponibilidad, TipoHabitacionEntity tipos_habitacion_id_tipo) {
         this.consumo_acumulado = consumo_acumulado;
         this.disponibilidad = disponibilidad;
-
         this.tipos_habitacion_id_tipo = tipos_habitacion_id_tipo;
     }
 
@@ -70,6 +69,9 @@ public class HabitacionEntity {
 
     public void setTipos_habitacion_id_tipo(TipoHabitacionEntity tipos_habitacion_id_tipo) {
         this.tipos_habitacion_id_tipo = tipos_habitacion_id_tipo;
+    }
+
+    public class RespuestaReq1 {
     }
 
 }

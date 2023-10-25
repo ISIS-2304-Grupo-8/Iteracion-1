@@ -16,7 +16,7 @@ function fetchAndDisplayUsers(page = 0, size = 10) {
                         <td>${user.email}</td>
                         <td>${user.num_doc}</td>
                         <td>${user.tipo_doc}</td>
-                        <td>${user.rol}</td>
+                        <td>${user.rol.id_usuario}</td>
                     </tr>
                 `;
                 usersTableBody.insertAdjacentHTML('beforeend', userRow);

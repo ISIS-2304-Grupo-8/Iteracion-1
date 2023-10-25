@@ -1,6 +1,8 @@
 package uniandes.edu.co.proyecto.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import java.util.Collections;
 
 import uniandes.edu.co.proyecto.modelo.ClienteEntity;
+import uniandes.edu.co.proyecto.modelo.EmpleadoEntity;
 import uniandes.edu.co.proyecto.repositories.ClienteRepository;
 import uniandes.edu.co.proyecto.repositories.ReservasRepository;
 
@@ -25,10 +28,16 @@ public class ClientesController {
     @Autowired
     private ReservasRepository reservasRepository;
 
+    //@GetMapping("/clientes")
+    //public String clientes(Model model){
+    //    model.addAttribute("clientes", clienteRepository.darClientes());
+    //    return "clientes";
+    //}
+
     @GetMapping("/clientes")
-    public String clientes(Model model){
-        model.addAttribute("clientes", clienteRepository.darClientes());
-        return "clientes";
+    public ResponseEntity<Page<ClienteEntity>> clientes(Pageable pageable){
+    Page<ClienteEntity> clientesPage = clienteRepository.findAll(pageable);
+    return new ResponseEntity<>(clientesPage, HttpStatus.OK);
     }
     
     @GetMapping("/clientes/new")
@@ -40,7 +49,7 @@ public class ClientesController {
 
     @PostMapping("/clientes/new/save")
     public String clienteGuardar(@ModelAttribute ClienteEntity cliente){
-        clienteRepository.insertarCliente(cliente.getNum_doc(), cliente.getNombre(), cliente.getEmail(), cliente.getTipo_doc(), cliente.getRol_cliente());
+        clienteRepository.insertarCliente(cliente.getNum_doc(), cliente.getNombre(), cliente.getEmail(), cliente.getTipo_doc(), cliente.getRol_cliente().getId_usuario());
         return "redirect:/clientes";
     }
 
@@ -58,7 +67,7 @@ public class ClientesController {
 
     @PostMapping("/clientes/{num_doc}/edit/save")
     public String clienteEditarGuardar(@PathVariable("num_doc") int num_doc, @ModelAttribute ClienteEntity cliente){
-        clienteRepository.actualizarCliente(num_doc, cliente.getNombre(), cliente.getEmail(), cliente.getTipo_doc(), cliente.getRol_cliente());
+        clienteRepository.actualizarCliente(num_doc, cliente.getNombre(), cliente.getEmail(), cliente.getTipo_doc(), cliente.getRol_cliente().getId_usuario());
         return "redirect:/clientes";
     }
 
