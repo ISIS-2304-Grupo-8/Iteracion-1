@@ -9,9 +9,14 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.HabitacionEntity;
+import uniandes.edu.co.proyecto.modelo.ReservanEntity;
 
 public interface HabitacionRepository extends JpaRepository<HabitacionEntity, Integer> {
     
+    public interface RespuestaReq1{
+        Integer getID_HABITACION();
+        Integer getDINERO_RECOLECTADO();
+    }
     //get all instances
     @Query(value = "SELECT * FROM Habitaciones", nativeQuery=true)
     Collection<HabitacionEntity> darHabitaciones();
@@ -39,4 +44,16 @@ public interface HabitacionRepository extends JpaRepository<HabitacionEntity, In
     @Transactional
     @Query(value = "DELETE FROM Habitaciones WHERE id_habitacion = :id_habitacion", nativeQuery = true)
     void eliminarHabitacion(@Param("id_habitacion") Integer id_habitacion);
+
+    //Basicas Entrega 2
+    @Query(value = "SELECT R.id_habitacion AS ID_HABITACION, SUM(T.precio) AS DINERO_RECOLECTADO\n" +
+    "FROM reservan R\n" +
+    "INNER JOIN servicios S ON R.servicios_id = S.id_servicio\n" +
+    "INNER JOIN Tipos_servicio T ON S.ts_tipo_servicio = T.tipo_servicio\n" +
+    "WHERE EXTRACT(YEAR FROM fecha_inicio) = EXTRACT(YEAR FROM SYSDATE) AND EXTRACT(YEAR FROM fecha_final) = EXTRACT(YEAR FROM SYSDATE)\n" +
+    "GROUP BY R.id_habitacion\n" +
+    "ORDER BY R.id_habitacion"
+    , nativeQuery = true)
+    Collection<RespuestaReq1> darDineroRecolectadoServiciosPorHabitacion();
+
 }

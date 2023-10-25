@@ -35,4 +35,13 @@ public interface ServicioRepository extends JpaRepository<ServicioEntity, Intege
     @Transactional
     @Query(value = "DELETE FROM Servicios WHERE id_servicio = :id_servicio", nativeQuery = true)
     void eliminarServicio(@Param("id_servicio") Integer id_servicio);
+
+    @Query(value = "SELECT R.servicios_id, COUNT(R.servicios_id)" +//
+    "FROM reservan R" +//
+    "WHERE R.fecha_inicio>=:f_in AND R.fecha_final<=:f_fin" +//
+    "GROUP BY R.servicios_id" +
+    "ORDER BY COUNT(R.servicios_id) DESC, R.servicios_id ASC" +
+    "FETCH FIRST 20 ROWS ONLY", nativeQuery = true)
+    Collection<ServicioEntity> dar20ServiciosMasPopulares(@Param("f_in") String f_in, @Param("f_fin") String f_fin);
+
 }
