@@ -12,6 +12,11 @@ import org.springframework.transaction.annotation.Transactional;
 import uniandes.edu.co.proyecto.modelo.ServicioEntity;
 
 public interface ServicioRepository extends JpaRepository<ServicioEntity, Integer> {
+
+    public interface ResponseMasPopulares {
+        Integer getID_SERVICIO();
+        Integer getVECES_CONSUMIDO();
+    }
     
     @Query(value = "SELECT * FROM Servicios", nativeQuery=true)
     Collection<ServicioEntity> darServicios();
@@ -36,12 +41,12 @@ public interface ServicioRepository extends JpaRepository<ServicioEntity, Intege
     @Query(value = "DELETE FROM Servicios WHERE id_servicio = :id_servicio", nativeQuery = true)
     void eliminarServicio(@Param("id_servicio") Integer id_servicio);
 
-    @Query(value = "SELECT R.servicios_id, COUNT(R.servicios_id)" +//
-    "FROM reservan R" +//
-    "WHERE R.fecha_inicio>=:f_in AND R.fecha_final<=:f_fin" +//
-    "GROUP BY R.servicios_id" +
-    "ORDER BY COUNT(R.servicios_id) DESC, R.servicios_id ASC" +
+    @Query(value = "SELECT R.servicios_id AS id_servicio, COUNT(R.servicios_id) AS veces_consumido " +//
+    "FROM reservan R " +//
+    "WHERE R.fecha_inicio>=to_date(:f_in,'yyyy-mm-dd') AND R.fecha_final<=to_date(:f_fin,'yyyy-mm-dd') " +//
+    "GROUP BY R.servicios_id " +
+    "ORDER BY COUNT(R.servicios_id) DESC, R.servicios_id ASC " +
     "FETCH FIRST 20 ROWS ONLY", nativeQuery = true)
-    Collection<ServicioEntity> dar20ServiciosMasPopulares(@Param("f_in") String f_in, @Param("f_fin") String f_fin);
+    Collection<ResponseMasPopulares> dar20ServiciosMasPopulares(@Param("f_in") String f_in, @Param("f_fin") String f_fin);
 
 }
