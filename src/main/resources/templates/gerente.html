@@ -47,32 +47,37 @@
             </div>
         </div>
     </div>
-    <div id="gerente-section" class="container my-5">
-        <h3>Consultar el dinero recolectado por servicios en cada  habitación en el último año corrido.</h3>
-        <div class="card p-4 text-bg-dark">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewMoneyModal">Consultar</button>
+    <div class="container my-5">
+        <div class="card mb-5 p-4 text-bg-dark">
+                <h3>Consultar el dinero recolectado por servicios en cada  habitación en el último año corrido.</h3>
+                <div class="card-body">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewMoneyModal">Consultar</button>
+                </div>
         </div>
     </div>
-    <div id="gerente-section" class="container my-5">
-        <h3>Top 20 servicios</h3>
-        <div class="card p-4 text-bg-dark">
-            <form id="serviciosPopularesForm">
-                <!-- Input para fecha -->
-                <div class="mb-3">
-                    <label for="f_in" class="form-label">Fecha de inicio</label>
-                    <input type="datetime-local" class="form-control" id="f_in" name="f_in" required>
-                </div>
-                <div class="mb-3">
-                    <label for="f_fin" class="form-label">Fecha de fin</label>
-                    <input type="datetime-local" class="form-control" id="f_fin" name="f_fin" required>
-                </div>
-                
 
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewServicesModal">Consultar</button>
+    <div class="container my-5">
+        <div class="card mb-5 p-4 text-bg-dark">
+            <h3>Top 20 servicios</h3>
+            <div class="card-body">
+                <form id="serviciosPopularesForm">
+                    <!-- Input para fecha -->
+                    <div class="mb-3">
+                        <label for="f_in" class="form-label">Fecha de inicio</label>
+                        <input type="datetime-local" class="form-control" id="f_in" name="f_in" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="f_fin" class="form-label">Fecha de fin</label>
+                        <input type="datetime-local" class="form-control" id="f_fin" name="f_fin" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewServicesModal">Consultar</button>
 
-            </form>
+                </form>
+            </div>
         </div>
     </div>
+
+
 
 
 
@@ -86,7 +91,7 @@
                 <div class="modal-body">
                     <!-- Table to display users -->
                     <table class="table">
-                        <thead>
+                        <thead class="table-dark">
                             <tr>
                                 <th scope="col">Habitación</th>
                                 <th scope="col">Dinero recolectado</th>
@@ -122,7 +127,7 @@
                 <div class="modal-body">
                     <!-- Table to display users -->
                     <table class="table">
-                        <thead>
+                        <thead class="table-dark">
                             <tr>
                                 <th scope="col">Servicio</th>
                                 <th scope="col">Veces consumido</th>
