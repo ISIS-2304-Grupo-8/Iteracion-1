@@ -14,6 +14,12 @@ import uniandes.edu.co.proyecto.modelo.ReservanEntity;
 import uniandes.edu.co.proyecto.modelo.ReservanPK;
 
 public interface ReservanRepository extends JpaRepository<ReservanEntity, ReservanPK> {
+
+    public interface ResponseOperation {
+        String getFECHA_FINAL();
+        Integer getCANTIDAD_CONSUMOS();
+        
+    }
     
     //get all instances
     @Query(value = "SELECT * FROM Reservan", nativeQuery=true)
@@ -42,5 +48,14 @@ public interface ReservanRepository extends JpaRepository<ReservanEntity, Reserv
     @Transactional
     @Query(value = "DELETE FROM Reservan WHERE hab_id = :hab_id AND serv_id= :serv_id", nativeQuery = true)
     void eliminarReserva(@Param("hab_id") Integer hab_id, @Param("serv_id") Integer serv_id);
+
+    //RF6 Iteracion 2
+    @Query(value="SELECT TO_CHAR(fecha_final, 'YYYY-MM-DD') AS FECHA_FINAL, COUNT(precio) AS CANTIDAD_CONSUMOS " + 
+        "FROM reservan " + 
+        "INNER JOIN servicios ON servicios.id_servicio = reservan.servicios_id " +
+        "INNER JOIN tipos_servicio ON tipos_servicio.tipo_servicio = servicios.ts_tipo_servicio " +
+        "GROUP BY fecha_final " +
+        "ORDER BY CANTIDAD_CONSUMOS DESC;", nativeQuery=true)
+    Collection<ResponseOperation> consultarFechasMayoresIngresos();
 }
 

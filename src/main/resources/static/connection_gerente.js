@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
 function fetchAndDisplayServices(page = 0, size = 10) {
     const f_in = document.getElementById('f_in').value;
     const f_fin = document.getElementById('f_fin').value;
-    const f_inDate = new Date(f_in);
-    const f_finDate = new Date(f_fin);
-    const f_inDateFormatted = f_inDate.toISOString().split('T')[0];
-    const f_finDateFormatted = f_finDate.toISOString().split('T')[0];
 
-    const url = `/servicios/20_populares?page=${page}&size=${size}&f_in=${f_inDateFormatted}&f_fin=${f_finDateFormatted}`;
+    if(f_in == '' || f_fin == ''){
+        alert("Debe ingresar ambas fechas");
+        return;
+    }
+    const url = `/servicios/20_populares?page=${page}&size=${size}&f_in=${f_in}&f_fin=${f_fin}`;
 
     fetch(url)
     .then(response => response.json())
@@ -113,7 +113,56 @@ function fetchAndDisplayServices(page = 0, size = 10) {
         });
 }
 
-  // Agregar controladores de eventos para los botones de paginación
+ function fetchAndDisplayClients(page=0, size=10){
+    fetch(`/clientes/buenos_clientes?page=${page}&size=${size}`)
+    .then(response => response.json())
+    .then(data => {
+        const clientsTableBody = document.getElementById('goodClientsTableBody');
+        clientsTableBody.innerHTML = ''; // Limpiar el contenido anterior
+
+        data.forEach((cli) => {
+            const cliRow = `
+                <tr>
+                    <td>${cli.cedula_CLIENTE}</td>
+                    <td>${cli.dias_ESTADIA}</td>
+                    <td>${cli.consumo_TOTAL}</td>
+                </tr>
+            `;
+            clientsTableBody.insertAdjacentHTML('beforeend', cliRow);
+        });
+
+        // Lógica de paginación
+        const paginationControls = document.getElementById('paginationControlsGoodClients');
+        const totalPages = data.totalPages;
+
+        // Limpiar controles de paginación existentes
+        paginationControls.innerHTML = `
+            <li class="page-item"><a class="page-link" href="#" id="previousPage">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#" id="nextPage">Next</a></li>
+        `;
+
+        // Insertar números de página
+        for (let i = 0; i < totalPages; i++) {
+            const pageItem = document.createElement('li');
+            pageItem.className = 'page-item';
+            pageItem.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i + 1}</a>`;
+            paginationControls.insertBefore(pageItem, document.getElementById('nextPage').parentNode);
+        }
+
+        // Deshabilitar los botones anterior/siguiente según sea necesario
+        document.getElementById('previousPage').parentNode.classList.toggle('disabled', page === 0);
+        document.getElementById('nextPage').parentNode.classList.toggle('disabled', page === totalPages - 1);
+
+        currentPage = page; // Actualizar página actual
+    })
+    .catch(error => {
+        console.error('Error fetching users:', error);
+    });
+}
+
+
+
+// Agregar controladores de eventos para los botones de paginación
 document.addEventListener("DOMContentLoaded", function() {
     
     document.getElementById('paginationControls').addEventListener('click', function(event) {
@@ -148,5 +197,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    
-});
+    document.getElementById('paginationControlsGoodClients').addEventListener('click', function(event) {
+        if (event.target.tagName === 'A' && !event.target.parentNode.classList.contains('disabled')) {
+            const clickedPage = event.target.getAttribute('data-page');
+
+            if (clickedPage !== null) {
+                fetchAndDisplayClients(parseInt(clickedPage));
+            } else if (event.target.id === 'previousPage') {
+                fetchAndDisplayClients(currentPage - 1);
+            } else if (event.target.id === 'nextPage') {
+                fetchAndDisplayClients(currentPage + 1);
+            }
+
+            event.preventDefault();
+        }
+    });
+}); 

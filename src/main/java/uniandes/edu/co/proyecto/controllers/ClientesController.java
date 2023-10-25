@@ -1,5 +1,6 @@
 package uniandes.edu.co.proyecto.controllers;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,12 +13,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
+
+import java.util.Collection;
 import java.util.Collections;
 
 import uniandes.edu.co.proyecto.modelo.ClienteEntity;
 import uniandes.edu.co.proyecto.modelo.EmpleadoEntity;
 import uniandes.edu.co.proyecto.repositories.ClienteRepository;
 import uniandes.edu.co.proyecto.repositories.ReservasRepository;
+import uniandes.edu.co.proyecto.repositories.ServicioRepository.ResponseMasPopulares;
+import uniandes.edu.co.proyecto.repositories.ClienteRepository.ResponseGoodClients;
 
 @Controller
 public class ClientesController {
@@ -86,5 +91,11 @@ public class ClientesController {
         } else {
             return new ResponseEntity<>(Collections.singletonMap("mensaje", "Cliente no encontrado"), HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/clientes/buenos_clientes")
+    public ResponseEntity<Collection<ResponseGoodClients>> buenosClientes() {
+        Collection<ResponseGoodClients> buenosClientesPage = clienteRepository.darBuenosClientes();
+        return new ResponseEntity<>(buenosClientesPage, HttpStatus.OK);
     }
 }
