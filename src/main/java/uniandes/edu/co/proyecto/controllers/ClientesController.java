@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import uniandes.edu.co.proyecto.modelo.ClienteEntity;
 import uniandes.edu.co.proyecto.modelo.EmpleadoEntity;
@@ -44,19 +46,34 @@ public class ClientesController {
     Page<ClienteEntity> clientesPage = clienteRepository.findAll(pageable);
     return new ResponseEntity<>(clientesPage, HttpStatus.OK);
     }
-    
-    @GetMapping("/clientes/new")
-    public String clienteForm(Model model){
-        model.addAttribute("cliente", new ClienteEntity());
-        model.addAttribute("reservas",reservasRepository.darReservas());
-        return "clienteNuevo";
-    }
 
-    @PostMapping("/clientes/new/save")
-    public String clienteGuardar(@ModelAttribute ClienteEntity cliente){
-        clienteRepository.insertarCliente(cliente.getNum_doc(), cliente.getNombre(), cliente.getEmail(), cliente.getTipo_doc(), cliente.getRol_cliente().getId_usuario());
-        return "redirect:/clientes";
+    //test for creating new 'empleado'
+    @PostMapping("/clientes/new")
+    public ResponseEntity<Map<String, String>> createCliente(@RequestBody ClienteEntity cliente) {
+    Map<String, String> response = new HashMap<>();
+    try {
+        clienteRepository.insertarCliente(cliente.getNum_doc(), cliente.getNombre(),
+                cliente.getEmail(), cliente.getTipo_doc(), cliente.getRol_cliente().getId_usuario());
+        response.put("message", "Cliente created successfully");
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    } catch (Exception e) {
+        response.put("message", "Failed to create Cliente");
+        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
+    
+    // @GetMapping("/clientes/new")
+    // public String clienteForm(Model model){
+    //     model.addAttribute("cliente", new ClienteEntity());
+    //     model.addAttribute("reservas",reservasRepository.darReservas());
+    //     return "clienteNuevo";
+    // }
+
+    // @PostMapping("/clientes/new/save")
+    // public String clienteGuardar(@ModelAttribute ClienteEntity cliente){
+    //     clienteRepository.insertarCliente(cliente.getNum_doc(), cliente.getNombre(), cliente.getEmail(), cliente.getTipo_doc(), cliente.getRol_cliente().getId_usuario());
+    //     return "redirect:/clientes";
+    // }
 
     @GetMapping("/clientes/{num_doc}/edit")
     public String clienteEditarForm(@PathVariable("num_doc") int num_doc, Model model){

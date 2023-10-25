@@ -1,5 +1,11 @@
 let currentPage = 0; // Página actual. Empieza en 0.
 
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector('.btn.btn-secondary.goback').addEventListener('click', function() {
+      window.location.href = "/";
+    });
+  });
+
 function fetchAndDisplayUsers(page = 0, size = 10) {
     fetch(`/empleados?page=${page}&size=${size}`)
         .then(response => response.json())

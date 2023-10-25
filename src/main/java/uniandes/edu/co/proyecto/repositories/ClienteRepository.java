@@ -29,7 +29,7 @@ public interface ClienteRepository extends JpaRepository<ClienteEntity,
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO clientes (num_doc, nombre, email, tipo_doc, rol_cliente, reservas_id_reserva) VALUES (:num_doc, :nombre, :email, :tipo_doc, :rol_cliente)", nativeQuery = true)
+    @Query(value = "INSERT INTO clientes (num_doc, nombre, email, tipo_doc, rol_cliente) VALUES (:num_doc, :nombre, :email, :tipo_doc, :rol_cliente)", nativeQuery = true)
     void insertarCliente(@Param("num_doc") int num_doc, @Param("nombre") String nombre, @Param("email") String email , 
     @Param("tipo_doc") String tipo_doc, @Param("rol_cliente") Integer rol_cliente);
 

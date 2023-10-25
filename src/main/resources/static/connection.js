@@ -75,7 +75,11 @@
             alert("There is a nullable field, please try again.");
         } else {
             //mapping right name of the role for the db
-                role = getKeysByValue(numRoleMapping, role.toLowerCase())[0];
+            number_of_role_in_db = getKeysByValue(numRoleMapping, role.toLowerCase())[0];
+                role = {
+                    "id_usuario": number_of_role_in_db,
+                    "rol": role.toLowerCase()
+                };
             // Prepare the data to be sent to the server (body)
             const data = {
                 num_doc: documentNumber,  
@@ -124,17 +128,36 @@
             || documentNumber === null) {
         alert("There is a nullable field, please try again.");
     } else {
+            role = {
+                "id_usuario": 1,
+                "rol": "cliente"
+            };
         // Prepare the data to be sent to the server (body)
-        const data = {
+        const client_data = {
             num_doc: documentNumber,  
             nombre: name,
             email: email,
             tipo_doc: documentType,
-            rol_cliente: "cliente"
+            rol_cliente: role
             };
-        //TODO FETCH TO POST THE NEW 'CLIENTE'
+        // Make a POST request to create a new worker
+            fetch('/clientes/new', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(client_data),
+            })
+            .then(response => response.json())  // Parse the JSON from the response
+            .then(data => {
+                console.log('Success:', data);
+                alert('Cliente created successfully');
+            })
+            .catch((error) => {         // catching errors if they are and printing them
+                console.error('Error:', error);
+                alert('Failed to create cliente');
+            });
         }
-        console.log(`Creating client: Name: ${name}, Email: ${email}, Document Type: ${documentType}`);
 
         var clientModal = bootstrap.Modal.getInstance(document.getElementById('createClientModal'));
         clientModal.hide();
@@ -205,8 +228,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 fetch(`/empleados/${documentNumber}`)
                     .then(response => response.json())
                     .then(data => { 
-                        if (data.empleado && numRoleMapping[parseInt(data.empleado.rol)] === role) {
-                            alert(`${numRoleMapping[parseInt(data.empleado.rol)]} encontrado: ${data.empleado.nombre}`);  
+                        if (data.empleado && data.empleado.rol.rol === role) {
+                            alert(`${data.empleado.rol.rol} encontrado: ${data.empleado.nombre}`);  
                             switch(role) {
                                 case "gerente":
                                     window.location.href = "gerente.html";
