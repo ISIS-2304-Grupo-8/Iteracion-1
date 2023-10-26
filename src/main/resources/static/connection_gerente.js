@@ -121,6 +121,8 @@ function fetchAndDisplayServices(page = 0, size = 10) {
         clientsTableBody.innerHTML = ''; // Limpiar el contenido anterior
 
         data.forEach((cli) => {
+            if (cli.dias_ESTADIA == null) cli.dias_ESTADIA = '-';
+            if (cli.consumo_TOTAL == null) cli.consumo_TOTAL = '-';
             const cliRow = `
                 <tr>
                     <td>${cli.cedula_CLIENTE}</td>
