@@ -2,6 +2,8 @@ package uniandes.edu.co.proyecto.repositories;
 
 import java.util.Collection;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -9,7 +11,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.HabitacionEntity;
-import uniandes.edu.co.proyecto.modelo.ReservanEntity;
 
 public interface HabitacionRepository extends JpaRepository<HabitacionEntity, Integer> {
     
@@ -17,6 +18,14 @@ public interface HabitacionRepository extends JpaRepository<HabitacionEntity, In
         Integer getID_HABITACION();
         Integer getDINERO_RECOLECTADO();
     }
+
+    //columnas retornadas con el req3 de la 2 parte del reto
+    public interface RespuestaOcupacion {
+        Integer getID_HABITACION();
+        Integer getTOTAL_DIAS_OCUPADOS();
+        Double getPORCENTAJE_OCUPACION();
+    }
+    
     //get all instances
     @Query(value = "SELECT * FROM habitaciones", nativeQuery=true)
     Collection<HabitacionEntity> darHabitaciones();
@@ -56,4 +65,23 @@ public interface HabitacionRepository extends JpaRepository<HabitacionEntity, In
     , nativeQuery = true)
     Collection<RespuestaReq1> darDineroRecolectadoServiciosPorHabitacion();
 
+    //consulta sobre porcentaje de ocupacion ultimo año de habitaciones
+    @Query(value = 
+    "SELECT " +
+    "   apartan.id_habitacion AS ID_HABITACION, " +
+    "   SUM(FECHA_FIN - FECHA_IN) AS TOTAL_DIAS_OCUPADOS, " +
+    "   ROUND((SUM(FECHA_FIN - FECHA_IN) * 100 / 365), 2) AS PORCENTAJE_OCUPACION " +
+    "FROM " +
+    "   APARTAN " +
+    "WHERE " +
+    "   EXTRACT(YEAR FROM FECHA_IN) = EXTRACT(YEAR FROM SYSDATE) " +
+    "   AND EXTRACT(YEAR FROM FECHA_FIN) = EXTRACT(YEAR FROM SYSDATE) " +
+    "GROUP BY " +
+    "   apartan.id_habitacion " +
+    "ORDER BY " +
+    "   apartan.id_habitacion", 
+    nativeQuery = true)
+    Page<RespuestaOcupacion> obtenerIndiceOcupacionPorHabitacion(Pageable pageable);
+
+    
 }

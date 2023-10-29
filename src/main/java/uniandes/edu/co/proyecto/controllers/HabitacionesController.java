@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import uniandes.edu.co.proyecto.modelo.EmpleadoEntity;
+
 import uniandes.edu.co.proyecto.modelo.HabitacionEntity;
 import uniandes.edu.co.proyecto.repositories.HabitacionRepository;
 import uniandes.edu.co.proyecto.repositories.HabitacionRepository.RespuestaReq1;
+import uniandes.edu.co.proyecto.repositories.HabitacionRepository.RespuestaOcupacion;
+
 
 @Controller
 public class HabitacionesController {
@@ -92,6 +94,12 @@ public class HabitacionesController {
     public ResponseEntity<Collection<RespuestaReq1>> habitacionesDinero(Pageable pageable){
     Collection<RespuestaReq1> habPage = habitacionRepository.darDineroRecolectadoServiciosPorHabitacion();
     return new ResponseEntity<>(habPage, HttpStatus.OK);
+    }
+
+    @GetMapping("/habitaciones/indice_ocupacion")
+    public ResponseEntity<Page<RespuestaOcupacion>> obtenerIndiceOcupacion(Pageable pageable) {
+    Page<RespuestaOcupacion> resultado = habitacionRepository.obtenerIndiceOcupacionPorHabitacion(pageable);
+    return new ResponseEntity<>(resultado, HttpStatus.OK);
     }
 
     
