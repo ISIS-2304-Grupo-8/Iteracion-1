@@ -98,8 +98,6 @@ public class HabitacionesController {
 
     @GetMapping("/habitaciones/indice_ocupacion")
     public ResponseEntity<Collection<RespuestaOcupacion>> obtenerIndiceOcupacion(@RequestParam(required = false) Integer size, @RequestParam(required = false) Integer offset) {
-        System.out.println("EL tamaño escogido es: " + size);
-        System.out.println("EL offset escogido es: " + offset);
         Collection<RespuestaOcupacion> resultado = habitacionRepository.obtenerIndiceOcupacionPorHabitacion(size, offset);
     return new ResponseEntity<>(resultado, HttpStatus.OK);
     }

@@ -49,8 +49,73 @@
     <!-- Sección de índice de ocupación de habitaciones -->
     <div class="container my-5">
         <div class="row">
-            <!-- Espacio vacío ocupando la mitad izquierda -->
-            <div class="col-md-6"></div>
+        <!-- Card ocupando la mitad derecha -->
+        <div class="col-md-6">
+            <!-- Card principal -->
+            <div class="card shadow-lg bg-light">
+                <!-- Título de la card -->
+                <div class="card-header bg-dark text-white">
+                    <h2 class="text-center mb-0">RFC4 - Servicios según características</h2>
+                </div>
+        
+                <!-- Cuerpo de la card con los filtros para seleccionar las características -->
+                <div class="card-body bg-secondary text-white">
+                    <p>Filtre los servicios según las características deseadas:</p>
+                    
+                    <form id="serviceFiltersModRFC4">
+                        <div class="form-group">
+                            <label for="priceRangeModRFC4">Rango de Precio:</label>
+                            <input type="range" id="priceRangeModRFC4" name="priceRangeModRFC4" min="0" max="1000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dateRangeModRFC4">Rango de Fecha de Consumo:</label>
+                            <input type="date" id="startDateModRFC4" name="startDateModRFC4">
+                            <span> a </span>
+                            <input type="date" id="endDateModRFC4" name="endDateModRFC4">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="serviceTypeModRFC4">Tipo de Servicio:</label>
+                            <select id="serviceTypeModRFC4" name="serviceTypeModRFC4" class="custom-select">
+                                <!-- Opciones de tipos de servicios -->
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-submit-rf4">Filtrar</button>
+                    </form>
+        
+                    <!-- Aquí se mostrarán los servicios que cumplen con las características -->
+                    <div id="filteredServicesModRFC4"></div>
+                </div>
+        
+                <!-- Pie de la card con la selección de registros y paginación -->
+                <div class="card-footer d-flex justify-content-between align-items-center bg-dark text-white">
+                    <div>
+                        <label for="recordsPerPageServicesModRFC4" class="mr-2">Registros por página:</label>
+                        <select id="recordsPerPageServicesModRFC4" class="custom-select custom-select-sm" style="width: auto;">
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+        
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination mb-0">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#prevModRFC4">Anterior</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#nextModRFC4">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>        
             
             <!-- Card ocupando la mitad derecha -->
             <div class="col-md-6">
@@ -60,9 +125,9 @@
                     <div class="card-header bg-dark text-white">
                         <h2 class="text-center mb-0">RFC3 - Índice de Ocupación de Habitaciones</h2>
                     </div>
-                    
+                
                     <!-- Cuerpo de la card con el texto y lugar para mostrar los datos de las habitaciones -->
-                    <div class="card-body bg-secondary text-white text-center">
+                    <div class="card-body modRF3 bg-secondary text-white text-center">
                         <p>Mostrando el porcentaje de ocupación de cada habitación en el último año.</p>
                         <!-- Aquí se mostrarán los datos de las habitaciones -->
                     </div>
@@ -80,7 +145,7 @@
                                 <option value="10">10</option>
                             </select>
                         </div>
-                        
+                            
                         <nav aria-label="Page navigation example">
                             <ul class="pagination mb-0">
                                 <li class="page-item disabled">
@@ -162,3 +227,4 @@
 <script defer src="./connection_recepcionista.js"></script>
 </body>
 </html>
+
