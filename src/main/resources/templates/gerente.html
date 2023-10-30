@@ -60,6 +60,110 @@
         </div>
     </div>
 
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow-lg bg-light">
+                    <!-- Título de la card -->
+                    <div class="card-header bg-dark text-white">
+                        <h2 class="text-center mb-0">RFC1 - Dinero recolectado por servicios por habitacion</h2>
+                    </div>
+
+                    <div class="card-body modRF1 bg-secondary text-white text-center">
+                        <p>Mostrando dinero recolectado por servicios por habitacion.</p>
+                        <!-- Aquí se mostrarán los datos de las habitaciones -->
+                    </div>
+                    
+                    <div class="card-footer d-flex justify-content-between align-items-center bg-dark text-white">
+                        <div>
+                            <label for="recordsPerPage" class="mr-2">Registros por página:</label>
+                            <select id="recordsPerPage" class="custom-select custom-select-sm" style="width: auto;">
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                            
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#prev">Anterior</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#next">Siguiente</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    
+    
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-lg bg-light">
+                    <div class="card-header bg-dark text-white">
+                        <h2 class="text-center mb-0">RFC2 - Top Servicios</h2>
+                    </div>
+
+                    <div class="card-body bg-secondary text-white">
+                        <p>Filtre los servicios según las fechas deseadas:</p>
+
+                        <form id="serviceFiltersModRFC1">
+                            <div class="form-group">
+                                <label for="dateRangeModRFC2">Rango de Fechas de Servicio:</label>
+                                <input type="date" id="startDateModRFC2" name="startDateModRFC2">
+                                <span> a </span>
+                                <input type="date" id="endDateModRFC2" name="endDateModRFC2">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit-rf2">Filtrar</button>
+                        </form>
+
+                        <!-- Aquí se mostrarán los servicios que cumplen con las características -->
+                        <div id="filteredServicesModRFC2"></div>
+
+                    </div>
+
+                    <!-- Pie de la card con la selección de registros y paginación -->
+                <div class="card-footer d-flex justify-content-between align-items-center bg-dark text-white">
+                    <div>
+                        <label for="recordsPerPageServicesModRFC2" class="mr-2">Registros por página:</label>
+                        <select id="recordsPerPageServicesModRFC2" class="custom-select custom-select-sm" style="width: auto;">
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+        
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination mb-0">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#prevModRFC2">Anterior</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#nextModRFC2">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
     <!-- 20 populares Card - RF2 -->
     <div class="container my-5">
         <div class="card mb-5 p-4 text-bg-dark">
@@ -98,7 +202,7 @@
     </div>
 
 
-    <!--- Buenos Clientes RF7-->
+    <!--- Buenos Clientes RF7 y otros-->
     <div class="container my-5">
         <div class="row">
             <div class="col-md-6">

@@ -93,8 +93,10 @@ public class HabitacionesController {
     // }
 
     @GetMapping("/habitaciones/dinero_recolectado")
-    public ResponseEntity<Collection<RespuestaReq1>> habitacionesDinero(Pageable pageable) {
-        Collection<RespuestaReq1> habPage = habitacionRepository.darDineroRecolectadoServiciosPorHabitacion();
+    public ResponseEntity<Collection<RespuestaReq1>> habitacionesDinero(@RequestParam(required = false) Integer size,
+            @RequestParam(required = false) Integer offset) {
+        Collection<RespuestaReq1> habPage = habitacionRepository.darDineroRecolectadoServiciosPorHabitacion(size,
+                offset);
         return new ResponseEntity<>(habPage, HttpStatus.OK);
     }
 

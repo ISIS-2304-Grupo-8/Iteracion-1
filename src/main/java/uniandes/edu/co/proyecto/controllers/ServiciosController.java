@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import uniandes.edu.co.proyecto.modelo.ClienteEntity;
 import uniandes.edu.co.proyecto.modelo.ServicioEntity;
+import uniandes.edu.co.proyecto.repositories.ClienteRepository.ResponseGoodClients;
 import uniandes.edu.co.proyecto.repositories.ServicioRepository;
 import uniandes.edu.co.proyecto.repositories.ServicioRepository.ResponseMasPopulares;
 
@@ -24,15 +25,14 @@ public class ServiciosController {
     private ServicioRepository servicioRepository;
 
     @GetMapping("/servicios/20_populares")
-    public ResponseEntity<Collection<ResponseMasPopulares>> habitacionesDinero(Pageable pageable, @RequestParam("f_in") String f_in, @RequestParam("f_fin") String f_fin){
-    if(f_in == null || f_fin == null || f_in.isEmpty() || f_fin.isEmpty()){
-        Collection<ResponseMasPopulares> serPage = servicioRepository.dar20ServiciosMasPopulares(f_in, f_fin);
-        return new ResponseEntity<>(HttpStatus.OK);
-    } else {
-        Collection<ResponseMasPopulares> serPage = servicioRepository.dar20ServiciosMasPopulares(f_in, f_fin);
+    public ResponseEntity<Collection<ResponseMasPopulares>> habitacionesDinero(Pageable pageable,
+            @RequestParam("f_in") String f_in, @RequestParam("f_fin") String f_fin,
+            @RequestParam(required = false) Integer size,
+            @RequestParam(required = false) Integer offset) {
+
+        Collection<ResponseMasPopulares> serPage = servicioRepository.dar20ServiciosMasPopulares(f_in, f_fin, size,
+                offset);
         return new ResponseEntity<>(serPage, HttpStatus.OK);
     }
-    
-    }
-    
+
 }
