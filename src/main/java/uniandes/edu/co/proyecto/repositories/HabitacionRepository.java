@@ -67,21 +67,18 @@ public interface HabitacionRepository extends JpaRepository<HabitacionEntity, In
 
     //consulta sobre porcentaje de ocupacion ultimo año de habitaciones
     @Query(value = 
-    "SELECT " +
-    "   apartan.id_habitacion AS ID_HABITACION, " +
-    "   SUM(FECHA_FIN - FECHA_IN) AS TOTAL_DIAS_OCUPADOS, " +
-    "   ROUND((SUM(FECHA_FIN - FECHA_IN) * 100 / 365), 2) AS PORCENTAJE_OCUPACION " +
-    "FROM " +
-    "   APARTAN " +
-    "WHERE " +
-    "   EXTRACT(YEAR FROM FECHA_IN) = EXTRACT(YEAR FROM SYSDATE) " +
-    "   AND EXTRACT(YEAR FROM FECHA_FIN) = EXTRACT(YEAR FROM SYSDATE) " +
-    "GROUP BY " +
-    "   apartan.id_habitacion " +
-    "ORDER BY " +
-    "   apartan.id_habitacion", 
+    "SELECT apartan.id_habitacion AS ID_HABITACION,\n" +
+        "SUM(FECHA_FIN - FECHA_IN) AS TOTAL_DIAS_OCUPADOS,\n" +
+        "ROUND((SUM(FECHA_FIN - FECHA_IN) * 100 / 365), 2) AS PORCENTAJE_OCUPACION\n" +
+        "FROM APARTAN\n" +
+            "WHERE EXTRACT(YEAR FROM FECHA_IN) = EXTRACT(YEAR FROM SYSDATE)\n" +
+            "  AND EXTRACT(YEAR FROM FECHA_FIN) = EXTRACT(YEAR FROM SYSDATE)\n" +
+        "GROUP BY apartan.id_habitacion\n" +
+            "ORDER BY apartan.id_habitacion\n" +
+        "OFFSET :offset ROWS\n" +
+        "FETCH FIRST :size ROWS ONLY",
     nativeQuery = true)
-    Page<RespuestaOcupacion> obtenerIndiceOcupacionPorHabitacion(Pageable pageable);
-
-    
+    Collection<RespuestaOcupacion> obtenerIndiceOcupacionPorHabitacion(
+        @Param("size") Integer size,
+        @Param("offset") Integer offset);
 }

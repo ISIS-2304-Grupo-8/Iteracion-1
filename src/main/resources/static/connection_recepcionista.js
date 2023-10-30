@@ -1,6 +1,13 @@
 // Variables globales para la paginación.
 let currentPage = 0;
-const size = 5; // Cantidad de habitaciones a mostrar por página.
+let size = 5; // Cantidad de habitaciones a mostrar por página.
+
+// Función para actualizar la cantidad de registros por página y recargar los datos.
+function updateRecordsPerPage(event) {
+    size = parseInt(event.target.value);
+    currentPage = 0; // Reiniciar la paginación
+    loadData(currentPage, size);
+}
 
 /**
  * Función para mostrar los datos de habitaciones en una tabla dentro de la card.
@@ -67,11 +74,11 @@ function handlePaginationButtons(data) {
  * @param {number} page - Página actual.
  * @param {number} size - Cantidad de registros por página.
  */
-function loadData(page = 0, size = 10) {
-    fetch(`/habitaciones/indice_ocupacion?page=${page}&size=${size}`)
+function loadData(page, size) {
+    fetch(`/habitaciones/indice_ocupacion?size=${size}&offset=${page}`)
         .then(response => response.json())
         .then(data => {
-            displayData(data.content);
+            displayData(data);
             handlePaginationButtons(data);
         })
         .catch(error => console.error('Error al cargar datos:', error));
@@ -79,13 +86,18 @@ function loadData(page = 0, size = 10) {
 
 // Función para cargar la siguiente página de datos.
 function nextPage() {
-    currentPage++;
+    currentPage = currentPage + size;
     loadData(currentPage, size);
 }
 
 // Función para cargar la página anterior de datos.
 function prevPage() {
-    currentPage--;
+    if(currentPage - size < 0){
+        currentPage = 0;
+    }
+    else{
+        currentPage = currentPage - size;
+    }
     loadData(currentPage, size);
 }
 
@@ -105,4 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         prevLink.addEventListener("click", prevPage);
         nextLink.addEventListener("click", nextPage);
     }
+
+     // Asociar evento al desplegable para la cantidad de registros por página
+     document.getElementById('recordsPerPage').addEventListener('change', updateRecordsPerPage);
   });

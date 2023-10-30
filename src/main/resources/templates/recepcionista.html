@@ -46,34 +46,48 @@
         </div>
     </div>
 
-    <!--displayer records from percentage of occupation in the last year of a room-->
-    <div class="container mt-5">
+    <!-- Sección de índice de ocupación de habitaciones -->
+    <div class="container my-5">
         <div class="row">
-            <div class="col-md-6"></div> <!-- Espacio vacío a la izquierda -->
+            <!-- Espacio vacío ocupando la mitad izquierda -->
+            <div class="col-md-6"></div>
+            
+            <!-- Card ocupando la mitad derecha -->
             <div class="col-md-6">
-                <div class="card text-dark shadow-lg"> <!-- Añadido sombreado y eliminado bg-dark -->
-                    <!-- Sección del título -->
-                    <div class="card-header text-center font-weight-bold" style="background-color: #343a40; color: #f8f9fa;"> <!-- Modificado color y font color -->
-                        RFC #3
+                <!-- Card principal -->
+                <div class="card shadow-lg bg-light">
+                    <!-- Título de la card -->
+                    <div class="card-header bg-dark text-white">
+                        <h2 class="text-center mb-0">RFC3 - Índice de Ocupación de Habitaciones</h2>
                     </div>
-                    <hr class="m-0 bg-dark"> <!-- Modificado hr para que tenga un color más oscuro -->
-
-                    <!-- Sección del cuerpo para tablas y contenido -->
-                    <div class="card-body">
-                        <!-- Puedes insertar tus tablas y contenido desde JS aquí -->
-                        <h5 class="card-title font-weight-bold" style="color: #343a40;">ÍNDICE DE OCUPACIÓN DE CADA UNA DE LAS HABITACIONES DEL HOTEL</h5> <!-- Modificado para que tenga un font más oscuro -->
-                        <p class="card-text" style="color: #6c757d;">Este es un contenido de ejemplo para la tarjeta. Puedes insertar tablas, texto e imágenes desde JS aquí.</p> <!-- Modificado color para que sea más ligero -->
+                    
+                    <!-- Cuerpo de la card con el texto y lugar para mostrar los datos de las habitaciones -->
+                    <div class="card-body bg-secondary text-white text-center">
+                        <p>Mostrando el porcentaje de ocupación de cada habitación en el último año.</p>
+                        <!-- Aquí se mostrarán los datos de las habitaciones -->
                     </div>
-                    <hr class="m-0 bg-dark">
 
-                    <!-- Sección de paginación -->
-                    <div class="card-footer" style="background-color: #343a40;"> <!-- Modificado color -->
+                    <!-- Pie de la card con la selección de registros y paginación -->
+                    <div class="card-footer d-flex justify-content-between align-items-center bg-dark text-white">
+                        <div>
+                            <label for="recordsPerPage" class="mr-2">Registros por página:</label>
+                            <select id="recordsPerPage" class="custom-select custom-select-sm" style="width: auto;">
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        
                         <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-end mb-0">
+                            <ul class="pagination mb-0">
                                 <li class="page-item disabled">
-                                    <a class="page-link" href="#prev">Previous</a>
+                                    <a class="page-link" href="#prev">Anterior</a>
+                                </li>
                                 <li class="page-item">
-                                    <a class="page-link" href="#next">Next</a>
+                                    <a class="page-link" href="#next">Siguiente</a>
                                 </li>
                             </ul>
                         </nav>
@@ -82,9 +96,6 @@
             </div>
         </div>
     </div>
-
-
-    
 
     <!-- CRUD Sections -->
     <div class="container my-5">

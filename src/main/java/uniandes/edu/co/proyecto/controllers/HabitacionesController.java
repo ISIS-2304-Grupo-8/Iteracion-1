@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import uniandes.edu.co.proyecto.modelo.HabitacionEntity;
 import uniandes.edu.co.proyecto.repositories.HabitacionRepository;
@@ -97,8 +97,10 @@ public class HabitacionesController {
     }
 
     @GetMapping("/habitaciones/indice_ocupacion")
-    public ResponseEntity<Page<RespuestaOcupacion>> obtenerIndiceOcupacion(Pageable pageable) {
-    Page<RespuestaOcupacion> resultado = habitacionRepository.obtenerIndiceOcupacionPorHabitacion(pageable);
+    public ResponseEntity<Collection<RespuestaOcupacion>> obtenerIndiceOcupacion(@RequestParam(required = false) Integer size, @RequestParam(required = false) Integer offset) {
+        System.out.println("EL tamaño escogido es: " + size);
+        System.out.println("EL offset escogido es: " + offset);
+        Collection<RespuestaOcupacion> resultado = habitacionRepository.obtenerIndiceOcupacionPorHabitacion(size, offset);
     return new ResponseEntity<>(resultado, HttpStatus.OK);
     }
 
