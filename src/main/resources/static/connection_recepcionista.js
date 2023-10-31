@@ -68,7 +68,7 @@ function handlePaginationButtons(data) {
  * @param {number} page - Página actual.
  * @param {number} size - Cantidad de registros por página.
  */
-function loadData(page, size) {
+function loadData(page, size) { 
     fetch(`/habitaciones/indice_ocupacion?size=${size}&offset=${page}`)
         .then(response => response.json())
         .then(data => {
