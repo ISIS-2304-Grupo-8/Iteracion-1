@@ -6,21 +6,41 @@ let size = 5; // Cantidad de habitaciones a mostrar por página.
  * Función para actualizar la cantidad de registros por página y recargar los datos.
  * @param {Event} event - Evento del cambio en el selector de registros por página.
  */
-function updateRecordsPerPage(event) {
+function updateRecordsPerPageMoney(event) {
+    size = parseInt(event.target.value);
+    currentPage = 0; // Reiniciar la paginación.
+    fetchAndDisplayMoney(currentPage, size);
+}
+
+function updateRecordsPerPageClients(event) {
     size = parseInt(event.target.value);
     currentPage = 0; // Reiniciar la paginación.
     fetchAndDisplayClients(currentPage, size);
+}
+
+function updateRecordsPerPageServices(event) {
+    size = parseInt(event.target.value);
+    currentPage = 0; // Reiniciar la paginación.
     fetchAndDisplayServices(currentPage, size);
-    fetchAndDisplayMoney(currentPage, size);
 }
 
 /**
  * Función para habilitar o deshabilitar los botones de paginación.
  * @param {Object} data - Datos de paginación del backend.
  */
-function handlePaginationButtons(data) {
-    const prevBtnLi = document.querySelector('.page-link[href="#prev"]').parentNode;
-    const nextBtnLi = document.querySelector('.page-link[href="#next"]').parentNode;
+function handlePaginationButtons(data, type) {
+    let prevBtn = document.querySelector('.page-link[href="#prevRFC1"]');
+    let nextBtn = document.querySelector('.page-link[href="#nextRFC1"]');
+    if (type == "money"){
+        prevBtnLi = document.querySelector('.page-link[href="#prevRFC1"]').parentNode;
+        nextBtnLi = document.querySelector('.page-link[href="#nextRFC1"]').parentNode;
+    } else if (type == "clients"){
+        prevBtnLi = document.querySelector('.page-link[href="#prevRFC7"]').parentNode;
+        nextBtnLi = document.querySelector('.page-link[href="#nextRFC7"]').parentNode;
+    } else if (type == "services"){
+        prevBtnLi = document.querySelector('.page-link[href="#prevRFC2"]').parentNode;
+        nextBtnLi = document.querySelector('.page-link[href="#nextRFC2"]').parentNode;
+    }
 
     // Controlar la visibilidad de los botones de paginación.
     if (data.first) prevBtnLi.classList.add('disabled');
@@ -41,7 +61,7 @@ function fetchAndDisplayServices(page, size) {
         .then(data => {
             console.log(data);
             displayServices(data);
-            handlePaginationButtons(data);
+            handlePaginationButtons(data,"services");
         })
         .catch(error => {
             console.error('Error fetching users:', error);
@@ -56,11 +76,23 @@ function fetchAndDisplayServices(page, size) {
         .then(response => response.json())
         .then(data => {
             displayMoney(data);
-            handlePaginationButtons(data);
+            handlePaginationButtons(data,"money");
         })
         .catch(error => {
             console.error('Error fetching users:', error);
         });
+}
+
+function fetchAndDisplayClients(page, size){
+    fetch(`/clientes/buenos_clientes?size=${size}&offset=${page}`)
+    .then(response => response.json())
+    .then(data => {
+        displayGoodClients(data);
+        handlePaginationButtons(data,"clients");
+    })
+    .catch(error => {
+        console.error('Error fetching users:', error);
+    });
 }
 
 
@@ -159,30 +191,40 @@ function displayGoodClients(clientes){
     container.innerHTML = tableContent;
 }
 
-function fetchAndDisplayClients(page, size){
-    fetch(`/clientes/buenos_clientes?size=${size}&offset=${page}`)
-    .then(response => response.json())
-    .then(data => {
-        displayGoodClients(data);
-        handlePaginationButtons(data);
-    })
-    .catch(error => {
-        console.error('Error fetching users:', error);
-    });
+
+
+function nextPageMoney() {
+    currentPage += size;
+    fetchAndDisplayMoney(currentPage, size);
 }
 
-function nextPage() {
+function nextPageClients() {
     currentPage += size;
     fetchAndDisplayClients(currentPage, size);
+}
+
+function nextPageServices() {
+    currentPage += size;
     fetchAndDisplayServices(currentPage, size);
+
+}
+
+function prevPageMoney() {
+    currentPage = Math.max(0, currentPage - size); // No permitir páginas negativas.
+
     fetchAndDisplayMoney(currentPage, size);
 }
 
-function prevPage() {
+function prevPageClients() {
     currentPage = Math.max(0, currentPage - size); // No permitir páginas negativas.
     fetchAndDisplayClients(currentPage, size);
+}
+
+function prevPageServices() {
+    currentPage = Math.max(0, currentPage - size); // No permitir páginas negativas.
+
     fetchAndDisplayServices(currentPage, size);
-    fetchAndDisplayMoney(currentPage, size);
+
 }
 
 
@@ -208,14 +250,18 @@ document.addEventListener("DOMContentLoaded", function() {
     fetchAndDisplayMoney(currentPage, size);
 
     // Asignar eventos a los botones de paginación.
-    document.querySelector('.page-link[href="#prev"]').addEventListener("click", prevPage);
-    document.querySelector('.page-link[href="#next"]').addEventListener("click", nextPage);
+    document.querySelector('.page-link[href="#prevRFC1"]').addEventListener("click", prevPageMoney);
+    document.querySelector('.page-link[href="#nextRFC1"]').addEventListener("click", nextPageMoney);
 
-    document.querySelector('.page-link[href="#prevRFC2"]').addEventListener("click", prevPage);
-    document.querySelector('.page-link[href="#nextRFC2"]').addEventListener("click", nextPage);
+    document.querySelector('.page-link[href="#prevRFC2"]').addEventListener("click", prevPageServices);
+    document.querySelector('.page-link[href="#nextRFC2"]').addEventListener("click", nextPageServices);
+    
+    document.querySelector('.page-link[href="#prevRFC7"]').addEventListener("click", prevPageClients);
+    document.querySelector('.page-link[href="#nextRFC7"]').addEventListener("click", nextPageClients);
 
     // Asignar evento al selector de cantidad de registros por página.
-    document.getElementById('recordsPerPage').addEventListener('change', updateRecordsPerPage);
-    document.getElementById('recordsPerPageRFC2').addEventListener('change', updateRecordsPerPage);
+    document.getElementById('recordsPerPageRFC1').addEventListener('change', updateRecordsPerPageMoney);
+    document.getElementById('recordsPerPageRFC2').addEventListener('change', updateRecordsPerPageServices);
+    document.getElementById('recordsPerPageRFC7').addEventListener('change', updateRecordsPerPageClients);
 
 }); 
