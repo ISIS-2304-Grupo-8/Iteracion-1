@@ -191,42 +191,27 @@ function displayGoodClients(clientes){
     container.innerHTML = tableContent;
 }
 
-
-
-function nextPageMoney() {
+function nextPage(type){
     currentPage += size;
-    fetchAndDisplayMoney(currentPage, size);
+    if (type == "money"){
+        fetchAndDisplayMoney(currentPage, size);
+    } else if (type == "clients"){
+        fetchAndDisplayClients(currentPage, size);
+    } else if (type == "services"){
+        fetchAndDisplayServices(currentPage, size);
+    }
 }
 
-function nextPageClients() {
-    currentPage += size;
-    fetchAndDisplayClients(currentPage, size);
-}
-
-function nextPageServices() {
-    currentPage += size;
-    fetchAndDisplayServices(currentPage, size);
-
-}
-
-function prevPageMoney() {
+function prevPage(type){
     currentPage = Math.max(0, currentPage - size); // No permitir páginas negativas.
-
-    fetchAndDisplayMoney(currentPage, size);
+    if (type == "money"){
+        fetchAndDisplayMoney(currentPage, size);
+    } else if (type == "clients"){
+        fetchAndDisplayClients(currentPage, size);
+    } else if (type == "services"){
+        fetchAndDisplayServices(currentPage, size);
+    }
 }
-
-function prevPageClients() {
-    currentPage = Math.max(0, currentPage - size); // No permitir páginas negativas.
-    fetchAndDisplayClients(currentPage, size);
-}
-
-function prevPageServices() {
-    currentPage = Math.max(0, currentPage - size); // No permitir páginas negativas.
-
-    fetchAndDisplayServices(currentPage, size);
-
-}
-
 
 
 
@@ -250,14 +235,14 @@ document.addEventListener("DOMContentLoaded", function() {
     fetchAndDisplayMoney(currentPage, size);
 
     // Asignar eventos a los botones de paginación.
-    document.querySelector('.page-link[href="#prevRFC1"]').addEventListener("click", prevPageMoney);
-    document.querySelector('.page-link[href="#nextRFC1"]').addEventListener("click", nextPageMoney);
+    document.querySelector('.page-link[href="#prevRFC1"]').addEventListener("click", prevPage("money"));
+    document.querySelector('.page-link[href="#nextRFC1"]').addEventListener("click", nextPage("money"));
 
-    document.querySelector('.page-link[href="#prevRFC2"]').addEventListener("click", prevPageServices);
-    document.querySelector('.page-link[href="#nextRFC2"]').addEventListener("click", nextPageServices);
+    document.querySelector('.page-link[href="#prevRFC2"]').addEventListener("click", prevPage("services"));
+    document.querySelector('.page-link[href="#nextRFC2"]').addEventListener("click", nextPage("services"));
     
-    document.querySelector('.page-link[href="#prevRFC7"]').addEventListener("click", prevPageClients);
-    document.querySelector('.page-link[href="#nextRFC7"]').addEventListener("click", nextPageClients);
+    document.querySelector('.page-link[href="#prevRFC7"]').addEventListener("click", prevPage("clients"));
+    document.querySelector('.page-link[href="#nextRFC7"]').addEventListener("click", nextPage("clients"));
 
     // Asignar evento al selector de cantidad de registros por página.
     document.getElementById('recordsPerPageRFC1').addEventListener('change', updateRecordsPerPageMoney);
