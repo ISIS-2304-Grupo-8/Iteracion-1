@@ -147,7 +147,7 @@ function displayServices(services){
     services.forEach((serv) => {
         tableContent += `
             <tr>
-                <td>${serv.tipo_SERVICIO}</td>
+                <td>${serv.id_SERVICIO}</td>
                 <td>${serv.veces_CONSUMIDO}</td>
             </tr>
         `;

@@ -14,7 +14,7 @@ import uniandes.edu.co.proyecto.modelo.ServicioEntity;
 public interface ServicioRepository extends JpaRepository<ServicioEntity, Integer> {
 
         public interface ResponseMasPopulares {
-                String getTIPO_SERVICIO();
+                Integer getID_SERVICIO();
 
                 Integer getVECES_CONSUMIDO();
         }
@@ -45,14 +45,12 @@ public interface ServicioRepository extends JpaRepository<ServicioEntity, Intege
         @Query(value = "DELETE FROM Servicios WHERE id_servicio = :id_servicio", nativeQuery = true)
         void eliminarServicio(@Param("id_servicio") Integer id_servicio);
 
-        @Query(value = "SELECT T.tipo_servicio AS tipo_servicio, COUNT(T.tipo_servicio) AS veces_consumido " + //
+        @Query(value = "SELECT R.servicios_id AS id_servicio, COUNT(R.servicios_id) AS veces_consumido " + //
                         "FROM reservan R " +
-                        "INNER JOIN servicios S ON R.servicios_id = S.id_servicio " +
-                        "INNER JOIN tipos_servicio T ON T.tipo_servicio = S.ts_tipo_servicio " +
                         "WHERE R.fecha_inicio>=to_date(:f_in,'yyyy-mm-dd') AND R.fecha_final<=to_date(:f_fin,'yyyy-mm-dd') "
                         + //
-                        "GROUP BY T.tipo_servicio " +
-                        "ORDER BY COUNT(T.tipo_servicio) DESC, T.tipo_servicio ASC " +
+                        "GROUP BY R.servicios_id " +
+                        "ORDER BY COUNT(R.servicios_id) DESC, R.servicios_id ASC " +
                         "OFFSET :offset ROWS\n" +
                         "FETCH FIRST :size ROWS ONLY", nativeQuery = true)
         Collection<ResponseMasPopulares> dar20ServiciosMasPopulares(@Param("f_in") String f_in,
