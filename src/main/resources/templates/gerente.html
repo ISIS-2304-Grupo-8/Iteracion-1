@@ -108,46 +108,48 @@
                         <form id="serviceFiltersModRFC2">
                             <div class="form-group">
                                 <label for="dateRangeModRFC2">Rango de Fechas de Servicio:</label>
-                                <input type="date" id="startDateModRFC2" name="startDateModRFC2">
+                                <input type="date" id="startDateModRFC2" name="startDateModRFC2" required>
                                 <span> a </span>
-                                <input type="date" id="endDateModRFC2" name="endDateModRFC2">
+                                <input type="date" id="endDateModRFC2" name="endDateModRFC2" required>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-submit-rf2">Filtrar</button>
+                            <button type="submit" class="btn btn-primary btn-submit-rf2" id="btnFiltrarTopServicios">Filtrar</button>
                         </form>
 
-                        <!-- Aquí se mostrarán los servicios que cumplen con las características -->
-                        <div id="filteredServicesModRFC2"></div>
+                        <div class="card-body modRF2 bg-secondary text-white text-center">
+                            <p>Mostrando top servicios.</p>
+                            <!-- Aquí se mostrarán los datos de los servicios -->
+                        </div>
 
                     </div>
 
                     <!-- Pie de la card con la selección de registros y paginación -->
-                <div class="card-footer d-flex justify-content-between align-items-center bg-dark text-white">
-                    <div>
-                        <label for="recordsPerPageServicesModRFC2" class="mr-2">Registros por página:</label>
-                        <select id="recordsPerPageServicesModRFC2" class="custom-select custom-select-sm" style="width: auto;">
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                        </select>
+                    <div class="card-footer d-flex justify-content-between align-items-center bg-dark text-white">
+                        <div>
+                            <label for="recordsPerPageRFC2" class="mr-2">Registros por página:</label>
+                            <select id="recordsPerPageRFC2" class="custom-select custom-select-sm" style="width: auto;">
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                            </select>
+                        </div>
+                            
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#prevRFC2">Anterior</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#nextRFC2">Siguiente</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
-        
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination mb-0">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#prevModRFC2">Anterior</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#nextModRFC2">Siguiente</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                </div>
+                
 
             </div>
 
@@ -155,27 +157,7 @@
 
     </div>
 
-    <!-- 20 populares Card - RF2 -->
-    <div class="container my-5">
-        <div class="card mb-5 p-4 text-bg-dark">
-            <h3>Top 20 servicios</h3>
-            <div class="card-body">
-                <form id="serviciosPopularesForm">
-                    <!-- Input para fecha -->
-                    <div class="mb-3">
-                        <label for="f_in" class="form-label">Fecha de inicio</label>
-                        <input type="datetime-local" class="form-control" id="f_in" name="f_in" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="f_fin" class="form-label">Fecha de fin</label>
-                        <input type="datetime-local" class="form-control" id="f_fin" name="f_fin" required>
-                    </div>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewServicesModal">Consultar top 20 servicios</button>
-
-                </form>
-            </div>
-        </div>
-    </div>
+    
     <!--- Analizar operación RF6-->
     <div class="container my-5">
         <div class="card mb-5 p-4 text-bg-dark">

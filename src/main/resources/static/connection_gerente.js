@@ -10,7 +10,7 @@ function updateRecordsPerPage(event) {
     size = parseInt(event.target.value);
     currentPage = 0; // Reiniciar la paginación.
     fetchAndDisplayClients(currentPage, size);
-    //fetchAndDisplayServices(currentPage, size);
+    fetchAndDisplayServices(currentPage, size);
     fetchAndDisplayMoney(currentPage, size);
 }
 
@@ -32,17 +32,21 @@ function handlePaginationButtons(data) {
 
 
 function fetchAndDisplayServices(page, size) {
-    const url = `/servicios/20_populares?page=${page}&size=${size}&f_in=${f_in}&f_fin=${f_fin}`;
+    const startDate = document.getElementById('startDateModRFC2').value;
+    const endDate = document.getElementById('endDateModRFC2').value;
 
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        displayServices(data);
-        handlePaginationButtons(data);
-    })
-    .catch(error => {
-        console.error('Error fetching users:', error);
-    });
+    if(startDate!= "" && endDate != ""){
+        fetch(`/servicios/20_populares?size=${size}&offset=${page}&f_in=${startDate}&f_fin=${endDate}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            displayServices(data);
+            handlePaginationButtons(data);
+        })
+        .catch(error => {
+            console.error('Error fetching users:', error);
+        });
+    }
 
 
 }
@@ -95,7 +99,7 @@ function displayMoney(habitaciones) {
 
 //TOP SERVICIOS
 function displayServices(services){
-    const container = document.querySelector('.card-body.modRF7');
+    const container = document.querySelector('.card-body.modRF2');
 
     // Generar contenido para la tabla.
     let tableContent = `
@@ -111,7 +115,7 @@ function displayServices(services){
     services.forEach((serv) => {
         tableContent += `
             <tr>
-                <td>${serv.id_SERVICIO}</td>
+                <td>${serv.tipo_SERVICIO}</td>
                 <td>${serv.veces_CONSUMIDO}</td>
             </tr>
         `;
@@ -170,14 +174,14 @@ function fetchAndDisplayClients(page, size){
 function nextPage() {
     currentPage += size;
     fetchAndDisplayClients(currentPage, size);
-    //fetchAndDisplayServices(currentPage, size);
+    fetchAndDisplayServices(currentPage, size);
     fetchAndDisplayMoney(currentPage, size);
 }
 
 function prevPage() {
     currentPage = Math.max(0, currentPage - size); // No permitir páginas negativas.
     fetchAndDisplayClients(currentPage, size);
-    //fetchAndDisplayServices(currentPage, size);
+    fetchAndDisplayServices(currentPage, size);
     fetchAndDisplayMoney(currentPage, size);
 }
 
@@ -196,61 +200,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Cargar los datos iniciales.
     fetchAndDisplayClients(currentPage, size);
-    //fetchAndDisplayServices(currentPage, size);
+
+    document.getElementById('btnFiltrarTopServicios').addEventListener('click', () => {
+        fetchAndDisplayServices(currentPage, size);
+    });
+
     fetchAndDisplayMoney(currentPage, size);
 
     // Asignar eventos a los botones de paginación.
     document.querySelector('.page-link[href="#prev"]').addEventListener("click", prevPage);
     document.querySelector('.page-link[href="#next"]').addEventListener("click", nextPage);
 
+    document.querySelector('.page-link[href="#prevRFC2"]').addEventListener("click", prevPage);
+    document.querySelector('.page-link[href="#nextRFC2"]').addEventListener("click", nextPage);
+
     // Asignar evento al selector de cantidad de registros por página.
     document.getElementById('recordsPerPage').addEventListener('change', updateRecordsPerPage);
-    
-    // document.getElementById('paginationControls').addEventListener('click', function(event) {
-    //     if (event.target.tagName === 'A' && !event.target.parentNode.classList.contains('disabled')) {
-    //         const clickedPage = event.target.getAttribute('data-page');
+    document.getElementById('recordsPerPageRFC2').addEventListener('change', updateRecordsPerPage);
 
-    //         if (clickedPage !== null) {
-    //             fetchAndDisplayMoney(parseInt(clickedPage));
-    //         } else if (event.target.id === 'previousPage') {
-    //             fetchAndDisplayMoney(currentPage - 1);
-    //         } else if (event.target.id === 'nextPage') {
-    //             fetchAndDisplayMoney(currentPage + 1);
-    //         }
-
-    //         event.preventDefault();
-    //     }
-    // });
-
-    // document.getElementById('paginationControlsServices').addEventListener('click', function(event) {
-    //     if (event.target.tagName === 'A' && !event.target.parentNode.classList.contains('disabled')) {
-    //         const clickedPage = event.target.getAttribute('data-page');
-
-    //         if (clickedPage !== null) {
-    //             fetchAndDisplayServices(parseInt(clickedPage));
-    //         } else if (event.target.id === 'previousPage') {
-    //             fetchAndDisplayServices(currentPage - 1);
-    //         } else if (event.target.id === 'nextPage') {
-    //             fetchAndDisplayServices(currentPage + 1);
-    //         }
-
-    //         event.preventDefault();
-    //     }
-    // });
-
-    // document.getElementById('paginationControlsGoodClients').addEventListener('click', function(event) {
-    //     if (event.target.tagName === 'A' && !event.target.parentNode.classList.contains('disabled')) {
-    //         const clickedPage = event.target.getAttribute('data-page');
-
-    //         if (clickedPage !== null) {
-    //             fetchAndDisplayClients(parseInt(clickedPage));
-    //         } else if (event.target.id === 'previousPage') {
-    //             fetchAndDisplayClients(currentPage - 1);
-    //         } else if (event.target.id === 'nextPage') {
-    //             fetchAndDisplayClients(currentPage + 1);
-    //         }
-
-    //         event.preventDefault();
-    //     }
-    // });
 }); 
